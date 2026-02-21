@@ -1,6 +1,6 @@
 {
   "appTitle": "スライドスタイル指示文生成ツール",
-  "appSubtitle": "スライドのスタイルとテーマをすばやく整え、明確で構造化されたスライド用プロンプトを作成します。",
+  "appSubtitle": "スライドのスタイルとテーマをすばやく整え、明確で構造化されたスライド用プロンプトを作成します",
   "navbarLabel": "グローバル操作",
   "interfaceLanguage": "表示言語",
   "colorModeLabel": "テーマモード",
@@ -31,8 +31,8 @@
   "previewExportTitle": "プレビューとエクスポート",
   "copyButton": "コピー",
   "copiedButton": "コピー済み",
-  "exportButton": ".txt を書き出し",
-  "resultReadyHint": "プレビューが更新されました。コピーまたは書き出しできます。",
+  "exportButton": "書き出し",
+  "resultReadyHint": "プレビューが更新されました。コピーまたは書き出しできます",
   "resultEmptyHint": "内容を入力するとライブプレビューが生成されます。",
   "emptyPrompt": "まだプロンプトがありません。設定と内容を入力してください。",
   "newCategoryPlaceholder": "新しいカテゴリ名",

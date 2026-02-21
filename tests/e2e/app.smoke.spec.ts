@@ -40,7 +40,7 @@ test('smoke: app renders and generates prompt', async ({ page }) => {
   await expect(page.locator('pre')).toContainText('Style Preset: My Style');
 
   const downloadPromise = page.waitForEvent('download');
-  await page.getByRole('button', { name: 'Export .txt' }).click();
+  await page.getByRole('button', { name: 'Export' }).click();
   const download = await downloadPromise;
   expect(download.suggestedFilename()).toMatch(/^slide-prompt-\d+\.txt$/);
 

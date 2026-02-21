@@ -1,6 +1,6 @@
 {
   "appTitle": "幻灯片风格提示词生成器",
-  "appSubtitle": "快速调整幻灯片风格与主题，打造清晰且结构化的幻灯片提示词。",
+  "appSubtitle": "快速调整幻灯片风格与主题，打造清晰且结构化的幻灯片提示词",
   "navbarLabel": "全局控制",
   "interfaceLanguage": "界面语言",
   "colorModeLabel": "主题模式",
@@ -31,8 +31,8 @@
   "previewExportTitle": "预览与导出",
   "copyButton": "复制",
   "copiedButton": "已复制",
-  "exportButton": "导出 .txt",
-  "resultReadyHint": "预览已更新，可直接复制或导出提示词。",
+  "exportButton": "导出",
+  "resultReadyHint": "预览已更新，可直接复制或导出提示词",
   "resultEmptyHint": "请先输入内容，即可实时生成提示词预览。",
   "emptyPrompt": "尚未生成提示词，请先设置控制项并输入内容。",
   "newCategoryPlaceholder": "新增分类名称",

@@ -1,6 +1,6 @@
 {
   "appTitle": "슬라이드 스타일 프롬프트 생성기",
-  "appSubtitle": "슬라이드 스타일과 테마를 빠르게 조정해 명확하고 구조화된 슬라이드 프롬프트를 만드세요.",
+  "appSubtitle": "슬라이드 스타일과 테마를 빠르게 조정해 명확하고 구조화된 슬라이드 프롬프트를 만드세요",
   "navbarLabel": "전역 제어",
   "interfaceLanguage": "인터페이스 언어",
   "colorModeLabel": "테마 모드",
@@ -31,8 +31,8 @@
   "previewExportTitle": "미리보기 및 내보내기",
   "copyButton": "복사",
   "copiedButton": "복사됨",
-  "exportButton": ".txt 내보내기",
-  "resultReadyHint": "미리보기가 준비되었습니다. 복사하거나 내보내세요.",
+  "exportButton": "내보내기",
+  "resultReadyHint": "미리보기가 준비되었습니다. 복사하거나 내보내세요",
   "resultEmptyHint": "내용을 입력하면 실시간 프롬프트 미리보기가 생성됩니다.",
   "emptyPrompt": "아직 프롬프트가 없습니다. 설정과 내용을 입력해 주세요.",
   "newCategoryPlaceholder": "새 카테고리 이름",

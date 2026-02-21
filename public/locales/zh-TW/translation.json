@@ -1,6 +1,6 @@
 {
   "appTitle": "投影片風格提示詞產生器",
-  "appSubtitle": "快速調整投影片風格與主題，打造清楚且結構化的投影片提示詞。",
+  "appSubtitle": "快速調整投影片風格與主題，打造清楚且結構化的投影片提示詞",
   "navbarLabel": "全域控制",
   "interfaceLanguage": "介面語言",
   "colorModeLabel": "主題模式",
@@ -31,8 +31,8 @@
   "previewExportTitle": "預覽與匯出",
   "copyButton": "複製",
   "copiedButton": "已複製",
-  "exportButton": "匯出 .txt",
-  "resultReadyHint": "預覽已更新，可直接複製或匯出提示詞。",
+  "exportButton": "匯出",
+  "resultReadyHint": "預覽已更新，可直接複製或匯出提示詞",
   "resultEmptyHint": "請先輸入內容，即可即時生成提示詞預覽。",
   "emptyPrompt": "尚未產生提示詞，請先設定控制項並輸入內容。",
   "newCategoryPlaceholder": "新增分類名稱",

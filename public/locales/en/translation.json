@@ -1,6 +1,6 @@
 {
   "appTitle": "Slide Style Prompt Generator",
-  "appSubtitle": "Quickly shape slide styles and themes to craft clear, structured slide prompts.",
+  "appSubtitle": "Quickly shape slide styles and themes to craft clear, structured slide prompts",
   "navbarLabel": "Global controls",
   "interfaceLanguage": "Language",
   "colorModeLabel": "Theme",
@@ -31,8 +31,8 @@
   "previewExportTitle": "Preview & Export",
   "copyButton": "Copy",
   "copiedButton": "Copied",
-  "exportButton": "Export .txt",
-  "resultReadyHint": "Preview is ready. Copy or export the generated prompt.",
+  "exportButton": "Export",
+  "resultReadyHint": "Preview is ready. Copy or export the generated prompt",
   "resultEmptyHint": "Enter source content to generate a live prompt preview.",
   "emptyPrompt": "No prompt yet. Fill in controls and content to generate output.",
   "newCategoryPlaceholder": "New category name",
