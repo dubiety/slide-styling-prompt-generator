@@ -483,21 +483,9 @@ function App() {
               </article>
 
               <article className="rounded-3xl border border-white/45 bg-white/55 p-4 shadow-[0_16px_42px_rgba(15,23,42,0.1)] backdrop-blur-xl dark:border-slate-700/70 dark:bg-slate-900/55">
-                <div className="mb-3 flex flex-wrap gap-2">
-                  <input
-                    value={paletteNameInput}
-                    onChange={(event) => setPaletteNameInput(event.target.value)}
-                    placeholder={t('addPalettePlaceholder')}
-                    className="min-w-[11rem] flex-1 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-800/80"
-                  />
-                  <button
-                    type="button"
-                    onClick={addCustomPalette}
-                    className={`${pillBase} border-indigo-300 bg-indigo-100/80 text-indigo-700 dark:border-indigo-500/60 dark:bg-indigo-900/40 dark:text-indigo-200`}
-                  >
-                    {t('addPaletteButton')}
-                  </button>
-                </div>
+                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-300">
+                  {t('paletteLibraryTitle')}
+                </h3>
                 <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
                   {palettes.map((palette) => (
                     <button
@@ -534,9 +522,27 @@ function App() {
                     </button>
                   ))}
                 </div>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <input
+                    value={paletteNameInput}
+                    onChange={(event) => setPaletteNameInput(event.target.value)}
+                    placeholder={t('addPalettePlaceholder')}
+                    className="min-w-[11rem] flex-1 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-800/80"
+                  />
+                  <button
+                    type="button"
+                    onClick={addCustomPalette}
+                    className={`${pillBase} border-indigo-300 bg-indigo-100/80 text-indigo-700 dark:border-indigo-500/60 dark:bg-indigo-900/40 dark:text-indigo-200`}
+                  >
+                    {t('addPaletteButton')}
+                  </button>
+                </div>
               </article>
 
               <article className="rounded-3xl border border-white/45 bg-white/55 p-4 shadow-[0_16px_42px_rgba(15,23,42,0.1)] backdrop-blur-xl dark:border-slate-700/70 dark:bg-slate-900/55">
+                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-300">
+                  {t('slideStyleTitle')}
+                </h3>
                 <div className="mb-3 grid gap-2 md:grid-cols-3">
                   <input
                     value={styleNameInput}
