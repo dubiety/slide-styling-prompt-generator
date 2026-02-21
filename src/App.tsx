@@ -422,6 +422,8 @@ function App() {
   const pillBase =
     'rounded-full border px-3 py-1.5 text-xs font-medium transition duration-200 hover:-translate-y-0.5 hover:scale-[1.02]';
   const iconButtonBase = 'inline-flex h-8 w-8 items-center justify-center rounded-full';
+  const tabButtonBase =
+    'inline-flex h-8 items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_20%_10%,rgba(99,102,241,0.25),transparent_38%),radial-gradient(circle_at_80%_0%,rgba(236,72,153,0.2),transparent_32%),radial-gradient(circle_at_50%_100%,rgba(14,165,233,0.18),transparent_32%)] bg-slate-100 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
@@ -480,26 +482,32 @@ function App() {
                   onClick={() => setActiveTab('generator')}
                   aria-label={t('tabGenerator')}
                   title={t('tabGenerator')}
-                  className={`rounded-full p-2 transition ${
+                  className={`${tabButtonBase} ${
                     activeTab === 'generator'
-                      ? 'bg-gradient-to-r from-indigo-500 via-sky-500 to-fuchsia-500 text-white shadow-md'
-                      : 'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
+                      ? 'border-transparent bg-gradient-to-r from-indigo-500 via-sky-500 to-fuchsia-500 text-white shadow-md'
+                      : 'border-white/70 bg-white/70 text-slate-600 hover:text-slate-900 dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-300 dark:hover:text-white'
                   }`}
                 >
-                  <PaletteIcon className="h-4 w-4" />
+                  <span className="inline-flex items-center gap-2">
+                    <PaletteIcon className="h-4 w-4" />
+                    <span>{t('tabGenerator')}</span>
+                  </span>
                 </button>
                 <button
                   type="button"
                   onClick={() => setActiveTab('templates')}
                   aria-label={t('tabTemplates')}
                   title={t('tabTemplates')}
-                  className={`rounded-full p-2 transition ${
+                  className={`${tabButtonBase} ${
                     activeTab === 'templates'
-                      ? 'bg-gradient-to-r from-indigo-500 via-sky-500 to-fuchsia-500 text-white shadow-md'
-                      : 'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
+                      ? 'border-transparent bg-gradient-to-r from-indigo-500 via-sky-500 to-fuchsia-500 text-white shadow-md'
+                      : 'border-white/70 bg-white/70 text-slate-600 hover:text-slate-900 dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-300 dark:hover:text-white'
                   }`}
                 >
-                  <BookTemplate className="h-4 w-4" />
+                  <span className="inline-flex items-center gap-2">
+                    <BookTemplate className="h-4 w-4" />
+                    <span>{t('tabTemplates')}</span>
+                  </span>
                 </button>
               </div>
             </div>
