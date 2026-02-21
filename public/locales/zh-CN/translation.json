@@ -52,5 +52,165 @@
   "platforms": {
     "Gemini": "Gemini",
     "NotebookLM": "NotebookLM"
+  },
+  "paletteNames": {
+    "palette-default-1": "太平洋礁",
+    "palette-default-2": "极光暮色",
+    "palette-default-3": "森林薄雾",
+    "palette-default-4": "薰衣夜色",
+    "palette-default-5": "沙丘",
+    "palette-default-6": "霓虹脉冲",
+    "palette-default-7": "北境天空",
+    "palette-default-8": "柑橘亮点",
+    "palette-default-9": "极简单色",
+    "palette-default-10": "玫瑰云",
+    "palette-default-11": "玉色花园",
+    "palette-default-12": "靛蓝漂流",
+    "palette-default-13": "琥珀微光",
+    "palette-default-14": "冰川湖",
+    "palette-default-15": "霓光石板",
+    "palette-default-16": "珊瑚薄荷",
+    "palette-default-17": "摩卡奶霜",
+    "palette-default-18": "皇家丝绒",
+    "palette-default-19": "海岸微风",
+    "palette-default-20": "沙漠暮光"
+  },
+  "stylePresets": {
+    "style-default-1": {
+      "name": "高层洞察",
+      "promptHint": "以精准商业框架呈现关键决策与结果。"
+    },
+    "style-default-2": {
+      "name": "故事弧线",
+      "promptHint": "用叙事节奏串联开场、冲突与收束。"
+    },
+    "style-default-3": {
+      "name": "分析简报",
+      "promptHint": "以数据与图表逻辑支撑核心观点。"
+    },
+    "style-default-4": {
+      "name": "发布提案",
+      "promptHint": "聚焦问题、方案与市场机会的提案叙事。"
+    },
+    "style-default-5": {
+      "name": "教学讲解",
+      "promptHint": "分层讲解概念，并加入关键回顾。"
+    },
+    "style-default-6": {
+      "name": "工作坊引导",
+      "promptHint": "通过互动环节与练习步骤推进内容。"
+    },
+    "style-default-7": {
+      "name": "董事会更新",
+      "promptHint": "高层视角总结战略、风险与后续动作。"
+    },
+    "style-default-8": {
+      "name": "销售赋能",
+      "promptHint": "强化价值主张、异议处理与转化导向。"
+    },
+    "style-default-9": {
+      "name": "投资人叙事",
+      "promptHint": "以增长数据和逻辑构建投资说服力。"
+    },
+    "style-default-10": {
+      "name": "产品导览",
+      "promptHint": "用功能与收益串联清晰演示流程。"
+    },
+    "style-default-11": {
+      "name": "研究报告",
+      "promptHint": "按假设、方法、结论与影响依次展开。"
+    },
+    "style-default-12": {
+      "name": "路线图同步",
+      "promptHint": "用时间线说明里程碑与依赖关系。"
+    },
+    "style-default-13": {
+      "name": "案例研究",
+      "promptHint": "采用背景、行动、结果的案例结构。"
+    },
+    "style-default-14": {
+      "name": "训练冲刺",
+      "promptHint": "以短节奏实操与记忆提示提升吸收。"
+    },
+    "style-default-15": {
+      "name": "设计评审",
+      "promptHint": "清晰对比设计意图、取舍与最终方向。"
+    },
+    "style-default-16": {
+      "name": "营销计划",
+      "promptHint": "整合受众、信息、渠道与衡量指标。"
+    },
+    "style-default-17": {
+      "name": "变更提案",
+      "promptHint": "聚焦当前痛点、变更方案与落地路径。"
+    },
+    "style-default-18": {
+      "name": "技术深潜",
+      "promptHint": "按架构层次拆解技术重点与依赖。"
+    },
+    "style-default-19": {
+      "name": "季度复盘",
+      "promptHint": "总结成果、失误、经验与下季重点。"
+    },
+    "style-default-20": {
+      "name": "客户旅程",
+      "promptHint": "描绘阶段触点、摩擦点与价值时刻。"
+    }
+  },
+  "categoryTemplates": {
+    "typography": {
+      "name": "字体风格",
+      "options": [
+        "粗体无衬线",
+        "衬线混搭",
+        "等宽点缀",
+        "编辑风",
+        "几何简洁",
+        "高对比"
+      ]
+    },
+    "mood": {
+      "name": "氛围",
+      "options": [
+        "自信",
+        "活泼",
+        "沉稳",
+        "有活力",
+        "高级",
+        "极简"
+      ]
+    },
+    "audience": {
+      "name": "受众",
+      "options": [
+        "管理层",
+        "产品团队",
+        "设计团队",
+        "学生",
+        "客户",
+        "投资人"
+      ]
+    },
+    "purpose": {
+      "name": "目的",
+      "options": [
+        "提案",
+        "教学",
+        "报告",
+        "工作坊",
+        "决策评审",
+        "路线图"
+      ]
+    },
+    "character-theme": {
+      "name": "角色主题",
+      "options": [
+        "中性专业",
+        "科幻未来",
+        "友好极简",
+        "优雅高级",
+        "大胆创业"
+      ]
+    }
   }
 }

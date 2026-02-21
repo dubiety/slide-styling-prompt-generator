@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import { defaultLanguage, parseLanguage, supportedLanguages } from './localization/config';
@@ -146,6 +147,34 @@ function getInitialColorMode(): ColorMode {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
+function getLocalizedStyle(style: StylePreset, t: TFunction): Pick<StylePreset, 'name' | 'promptHint'> {
+  if (style.isCustom) return { name: style.name, promptHint: style.promptHint };
+  return {
+    name: t(`stylePresets.${style.id}.name`, { defaultValue: style.name }),
+    promptHint: t(`stylePresets.${style.id}.promptHint`, { defaultValue: style.promptHint })
+  };
+}
+
+function getLocalizedPaletteName(palette: Palette, t: TFunction): string {
+  if (palette.isCustom) return palette.name;
+  return t(`paletteNames.${palette.id}`, { defaultValue: palette.name });
+}
+
+function getLocalizedCategoryName(category: CategoryTemplate, t: TFunction): string {
+  if (category.isCustom) return category.name;
+  return t(`categoryTemplates.${category.id}.name`, { defaultValue: category.name });
+}
+
+function getLocalizedOptionLabel(
+  category: CategoryTemplate,
+  option: string,
+  optionIndex: number,
+  t: TFunction
+): string {
+  if (category.isCustom) return option;
+  return t(`categoryTemplates.${category.id}.options.${optionIndex}`, { defaultValue: option });
+}
+
 function App() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
@@ -212,13 +241,13 @@ function App() {
       buildPromptPreview({
         language: activeLanguage,
         colors,
-        paletteName: selectedPalette.name,
+        paletteName: getLocalizedPaletteName(selectedPalette, t),
         styleName: selectedStyle.name,
         styleHint: selectedStyle.promptHint,
         selections,
         categories
       }),
-    [activeLanguage, colors, selectedPalette.name, selectedStyle, selections, categories]
+    [activeLanguage, colors, selectedPalette, selectedStyle, selections, categories, t]
   );
 
   const onCopy = async () => {
@@ -502,7 +531,7 @@ function App() {
                     >
                       <div className="mb-1 flex items-center justify-between gap-2">
                         <span className="text-xs font-semibold text-slate-700 dark:text-slate-100">
-                          {palette.name}
+                          {getLocalizedPaletteName(palette, t)}
                         </span>
                         {palette.isCustom ? (
                           <span
@@ -590,7 +619,7 @@ function App() {
                     >
                       <div className="mb-1 flex items-center justify-between gap-2">
                         <span className="text-xs font-semibold text-slate-700 dark:text-slate-100">
-                          {styleItem.name}
+                          {getLocalizedStyle(styleItem, t).name}
                         </span>
                         {styleItem.isCustom ? (
                           <span
@@ -604,7 +633,9 @@ function App() {
                           </span>
                         ) : null}
                       </div>
-                      <p className="text-xs text-slate-500 dark:text-slate-400">{styleItem.promptHint}</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                        {getLocalizedStyle(styleItem, t).promptHint}
+                      </p>
                     </button>
                   ))}
                 </div>
@@ -618,10 +649,10 @@ function App() {
                   {categories.map((category) => (
                     <div key={category.id}>
                       <p className="mb-1 text-xs font-semibold text-slate-600 dark:text-slate-300">
-                        {category.name}
+                        {getLocalizedCategoryName(category, t)}
                       </p>
                       <div className="flex flex-wrap gap-2">
-                        {category.options.map((option) => {
+                        {category.options.map((option, optionIndex) => {
                           const selected = (selections[category.id] ?? []).includes(option);
                           return (
                             <button
@@ -634,7 +665,7 @@ function App() {
                                   : 'border-slate-200 bg-white/80 text-slate-600 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-300'
                               }`}
                             >
-                              {option}
+                              {getLocalizedOptionLabel(category, option, optionIndex, t)}
                             </button>
                           );
                         })}

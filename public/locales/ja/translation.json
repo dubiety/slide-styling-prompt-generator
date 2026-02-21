@@ -52,5 +52,165 @@
   "platforms": {
     "Gemini": "Gemini",
     "NotebookLM": "NotebookLM"
+  },
+  "paletteNames": {
+    "palette-default-1": "パシフィックリーフ",
+    "palette-default-2": "オーロラサンセット",
+    "palette-default-3": "フォレストミスト",
+    "palette-default-4": "ラベンダーナイト",
+    "palette-default-5": "サンドデューン",
+    "palette-default-6": "ネオンパルス",
+    "palette-default-7": "アークティックスカイ",
+    "palette-default-8": "シトラスポップ",
+    "palette-default-9": "ミニマルモノ",
+    "palette-default-10": "ローズクラウド",
+    "palette-default-11": "ジェードガーデン",
+    "palette-default-12": "インディゴドリフト",
+    "palette-default-13": "アンバーグロー",
+    "palette-default-14": "グレイシャーレイク",
+    "palette-default-15": "スレートネオン",
+    "palette-default-16": "コーラルミント",
+    "palette-default-17": "モカクリーム",
+    "palette-default-18": "ロイヤルベルベット",
+    "palette-default-19": "コースタルブリーズ",
+    "palette-default-20": "デザートトワイライト"
+  },
+  "stylePresets": {
+    "style-default-1": {
+      "name": "エグゼクティブ洞察",
+      "promptHint": "意思決定と成果を簡潔な経営視点で整理します。"
+    },
+    "style-default-2": {
+      "name": "ストーリー構成",
+      "promptHint": "導入・展開・結論の流れで訴求力を高めます。"
+    },
+    "style-default-3": {
+      "name": "分析ブリーフ",
+      "promptHint": "データと図表を軸に論点を明確化します。"
+    },
+    "style-default-4": {
+      "name": "ローンチ提案",
+      "promptHint": "課題・解決策・市場性を一貫して提示します。"
+    },
+    "style-default-5": {
+      "name": "教育デッキ",
+      "promptHint": "概念を段階的に説明し、要点を復習します。"
+    },
+    "style-default-6": {
+      "name": "ワークショップ",
+      "promptHint": "演習とチェックポイントで参加型に進行します。"
+    },
+    "style-default-7": {
+      "name": "取締役会アップデート",
+      "promptHint": "戦略、リスク、次アクションを上位視点で要約します。"
+    },
+    "style-default-8": {
+      "name": "営業支援",
+      "promptHint": "価値訴求と反論対応を成約導線で整理します。"
+    },
+    "style-default-9": {
+      "name": "投資家向け叙述",
+      "promptHint": "成長指標とロジックで投資判断を支援します。"
+    },
+    "style-default-10": {
+      "name": "製品ウォークスルー",
+      "promptHint": "機能と便益をデモ導線でわかりやすく示します。"
+    },
+    "style-default-11": {
+      "name": "調査レポート",
+      "promptHint": "仮説、方法、結果、示唆の順で構成します。"
+    },
+    "style-default-12": {
+      "name": "ロードマップ同期",
+      "promptHint": "マイルストーンと依存関係を時系列で提示します。"
+    },
+    "style-default-13": {
+      "name": "ケーススタディ",
+      "promptHint": "背景・実施内容・成果の型で説明します。"
+    },
+    "style-default-14": {
+      "name": "トレーニング短期集中",
+      "promptHint": "短い実践と定着ポイントで学習効率を上げます。"
+    },
+    "style-default-15": {
+      "name": "デザインレビュー",
+      "promptHint": "意図、トレードオフ、決定理由を明確に示します。"
+    },
+    "style-default-16": {
+      "name": "キャンペーン計画",
+      "promptHint": "ターゲット、メッセージ、チャネル、指標を統合します。"
+    },
+    "style-default-17": {
+      "name": "変更提案",
+      "promptHint": "現状課題、変更案、導入計画を整理します。"
+    },
+    "style-default-18": {
+      "name": "技術ディープダイブ",
+      "promptHint": "アーキテクチャ層で技術要点を段階的に説明します。"
+    },
+    "style-default-19": {
+      "name": "四半期レビュー",
+      "promptHint": "成果、課題、学び、次期重点を簡潔にまとめます。"
+    },
+    "style-default-20": {
+      "name": "カスタマージャーニー",
+      "promptHint": "各段階の接点、課題、価値体験を可視化します。"
+    }
+  },
+  "categoryTemplates": {
+    "typography": {
+      "name": "タイポグラフィ",
+      "options": [
+        "太字サンセリフ",
+        "セリフミックス",
+        "モノアクセント",
+        "エディトリアル",
+        "幾何クリーン",
+        "高コントラスト"
+      ]
+    },
+    "mood": {
+      "name": "ムード",
+      "options": [
+        "自信",
+        "遊び心",
+        "落ち着き",
+        "エネルギッシュ",
+        "ラグジュアリー",
+        "ミニマル"
+      ]
+    },
+    "audience": {
+      "name": "対象者",
+      "options": [
+        "経営層",
+        "プロダクトチーム",
+        "デザインチーム",
+        "学生",
+        "顧客",
+        "投資家"
+      ]
+    },
+    "purpose": {
+      "name": "目的",
+      "options": [
+        "提案",
+        "教育",
+        "レポート",
+        "ワークショップ",
+        "意思決定レビュー",
+        "ロードマップ"
+      ]
+    },
+    "character-theme": {
+      "name": "キャラクターテーマ",
+      "options": [
+        "ニュートラル・プロ",
+        "SFフューチャー",
+        "フレンドリー・ミニマル",
+        "エレガント・プレミアム",
+        "大胆スタートアップ"
+      ]
+    }
   }
 }

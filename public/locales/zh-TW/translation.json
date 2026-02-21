@@ -52,5 +52,165 @@
   "platforms": {
     "Gemini": "Gemini",
     "NotebookLM": "NotebookLM"
+  },
+  "paletteNames": {
+    "palette-default-1": "太平洋礁",
+    "palette-default-2": "極光暮色",
+    "palette-default-3": "森林薄霧",
+    "palette-default-4": "薰衣夜色",
+    "palette-default-5": "沙丘",
+    "palette-default-6": "霓虹脈衝",
+    "palette-default-7": "北境天空",
+    "palette-default-8": "柑橘亮點",
+    "palette-default-9": "極簡單色",
+    "palette-default-10": "玫瑰雲",
+    "palette-default-11": "玉色花園",
+    "palette-default-12": "靛藍漂流",
+    "palette-default-13": "琥珀微光",
+    "palette-default-14": "冰川湖",
+    "palette-default-15": "霓光石板",
+    "palette-default-16": "珊瑚薄荷",
+    "palette-default-17": "摩卡奶霜",
+    "palette-default-18": "皇家絲絨",
+    "palette-default-19": "海岸微風",
+    "palette-default-20": "沙漠暮光"
+  },
+  "stylePresets": {
+    "style-default-1": {
+      "name": "高階洞察",
+      "promptHint": "以精準商業框架呈現重點決策與成果。"
+    },
+    "style-default-2": {
+      "name": "故事弧線",
+      "promptHint": "用故事節奏串接開場、張力與收斂。"
+    },
+    "style-default-3": {
+      "name": "分析簡報",
+      "promptHint": "以數據與圖表脈絡支撐核心論點。"
+    },
+    "style-default-4": {
+      "name": "上市提案",
+      "promptHint": "聚焦問題、解法與市場機會的提案敘事。"
+    },
+    "style-default-5": {
+      "name": "教學簡報",
+      "promptHint": "循序拆解概念，並加入重點回顧。"
+    },
+    "style-default-6": {
+      "name": "工作坊引導",
+      "promptHint": "以互動節點與練習步驟引導參與。"
+    },
+    "style-default-7": {
+      "name": "董事會更新",
+      "promptHint": "高層視角總結策略、風險與後續行動。"
+    },
+    "style-default-8": {
+      "name": "銷售賦能",
+      "promptHint": "強化價值主張、異議處理與轉換導向。"
+    },
+    "style-default-9": {
+      "name": "投資人敘事",
+      "promptHint": "以成長數據與邏輯建構投資說服力。"
+    },
+    "style-default-10": {
+      "name": "產品導覽",
+      "promptHint": "以功能與效益串連清楚的展示流程。"
+    },
+    "style-default-11": {
+      "name": "研究報告",
+      "promptHint": "依序呈現假設、方法、發現與影響。"
+    },
+    "style-default-12": {
+      "name": "路線圖同步",
+      "promptHint": "用時間軸說明里程碑與相依關係。"
+    },
+    "style-default-13": {
+      "name": "案例研究",
+      "promptHint": "採情境、行動、成果的案例結構。"
+    },
+    "style-default-14": {
+      "name": "訓練衝刺",
+      "promptHint": "以短節奏實作與記憶提示提升吸收。"
+    },
+    "style-default-15": {
+      "name": "設計評審",
+      "promptHint": "清楚對比設計意圖、取捨與決策。"
+    },
+    "style-default-16": {
+      "name": "行銷計畫",
+      "promptHint": "整合受眾、訊息、渠道與衡量指標。"
+    },
+    "style-default-17": {
+      "name": "變革提案",
+      "promptHint": "聚焦現況痛點、改變方案與落地路徑。"
+    },
+    "style-default-18": {
+      "name": "技術深潛",
+      "promptHint": "以架構層次拆解技術重點與依賴。"
+    },
+    "style-default-19": {
+      "name": "季度回顧",
+      "promptHint": "整理成果、缺口、學習與下季重點。"
+    },
+    "style-default-20": {
+      "name": "客戶旅程",
+      "promptHint": "描繪階段觸點、痛點與價值時刻。"
+    }
+  },
+  "categoryTemplates": {
+    "typography": {
+      "name": "字體風格",
+      "options": [
+        "粗體無襯線",
+        "襯線混搭",
+        "等寬點綴",
+        "編輯風",
+        "幾何簡潔",
+        "高對比"
+      ]
+    },
+    "mood": {
+      "name": "氛圍",
+      "options": [
+        "自信",
+        "活潑",
+        "沉穩",
+        "有活力",
+        "精緻",
+        "極簡"
+      ]
+    },
+    "audience": {
+      "name": "受眾",
+      "options": [
+        "管理層",
+        "產品團隊",
+        "設計團隊",
+        "學生",
+        "客戶",
+        "投資人"
+      ]
+    },
+    "purpose": {
+      "name": "目的",
+      "options": [
+        "提案",
+        "教學",
+        "報告",
+        "工作坊",
+        "決策檢視",
+        "路線圖"
+      ]
+    },
+    "character-theme": {
+      "name": "角色主題",
+      "options": [
+        "中性專業",
+        "科幻未來",
+        "友善極簡",
+        "優雅高級",
+        "大膽新創"
+      ]
+    }
   }
 }
