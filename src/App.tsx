@@ -1,5 +1,19 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { TFunction } from 'i18next';
+import {
+  BookTemplate,
+  Check,
+  Circle,
+  Copy,
+  Download,
+  Layers,
+  Moon,
+  Palette as PaletteIcon,
+  Plus,
+  RotateCcw,
+  Sun,
+  Trash2
+} from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import { defaultLanguage, parseLanguage, supportedLanguages } from './localization/config';
@@ -407,6 +421,7 @@ function App() {
 
   const pillBase =
     'rounded-full border px-3 py-1.5 text-xs font-medium transition duration-200 hover:-translate-y-0.5 hover:scale-[1.02]';
+  const iconButtonBase = 'inline-flex h-8 w-8 items-center justify-center rounded-full';
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_20%_10%,rgba(99,102,241,0.25),transparent_38%),radial-gradient(circle_at_80%_0%,rgba(236,72,153,0.2),transparent_32%),radial-gradient(circle_at_50%_100%,rgba(14,165,233,0.18),transparent_32%)] bg-slate-100 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
@@ -423,7 +438,6 @@ function App() {
             <div className="flex flex-col gap-2 xl:items-end">
               <div className="flex flex-wrap gap-2">
                 <label className="rounded-full border border-white/70 bg-white/70 px-3 py-1 text-xs font-medium text-slate-600 backdrop-blur-md dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-200">
-                  <span className="mr-2">{t('interfaceLanguage')}</span>
                   <select
                     name="language"
                     value={activeLanguage}
@@ -441,17 +455,22 @@ function App() {
                 <button
                   type="button"
                   onClick={() => setColorMode((prev) => (prev === 'light' ? 'dark' : 'light'))}
-                  className={`${pillBase} border-white/70 bg-white/70 text-slate-700 dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-100`}
+                  aria-label={colorMode === 'light' ? t('darkMode') : t('lightMode')}
+                  title={colorMode === 'light' ? t('darkMode') : t('lightMode')}
+                  className={`${iconButtonBase} border border-white/70 bg-white/70 text-slate-700 transition duration-200 hover:-translate-y-0.5 hover:scale-[1.05] dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-100`}
                 >
-                  {colorMode === 'light' ? t('darkMode') : t('lightMode')}
+                  {colorMode === 'light' ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
                 </button>
 
                 <button
                   type="button"
                   onClick={resetAllCustomizations}
-                  className={`${pillBase} border-fuchsia-300/80 bg-fuchsia-100/75 text-fuchsia-700 dark:border-fuchsia-600/70 dark:bg-fuchsia-900/30 dark:text-fuchsia-200`}
+                  aria-label={t('resetButton')}
+                  title={t('resetButton')}
+                  className={`${pillBase} inline-flex items-center gap-1.5 border-fuchsia-300/80 bg-fuchsia-100/75 text-fuchsia-700 dark:border-fuchsia-600/70 dark:bg-fuchsia-900/30 dark:text-fuchsia-200`}
                 >
-                  {t('resetButton')}
+                  <RotateCcw className="h-4 w-4" />
+                  <span>{t('resetButton')}</span>
                 </button>
               </div>
 
@@ -459,24 +478,28 @@ function App() {
                 <button
                   type="button"
                   onClick={() => setActiveTab('generator')}
-                  className={`rounded-full px-4 py-1.5 text-sm font-medium transition ${
+                  aria-label={t('tabGenerator')}
+                  title={t('tabGenerator')}
+                  className={`rounded-full p-2 transition ${
                     activeTab === 'generator'
                       ? 'bg-gradient-to-r from-indigo-500 via-sky-500 to-fuchsia-500 text-white shadow-md'
                       : 'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
                   }`}
                 >
-                  {t('tabGenerator')}
+                  <PaletteIcon className="h-4 w-4" />
                 </button>
                 <button
                   type="button"
                   onClick={() => setActiveTab('templates')}
-                  className={`rounded-full px-4 py-1.5 text-sm font-medium transition ${
+                  aria-label={t('tabTemplates')}
+                  title={t('tabTemplates')}
+                  className={`rounded-full p-2 transition ${
                     activeTab === 'templates'
                       ? 'bg-gradient-to-r from-indigo-500 via-sky-500 to-fuchsia-500 text-white shadow-md'
                       : 'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
                   }`}
                 >
-                  {t('tabTemplates')}
+                  <BookTemplate className="h-4 w-4" />
                 </button>
               </div>
             </div>
@@ -539,9 +562,12 @@ function App() {
                               event.stopPropagation();
                               deletePalette(palette.id);
                             }}
-                            className="cursor-pointer text-[10px] text-rose-500"
+                            className="inline-flex h-4 w-4 cursor-pointer items-center justify-center text-rose-500"
+                            role="button"
+                            aria-label={t('delete')}
+                            title={t('delete')}
                           >
-                            {t('delete')}
+                            <Trash2 className="h-3 w-3" />
                           </span>
                         ) : null}
                       </div>
@@ -573,9 +599,11 @@ function App() {
                   <button
                     type="button"
                     onClick={addCustomPalette}
-                    className={`${pillBase} border-indigo-300 bg-indigo-100/80 text-indigo-700 dark:border-indigo-500/60 dark:bg-indigo-900/40 dark:text-indigo-200`}
+                    aria-label={t('addPaletteButton')}
+                    title={t('addPaletteButton')}
+                    className={`${iconButtonBase} border border-indigo-300 bg-indigo-100/80 text-indigo-700 dark:border-indigo-500/60 dark:bg-indigo-900/40 dark:text-indigo-200`}
                   >
-                    {t('addPaletteButton')}
+                    <Plus className="h-4 w-4" />
                   </button>
                 </div>
               </article>
@@ -601,9 +629,11 @@ function App() {
                 <button
                   type="button"
                   onClick={addCustomStyle}
-                  className={`${pillBase} mb-3 border-sky-300 bg-sky-100/80 text-sky-700 dark:border-sky-500/60 dark:bg-sky-900/30 dark:text-sky-200`}
+                  aria-label={t('addStyleButton')}
+                  title={t('addStyleButton')}
+                  className={`${iconButtonBase} mb-3 border border-sky-300 bg-sky-100/80 text-sky-700 dark:border-sky-500/60 dark:bg-sky-900/30 dark:text-sky-200`}
                 >
-                  {t('addStyleButton')}
+                  <Plus className="h-4 w-4" />
                 </button>
                 <div className="grid gap-2 md:grid-cols-2">
                   {styles.map((styleItem) => (
@@ -627,9 +657,12 @@ function App() {
                               event.stopPropagation();
                               deleteStyle(styleItem.id);
                             }}
-                            className="cursor-pointer text-[10px] text-rose-500"
+                            className="inline-flex h-4 w-4 cursor-pointer items-center justify-center text-rose-500"
+                            role="button"
+                            aria-label={t('delete')}
+                            title={t('delete')}
                           >
-                            {t('delete')}
+                            <Trash2 className="h-3 w-3" />
                           </span>
                         ) : null}
                       </div>
@@ -678,22 +711,31 @@ function App() {
 
             <aside className="lg:sticky lg:top-6 lg:self-start">
               <article className="rounded-3xl border border-white/45 bg-white/55 p-4 shadow-[0_16px_42px_rgba(15,23,42,0.1)] backdrop-blur-xl dark:border-slate-700/70 dark:bg-slate-900/55">
+                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-300">
+                  {t('previewExportTitle')}
+                </h3>
                 <div className="mb-3 flex flex-wrap gap-2">
                   <button
                     type="button"
                     onClick={onCopy}
                     disabled={!generatedPrompt}
-                    className={`${pillBase} border-indigo-400 bg-indigo-500 text-white disabled:opacity-50`}
+                    aria-label={copied ? t('copiedButton') : t('copyButton')}
+                    title={copied ? t('copiedButton') : t('copyButton')}
+                    className={`${pillBase} inline-flex items-center gap-1.5 border-indigo-400 bg-indigo-500 text-white disabled:opacity-50`}
                   >
-                    {copied ? t('copiedButton') : t('copyButton')}
+                    {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                    <span>{copied ? t('copiedButton') : t('copyButton')}</span>
                   </button>
                   <button
                     type="button"
                     onClick={onExport}
                     disabled={!generatedPrompt}
-                    className={`${pillBase} border-fuchsia-400 bg-fuchsia-500 text-white disabled:opacity-50`}
+                    aria-label={t('exportButton')}
+                    title={t('exportButton')}
+                    className={`${pillBase} inline-flex items-center gap-1.5 border-fuchsia-400 bg-fuchsia-500 text-white disabled:opacity-50`}
                   >
-                    {t('exportButton')}
+                    <Download className="h-4 w-4" />
+                    <span>{t('exportButton')}</span>
                   </button>
                 </div>
                 <p className="mb-2 text-xs text-slate-500 dark:text-slate-400">
@@ -727,9 +769,11 @@ function App() {
                 <button
                   type="button"
                   onClick={addCategory}
-                  className={`${pillBase} border-indigo-300 bg-indigo-100/80 text-indigo-700 dark:border-indigo-500/60 dark:bg-indigo-900/30 dark:text-indigo-200`}
+                  aria-label={t('addCategoryButton')}
+                  title={t('addCategoryButton')}
+                  className={`${iconButtonBase} border border-indigo-300 bg-indigo-100/80 text-indigo-700 dark:border-indigo-500/60 dark:bg-indigo-900/30 dark:text-indigo-200`}
                 >
-                  {t('addCategoryButton')}
+                  <Plus className="h-4 w-4" />
                 </button>
               </div>
             </div>
@@ -753,16 +797,20 @@ function App() {
                       onClick={() =>
                         updateCategory(category.id, (current) => ({ ...current, multi: !current.multi }))
                       }
-                      className={`${pillBase} border-sky-300 bg-sky-100/80 text-sky-700 dark:border-sky-500/60 dark:bg-sky-900/30 dark:text-sky-200`}
+                      aria-label={category.multi ? t('multi') : t('single')}
+                      title={category.multi ? t('multi') : t('single')}
+                      className={`${iconButtonBase} border border-sky-300 bg-sky-100/80 text-sky-700 dark:border-sky-500/60 dark:bg-sky-900/30 dark:text-sky-200`}
                     >
-                      {category.multi ? t('multi') : t('single')}
+                      {category.multi ? <Layers className="h-4 w-4" /> : <Circle className="h-4 w-4" />}
                     </button>
                     <button
                       type="button"
                       onClick={() => removeCategory(category.id)}
-                      className={`${pillBase} border-rose-300 bg-rose-100/80 text-rose-700 dark:border-rose-500/60 dark:bg-rose-900/30 dark:text-rose-200`}
+                      aria-label={t('delete')}
+                      title={t('delete')}
+                      className={`${iconButtonBase} border border-rose-300 bg-rose-100/80 text-rose-700 dark:border-rose-500/60 dark:bg-rose-900/30 dark:text-rose-200`}
                     >
-                      {t('delete')}
+                      <Trash2 className="h-4 w-4" />
                     </button>
                   </div>
 
@@ -777,9 +825,11 @@ function App() {
                         <button
                           type="button"
                           onClick={() => removeOptionFromCategory(category.id, option)}
-                          className="rounded-full border border-rose-300 px-2 py-1 text-[11px] text-rose-600 dark:border-rose-500/60 dark:text-rose-300"
+                          aria-label={t('delete')}
+                          title={t('delete')}
+                          className={`${iconButtonBase} border border-rose-300 text-rose-600 dark:border-rose-500/60 dark:text-rose-300`}
                         >
-                          {t('delete')}
+                          <Trash2 className="h-3 w-3" />
                         </button>
                       </div>
                     ))}
@@ -797,9 +847,11 @@ function App() {
                     <button
                       type="button"
                       onClick={() => addOptionToCategory(category.id)}
-                      className={`${pillBase} border-indigo-300 bg-indigo-100/80 text-indigo-700 dark:border-indigo-500/60 dark:bg-indigo-900/30 dark:text-indigo-200`}
+                      aria-label={t('addOptionButton')}
+                      title={t('addOptionButton')}
+                      className={`${iconButtonBase} border border-indigo-300 bg-indigo-100/80 text-indigo-700 dark:border-indigo-500/60 dark:bg-indigo-900/30 dark:text-indigo-200`}
                     >
-                      {t('addOptionButton')}
+                      <Plus className="h-4 w-4" />
                     </button>
                   </div>
                 </article>
