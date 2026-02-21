@@ -5,6 +5,7 @@ export type ColorSet = {
   text: string;
   title: string;
   highlight: string;
+  otherColors?: string[];
 };
 
 export type Palette = {
@@ -34,26 +35,206 @@ export type SelectionMap = Record<string, string[]>;
 export const CUSTOMIZATION_STORAGE_KEY = 'slide-prompt-glass-customization-v1';
 
 const paletteData: Array<{ name: string; colors: ColorSet }> = [
-  { name: 'Indigo Sky', colors: { background: '#eef2ff', text: '#1e293b', title: '#3730a3', highlight: '#0ea5e9' } },
-  { name: 'Fuchsia Pulse', colors: { background: '#fdf4ff', text: '#334155', title: '#c026d3', highlight: '#7c3aed' } },
-  { name: 'Dusk Sapphire', colors: { background: '#eff6ff', text: '#1f2937', title: '#1d4ed8', highlight: '#a855f7' } },
-  { name: 'Aurora Mist', colors: { background: '#f8fafc', text: '#334155', title: '#6366f1', highlight: '#d946ef' } },
-  { name: 'Nebula Glow', colors: { background: '#eef2ff', text: '#0f172a', title: '#4338ca', highlight: '#f43f5e' } },
-  { name: 'Sky Violet', colors: { background: '#f0f9ff', text: '#1e293b', title: '#6366f1', highlight: '#e879f9' } },
-  { name: 'Plasma Arc', colors: { background: '#faf5ff', text: '#312e81', title: '#a21caf', highlight: '#06b6d4' } },
-  { name: 'Night Iris', colors: { background: '#f8fafc', text: '#0f172a', title: '#4f46e5', highlight: '#ec4899' } },
-  { name: 'Comet Trail', colors: { background: '#eff6ff', text: '#172554', title: '#2563eb', highlight: '#d946ef' } },
-  { name: 'Lunar Haze', colors: { background: '#f5f3ff', text: '#334155', title: '#7c3aed', highlight: '#0284c7' } },
-  { name: 'Electric Bloom', colors: { background: '#fff7ed', text: '#1f2937', title: '#4f46e5', highlight: '#d946ef' } },
-  { name: 'Ocean Neon', colors: { background: '#ecfeff', text: '#0f172a', title: '#312e81', highlight: '#0ea5e9' } },
-  { name: 'Prism Dust', colors: { background: '#faf5ff', text: '#334155', title: '#6366f1', highlight: '#f472b6' } },
-  { name: 'Ink Spark', colors: { background: '#f8fafc', text: '#111827', title: '#1e1b4b', highlight: '#a855f7' } },
-  { name: 'Royal Breeze', colors: { background: '#eef2ff', text: '#1e293b', title: '#4338ca', highlight: '#38bdf8' } },
-  { name: 'Velvet Dawn', colors: { background: '#fdf2f8', text: '#334155', title: '#be185d', highlight: '#6366f1' } },
-  { name: 'Crystal Byte', colors: { background: '#f0f9ff', text: '#1f2937', title: '#1d4ed8', highlight: '#c026d3' } },
-  { name: 'Gradient Orbit', colors: { background: '#f5f3ff', text: '#1f2937', title: '#4f46e5', highlight: '#ec4899' } },
-  { name: 'Midnight Air', colors: { background: '#e2e8f0', text: '#0f172a', title: '#1e3a8a', highlight: '#9333ea' } },
-  { name: 'Aurora Core', colors: { background: '#ecfeff', text: '#1f2937', title: '#312e81', highlight: '#db2777' } }
+  {
+    name: 'Garnet Sunrise',
+    colors: {
+      background: '#FFF1F5',
+      text: '#4A1D2D',
+      title: '#B4234E',
+      highlight: '#F97393',
+      otherColors: ['#FDE2E4', '#7A2846']
+    }
+  },
+  {
+    name: 'Royal Gemstone Dusk',
+    colors: {
+      background: '#EEF2FF',
+      text: '#1E1B4B',
+      title: '#4338CA',
+      highlight: '#8B5CF6',
+      otherColors: ['#22D3EE', '#C4B5FD']
+    }
+  },
+  {
+    name: 'Ruby Charcoal Twilight',
+    colors: {
+      background: '#F8FAFC',
+      text: '#1F2937',
+      title: '#7F1D1D',
+      highlight: '#EF4444',
+      otherColors: ['#374151', '#FCA5A5']
+    }
+  },
+  {
+    name: 'Emerald Ruby Dawn',
+    colors: {
+      background: '#ECFDF5',
+      text: '#14532D',
+      title: '#059669',
+      highlight: '#BE123C',
+      otherColors: ['#FDE68A', '#FCA5A5']
+    }
+  },
+  {
+    name: 'Crimson Amethyst Nightfall',
+    colors: {
+      background: '#FDF2F8',
+      text: '#3F1D2E',
+      title: '#BE123C',
+      highlight: '#9333EA',
+      otherColors: ['#F472B6', '#C4B5FD']
+    }
+  },
+  {
+    name: 'Emerald Sapphire Daybreak',
+    colors: {
+      background: '#EFF6FF',
+      text: '#0F172A',
+      title: '#0F766E',
+      highlight: '#2563EB',
+      otherColors: ['#34D399', '#93C5FD']
+    }
+  },
+  {
+    name: 'Rose Quartz Evening',
+    colors: {
+      background: '#FFF7FB',
+      text: '#4C1D3D',
+      title: '#DB2777',
+      highlight: '#F59EB2',
+      otherColors: ['#E9D5FF', '#FDA4AF']
+    }
+  },
+  {
+    name: 'Amber Obsidian Autumn',
+    colors: {
+      background: '#FFFBEB',
+      text: '#292524',
+      title: '#B45309',
+      highlight: '#F59E0B',
+      otherColors: ['#D97706', '#57534E']
+    }
+  },
+  {
+    name: 'Sunset Topaz Skies',
+    colors: {
+      background: '#FFF7ED',
+      text: '#1E293B',
+      title: '#EA580C',
+      highlight: '#F97316',
+      otherColors: ['#38BDF8', '#FDBA74']
+    }
+  },
+  {
+    name: 'Rose Garnet Meadow',
+    colors: {
+      background: '#FDF2F8',
+      text: '#3F3F46',
+      title: '#BE185D',
+      highlight: '#16A34A',
+      otherColors: ['#FB7185', '#86EFAC']
+    }
+  },
+  {
+    name: 'Cherry Onyx Sundown',
+    colors: {
+      background: '#FAFAF9',
+      text: '#0B0F1A',
+      title: '#9F1239',
+      highlight: '#E11D48',
+      otherColors: ['#1F2937', '#FDB4BF']
+    }
+  },
+  {
+    name: 'Autumn Ruby Harmony',
+    colors: {
+      background: '#FFFBF0',
+      text: '#3F2A1D',
+      title: '#C2410C',
+      highlight: '#DC2626',
+      otherColors: ['#F59E0B', '#FED7AA']
+    }
+  },
+  {
+    name: 'Mermaid Garnet Symphony',
+    colors: {
+      background: '#ECFEFF',
+      text: '#164E63',
+      title: '#0E7490',
+      highlight: '#BE123C',
+      otherColors: ['#5EEAD4', '#FDA4AF']
+    }
+  },
+  {
+    name: 'Mulberry Topaz Harvest',
+    colors: {
+      background: '#FAF5FF',
+      text: '#3B0764',
+      title: '#A21CAF',
+      highlight: '#F59E0B',
+      otherColors: ['#D946EF', '#FDE68A']
+    }
+  },
+  {
+    name: 'Magma Obsidian Spectrum',
+    colors: {
+      background: '#FFF7ED',
+      text: '#1C1917',
+      title: '#C2410C',
+      highlight: '#EF4444',
+      otherColors: ['#0F172A', '#FDBA74']
+    }
+  },
+  {
+    name: 'Jeweled Autumn Shades',
+    colors: {
+      background: '#F8FAFC',
+      text: '#3F3F46',
+      title: '#B45309',
+      highlight: '#0F766E',
+      otherColors: ['#A855F7', '#F59E0B']
+    }
+  },
+  {
+    name: 'Sapphire Coral Breeze',
+    colors: {
+      background: '#F0F9FF',
+      text: '#1E3A8A',
+      title: '#2563EB',
+      highlight: '#FB7185',
+      otherColors: ['#22D3EE', '#FDA4AF']
+    }
+  },
+  {
+    name: 'Aqua Ruby Nightfall',
+    colors: {
+      background: '#ECFEFF',
+      text: '#083344',
+      title: '#0E7490',
+      highlight: '#BE123C',
+      otherColors: ['#22D3EE', '#F43F5E']
+    }
+  },
+  {
+    name: 'Ocean Ruby Radiance',
+    colors: {
+      background: '#EFF6FF',
+      text: '#1E3A8A',
+      title: '#1D4ED8',
+      highlight: '#DC2626',
+      otherColors: ['#38BDF8', '#FCA5A5']
+    }
+  },
+  {
+    name: 'Emerald Lapis Twilight',
+    colors: {
+      background: '#ECFDF5',
+      text: '#064E3B',
+      title: '#059669',
+      highlight: '#1D4ED8',
+      otherColors: ['#22C55E', '#93C5FD']
+    }
+  }
 ];
 
 const styleData: Array<{ name: string; promptHint: string }> = [
@@ -167,7 +348,9 @@ export function buildPromptPreview(input: PromptBuilderInput): string {
     `Palette: ${input.paletteName}`,
     `Style Preset: ${input.styleName}`,
     `Style Direction: ${input.styleHint}`,
-    `Colors: background ${input.colors.background}, text ${input.colors.text}, title ${input.colors.title}, highlight ${input.colors.highlight}`,
+    `Colors: background ${input.colors.background}, text ${input.colors.text}, title ${input.colors.title}, highlight ${input.colors.highlight}, other colors ${
+      input.colors.otherColors && input.colors.otherColors.length > 0 ? input.colors.otherColors.join(', ') : 'none'
+    }`,
     selectedCategoryText ? `Category Selections:\n${selectedCategoryText}` : 'Category Selections: none',
     '',
     'Output Requirements:',

@@ -52,7 +52,9 @@ function isColorSet(value: unknown): value is ColorSet {
     typeof typed.background === 'string' &&
     typeof typed.text === 'string' &&
     typeof typed.title === 'string' &&
-    typeof typed.highlight === 'string'
+    typeof typed.highlight === 'string' &&
+    (!('otherColors' in typed) ||
+      (Array.isArray(typed.otherColors) && typed.otherColors.every((color) => typeof color === 'string')))
   );
 }
 
@@ -515,8 +517,18 @@ function App() {
                         ) : null}
                       </div>
                       <div className="flex gap-1">
-                        {Object.values(palette.colors).map((color) => (
-                          <span key={`${palette.id}-${color}`} className="h-3 w-3 rounded-full border" style={{ background: color }} />
+                        {[
+                          palette.colors.background,
+                          palette.colors.text,
+                          palette.colors.title,
+                          palette.colors.highlight,
+                          ...(palette.colors.otherColors ?? [])
+                        ].map((color) => (
+                          <span
+                            key={`${palette.id}-${color}`}
+                            className="h-6 min-w-0 flex-1 rounded-md border border-white/60 shadow-sm"
+                            style={{ background: color }}
+                          />
                         ))}
                       </div>
                     </button>
