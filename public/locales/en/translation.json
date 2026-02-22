@@ -102,83 +102,83 @@
   "stylePresets": {
     "style-default-1": {
       "name": "Photorealistic",
-      "promptHint": "Ultra-detailed, great for product showcases or scenario simulations."
+      "promptHint": "Ultra-detailed, great for product showcases or scenario simulations"
     },
     "style-default-2": {
       "name": "Cinematic Lighting",
-      "promptHint": "Emphasizes light/shadow and tension; adds narrative and premium feel."
+      "promptHint": "Emphasizes light/shadow and tension; adds narrative and premium feel"
     },
     "style-default-3": {
       "name": "Minimalist",
-      "promptHint": "Ample whitespace and simple colors; perfect for highlighting the core idea."
+      "promptHint": "Ample whitespace and simple colors; perfect for highlighting the core idea"
     },
     "style-default-4": {
       "name": "Flat Design",
-      "promptHint": "2D, clean and easy to recognize; a modern favorite for slides."
+      "promptHint": "2D, clean and easy to recognize; a modern favorite for slides"
     },
     "style-default-5": {
       "name": "Isometric",
-      "promptHint": "2.5D perspective; great for data centers, offices, or architecture diagrams."
+      "promptHint": "2.5D perspective; great for data centers, offices, or architecture diagrams"
     },
     "style-default-6": {
       "name": "3D Render / C4D Style",
-      "promptHint": "Strong depth and modern tech feel; often paired with Octane Render."
+      "promptHint": "Strong depth and modern tech feel; often paired with Octane Render"
     },
     "style-default-7": {
       "name": "Memphis Design",
-      "promptHint": "Playful geometric shapes and vivid colors; great for creative pitches."
+      "promptHint": "Playful geometric shapes and vivid colors; great for creative pitches"
     },
     "style-default-8": {
       "name": "Cyberpunk",
-      "promptHint": "Neon and high-tech vibe; perfect for future tech or software stories."
+      "promptHint": "Neon and high-tech vibe; perfect for future tech or software stories"
     },
     "style-default-9": {
       "name": "Line Art",
-      "promptHint": "Built from clean strokes; great for flowchart backdrops or icon-like visuals."
+      "promptHint": "Built from clean strokes; great for flowchart backdrops or icon-like visuals"
     },
     "style-default-10": {
       "name": "Synthwave",
-      "promptHint": "Retro-futuristic vibe with strong purples and blues."
+      "promptHint": "Retro-futuristic vibe with strong purples and blues"
     },
     "style-default-11": {
       "name": "Pixel Art",
-      "promptHint": "Nostalgic game vibe; great for fun, retro project explainers."
+      "promptHint": "Nostalgic game vibe; great for fun, retro project explainers"
     },
     "style-default-12": {
       "name": "Risograph",
-      "promptHint": "Grainy, overlapping print look; very artsy and design-forward."
+      "promptHint": "Grainy, overlapping print look; very artsy and design-forward"
     },
     "style-default-13": {
       "name": "Bauhaus",
-      "promptHint": "Geometric shapes, primary colors, balance of form and function; very modern."
+      "promptHint": "Geometric shapes, primary colors, balance of form and function; very modern"
     },
     "style-default-14": {
       "name": "Low Poly",
-      "promptHint": "Faceted geometric surfaces; modern and abstract."
+      "promptHint": "Faceted geometric surfaces; modern and abstract"
     },
     "style-default-15": {
       "name": "Watercolor",
-      "promptHint": "Soft washes and blends; warm, human, and empathetic storytelling."
+      "promptHint": "Soft washes and blends; warm, human, and empathetic storytelling"
     },
     "style-default-16": {
       "name": "Oil Painting",
-      "promptHint": "Thick, textured strokes; suits classic, serious, or historical topics."
+      "promptHint": "Thick, textured strokes; suits classic, serious, or historical topics"
     },
     "style-default-17": {
       "name": "Ukiyo-e",
-      "promptHint": "Traditional Japanese aesthetic; fits culture, beauty, or market-specific topics."
+      "promptHint": "Traditional Japanese aesthetic; fits culture, beauty, or market-specific topics"
     },
     "style-default-18": {
       "name": "Pop Art",
-      "promptHint": "High saturation and comic feel; great for bold statements or ads."
+      "promptHint": "High saturation and comic feel; great for bold statements or ads"
     },
     "style-default-19": {
       "name": "Paper Cutout",
-      "promptHint": "Layered, tactile look; cozy visuals with a dimensional feel."
+      "promptHint": "Layered, tactile look; cozy visuals with a dimensional feel"
     },
     "style-default-20": {
       "name": "Charcoal Sketch",
-      "promptHint": "Rough, thoughtful strokes; great for emphasizing concepts or prototyping."
+      "promptHint": "Rough, thoughtful strokes; great for emphasizing concepts or prototyping"
     }
   },
   "categoryTemplates": {

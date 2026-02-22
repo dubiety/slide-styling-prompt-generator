@@ -102,83 +102,83 @@
   "stylePresets": {
     "style-default-1": {
       "name": "포토리얼리스틱",
-      "promptHint": "극도로 디테일해 제품 전시나 시나리오 시뮬레이션에 적합합니다."
+      "promptHint": "극도로 디테일해 제품 전시나 시나리오 시뮬레이션에 적합합니다"
     },
     "style-default-2": {
       "name": "시네마틱 라이팅",
-      "promptHint": "빛과 그림자, 긴장감을 강조해 스토리와 고급스러움을 더합니다."
+      "promptHint": "빛과 그림자, 긴장감을 강조해 스토리와 고급스러움을 더합니다"
     },
     "style-default-3": {
       "name": "미니멀리스트",
-      "promptHint": "여백이 많고 단순한 색상으로 핵심 개념을 강조하기에 적합합니다."
+      "promptHint": "여백이 많고 단순한 색상으로 핵심 개념을 강조하기에 적합합니다"
     },
     "style-default-4": {
       "name": "플랫 디자인",
-      "promptHint": "2D 기반의 단순하고 알아보기 쉬운 스타일로 현대 슬라이드에서 선호됩니다."
+      "promptHint": "2D 기반의 단순하고 알아보기 쉬운 스타일로 현대 슬라이드에서 선호됩니다"
     },
     "style-default-5": {
       "name": "아이소메트릭",
-      "promptHint": "2.5D 시점으로 데이터센터, 사무실, 아키텍처 다이어그램에 자주 쓰입니다."
+      "promptHint": "2.5D 시점으로 데이터센터, 사무실, 아키텍처 다이어그램에 자주 쓰입니다"
     },
     "style-default-6": {
       "name": "3D 렌더 / C4D 스타일",
-      "promptHint": "입체감과 현대적 테크 느낌이 강하며 Octane Render와 자주 사용됩니다."
+      "promptHint": "입체감과 현대적 테크 느낌이 강하며 Octane Render와 자주 사용됩니다"
     },
     "style-default-7": {
       "name": "멤피스 디자인",
-      "promptHint": "발랄한 기하 형태와 선명한 색상으로 창의적 제안에 적합합니다."
+      "promptHint": "발랄한 기하 형태와 선명한 색상으로 창의적 제안에 적합합니다"
     },
     "style-default-8": {
       "name": "사이버펑크",
-      "promptHint": "네온과 하이테크 무드로 미래 기술이나 소프트웨어 주제에 적합합니다."
+      "promptHint": "네온과 하이테크 무드로 미래 기술이나 소프트웨어 주제에 적합합니다"
     },
     "style-default-9": {
       "name": "라인 아트",
-      "promptHint": "깔끔한 선으로 구성되어 흐름도 배경이나 아이콘형 비주얼에 좋습니다."
+      "promptHint": "깔끔한 선으로 구성되어 흐름도 배경이나 아이콘형 비주얼에 좋습니다"
     },
     "style-default-10": {
       "name": "신스웨이브",
-      "promptHint": "복고풍 미래감에 강렬한 보라·파랑 톤."
+      "promptHint": "복고풍 미래감에 강렬한 보라·파랑 톤"
     },
     "style-default-11": {
       "name": "픽셀 아트",
-      "promptHint": "복고 게임 감성으로 재미있는 레트로 프로젝트에 잘 어울립니다."
+      "promptHint": "복고 게임 감성으로 재미있는 레트로 프로젝트에 잘 어울립니다"
     },
     "style-default-12": {
       "name": "리소그래프",
-      "promptHint": "입자가 느껴지고 잉크가 겹쳐진 인쇄 질감으로 예술적·디자인 느낌이 강합니다."
+      "promptHint": "입자가 느껴지고 잉크가 겹쳐진 인쇄 질감으로 예술적·디자인 느낌이 강합니다"
     },
     "style-default-13": {
       "name": "바우하우스",
-      "promptHint": "기하학적 형태와 원색, 기능의 균형을 강조한 매우 현대적인 스타일입니다."
+      "promptHint": "기하학적 형태와 원색, 기능의 균형을 강조한 매우 현대적인 스타일입니다"
     },
     "style-default-14": {
       "name": "로우 폴리",
-      "promptHint": "기하학적 면으로 이루어진 현대적 추상 느낌."
+      "promptHint": "기하학적 면으로 이루어진 현대적 추상 느낌"
     },
     "style-default-15": {
       "name": "수채화",
-      "promptHint": "부드러운 번짐으로 따뜻하고 사람 중심의 스토리에 적합합니다."
+      "promptHint": "부드러운 번짐으로 따뜻하고 사람 중심의 스토리에 적합합니다"
     },
     "style-default-16": {
       "name": "유화",
-      "promptHint": "두꺼운 질감의 붓터치로 고전적·진지·역사적 주제에 어울립니다."
+      "promptHint": "두꺼운 질감의 붓터치로 고전적·진지·역사적 주제에 어울립니다"
     },
     "style-default-17": {
       "name": "우키요에",
-      "promptHint": "일본 전통 미학으로 문화·미학·특정 시장 주제에 적합합니다."
+      "promptHint": "일본 전통 미학으로 문화·미학·특정 시장 주제에 적합합니다"
     },
     "style-default-18": {
       "name": "팝 아트",
-      "promptHint": "채도가 높고 만화 같은 느낌으로 강한 메시지나 광고 슬라이드에 좋습니다."
+      "promptHint": "채도가 높고 만화 같은 느낌으로 강한 메시지나 광고 슬라이드에 좋습니다"
     },
     "style-default-19": {
       "name": "페이퍼 커트아웃",
-      "promptHint": "겹쳐진 종이 질감으로 아늑하고 입체적인 느낌을 줍니다."
+      "promptHint": "겹쳐진 종이 질감으로 아늑하고 입체적인 느낌을 줍니다"
     },
     "style-default-20": {
       "name": "목탄 스케치",
-      "promptHint": "거칠고 사색적인 터치로 콘셉트나 프로토타이핑 강조에 적합합니다."
+      "promptHint": "거칠고 사색적인 터치로 콘셉트나 프로토타이핑 강조에 적합합니다"
     }
   },
   "categoryTemplates": {

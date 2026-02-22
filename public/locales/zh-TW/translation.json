@@ -102,83 +102,83 @@
   "stylePresets": {
     "style-default-1": {
       "name": "寫實攝影",
-      "promptHint": "極高細節，適合產品展示或情境模擬。"
+      "promptHint": "極高細節，適合產品展示或情境模擬"
     },
     "style-default-2": {
       "name": "電影感",
-      "promptHint": "強調光影與張力，營造敘事感與高質感。"
+      "promptHint": "強調光影與張力，營造敘事感與高質感"
     },
     "style-default-3": {
       "name": "極簡主義",
-      "promptHint": "留白多、顏色單純，適合強調核心概念。"
+      "promptHint": "留白多、顏色單純，適合強調核心概念"
     },
     "style-default-4": {
       "name": "扁平化設計",
-      "promptHint": "二維設計，簡約且易辨識，是現代簡報常用風格。"
+      "promptHint": "二維設計，簡約且易辨識，是現代簡報常用風格"
     },
     "style-default-5": {
       "name": "等距視角",
-      "promptHint": "2.5D 視角，常用於呈現數據中心、辦公室或架構圖。"
+      "promptHint": "2.5D 視角，常用於呈現數據中心、辦公室或架構圖"
     },
     "style-default-6": {
       "name": "3D 渲染 / C4D 風格",
-      "promptHint": "立體感強，帶現代科技感，常搭配 Octane Render。"
+      "promptHint": "立體感強，帶現代科技感，常搭配 Octane Render"
     },
     "style-default-7": {
       "name": "孟菲斯風格",
-      "promptHint": "活潑幾何形狀與鮮豔色彩，適合創意型提案。"
+      "promptHint": "活潑幾何形狀與鮮豔色彩，適合創意型提案"
     },
     "style-default-8": {
       "name": "賽博龐克",
-      "promptHint": "霓虹燈、高科技感，適合強調未來科技或軟體開發。"
+      "promptHint": "霓虹燈、高科技感，適合強調未來科技或軟體開發"
     },
     "style-default-9": {
       "name": "線條藝術",
-      "promptHint": "由簡潔線條構成，適合流程圖背景或圖示化設計。"
+      "promptHint": "由簡潔線條構成，適合流程圖背景或圖示化設計"
     },
     "style-default-10": {
       "name": "合成器波",
-      "promptHint": "復古未來感，強烈的紫色與藍色調。"
+      "promptHint": "復古未來感，強烈的紫色與藍色調"
     },
     "style-default-11": {
       "name": "像素藝術",
-      "promptHint": "懷舊遊戲感，適合有趣的復古專案說明。"
+      "promptHint": "懷舊遊戲感，適合有趣的復古專案說明"
     },
     "style-default-12": {
       "name": "孔版印刷風",
-      "promptHint": "帶有顆粒感與重疊印刷感，深具文藝與設計感。"
+      "promptHint": "帶有顆粒感與重疊印刷感，深具文藝與設計感"
     },
     "style-default-13": {
       "name": "包浩斯風格",
-      "promptHint": "強調幾何形狀、原色與功能的平衡，非常具現代感。"
+      "promptHint": "強調幾何形狀、原色與功能的平衡，非常具現代感"
     },
     "style-default-14": {
       "name": "低多邊形",
-      "promptHint": "幾何切面構成，具備現代抽象感。"
+      "promptHint": "幾何切面構成，具備現代抽象感"
     },
     "style-default-15": {
       "name": "水彩畫",
-      "promptHint": "渲染感強，適合溫暖、具人文關懷的簡報。"
+      "promptHint": "渲染感強，適合溫暖、具人文關懷的簡報"
     },
     "style-default-16": {
       "name": "油畫",
-      "promptHint": "質地厚重，適合經典、嚴肅或具歷史感的內容。"
+      "promptHint": "質地厚重，適合經典、嚴肅或具歷史感的內容"
     },
     "style-default-17": {
       "name": "浮世繪",
-      "promptHint": "日系傳統美學，適合文化、美學或特定市場討論。"
+      "promptHint": "日系傳統美學，適合文化、美學或特定市場討論"
     },
     "style-default-18": {
       "name": "波普藝術",
-      "promptHint": "高彩度、漫畫感，適合強烈主張或廣告類投影片。"
+      "promptHint": "高彩度、漫畫感，適合強烈主張或廣告類投影片"
     },
     "style-default-19": {
       "name": "剪紙風格",
-      "promptHint": "具備物理層次感，畫面溫馨且富有立體視覺效果。"
+      "promptHint": "具備物理層次感，畫面溫馨且富有立體視覺效果"
     },
     "style-default-20": {
       "name": "木炭素描",
-      "promptHint": "粗獷且具思考感，適合強調概念原型。"
+      "promptHint": "粗獷且具思考感，適合強調概念原型"
     }
   },
   "categoryTemplates": {
