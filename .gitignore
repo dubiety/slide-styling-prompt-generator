@@ -146,3 +146,4 @@ dist
 # Don't commit openspec
 openspec/
 test-results/
+.DS_Store

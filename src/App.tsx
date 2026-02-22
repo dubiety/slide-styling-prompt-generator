@@ -179,16 +179,12 @@ function loadCustomizationState(): LoadedCustomizationState {
     ];
     const palettes = [...DEFAULT_PALETTES, ...customPalettes];
     const styles = [...DEFAULT_STYLE_PRESETS, ...customStyles];
-    const selectedPaletteId = palettes.some((item) => item.id === parsed.selectedPaletteId)
-      ? parsed.selectedPaletteId
-      : palettes[0].id;
-    const selectedStyleId = styles.some((item) => item.id === parsed.selectedStyleId)
-      ? parsed.selectedStyleId
-      : styles[0].id;
+    const selectedPaletteId = palettes[0].id;
+    const selectedStyleId = styles[0].id;
     const colors = isColorSet(parsed.colors)
       ? parsed.colors
-      : palettes.find((item) => item.id === selectedPaletteId)?.colors ?? palettes[0].colors;
-    const selections = sanitizeSelections(parsed.selections ?? {}, categories);
+      : palettes[0].colors;
+    const selections = sanitizeSelections({}, categories);
 
     return { palettes, styles, categories, selectedPaletteId, selectedStyleId, colors, selections };
   } catch {
@@ -420,6 +416,12 @@ function App() {
     setPalettes((prev) => [...prev, customPalette]);
     setSelectedPaletteId(customPalette.id);
     setPaletteNameInput('');
+  };
+
+  const onPaletteNameInputKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.nativeEvent.isComposing || event.key !== 'Enter') return;
+    event.preventDefault();
+    addCustomPalette();
   };
 
   const addOtherColor = () => {
@@ -814,7 +816,7 @@ function App() {
                       onClick={() => applyPalette(palette)}
                       className={`rounded-2xl border p-2 text-left transition hover:-translate-y-0.5 hover:scale-[1.01] ${
                         selectedPaletteId === palette.id
-                          ? 'border-fuchsia-400 bg-fuchsia-100/70 dark:border-fuchsia-500/70 dark:bg-fuchsia-900/30'
+                          ? 'border-indigo-400 bg-indigo-100/70 dark:border-indigo-500/70 dark:bg-indigo-900/30'
                           : 'border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-800/80'
                       }`}
                     >
@@ -859,6 +861,7 @@ function App() {
                   <input
                     value={paletteNameInput}
                     onChange={(event) => setPaletteNameInput(event.target.value)}
+                    onKeyDown={onPaletteNameInputKeyDown}
                     placeholder={t('addPalettePlaceholder')}
                     className="min-w-[11rem] flex-1 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-800/80"
                   />
