@@ -58,26 +58,26 @@ const paletteData: Array<{ name: string; colors: ColorSet }> = [
 ];
 
 const styleData: Array<{ name: string; promptHint: string }> = [
-  { name: 'Executive Insight', promptHint: 'Sharp business framing with concise decisions and outcomes.' },
-  { name: 'Story Arc', promptHint: 'Narrative-first flow with a hook, tension, and payoff.' },
-  { name: 'Analyst Brief', promptHint: 'Data-driven structure with chart-friendly reasoning.' },
-  { name: 'Launch Pitch', promptHint: 'Problem-solution-market storyline for product launches.' },
-  { name: 'Teaching Deck', promptHint: 'Explain concepts progressively with recap moments.' },
-  { name: 'Workshop Guide', promptHint: 'Interactive format with exercises and checkpoints.' },
-  { name: 'Board Update', promptHint: 'Top-level strategic summary with risks and next actions.' },
-  { name: 'Sales Enablement', promptHint: 'Value proposition, objections, and conversion-oriented framing.' },
-  { name: 'Investor Narrative', promptHint: 'Traction metrics, growth logic, and funding rationale.' },
-  { name: 'Product Walkthrough', promptHint: 'Feature-benefit storyline with visual demonstration cues.' },
-  { name: 'Research Report', promptHint: 'Hypothesis, method, findings, and implications sequence.' },
-  { name: 'Roadmap Sync', promptHint: 'Timeline-driven structure with dependencies and milestones.' },
-  { name: 'Case Study', promptHint: 'Context-action-result format with measurable impact.' },
-  { name: 'Training Sprint', promptHint: 'Fast practical learning path with short retention prompts.' },
-  { name: 'Design Review', promptHint: 'Design intent, trade-offs, alternatives, and final direction.' },
-  { name: 'Campaign Plan', promptHint: 'Audience-message-channel-measurement orchestration.' },
-  { name: 'Change Proposal', promptHint: 'Current pain, proposed shift, expected gains, rollout plan.' },
-  { name: 'Technical Deep Dive', promptHint: 'Architecture-focused sequence with clear abstraction layers.' },
-  { name: 'Quarterly Recap', promptHint: 'Wins, misses, learnings, and upcoming focus.' },
-  { name: 'Customer Journey', promptHint: 'Map stages, friction points, and value moments.' }
+  { name: 'Photorealistic', promptHint: 'Ultra-detailed, great for product showcases or scenario simulations.' },
+  { name: 'Cinematic Lighting', promptHint: 'Emphasizes light/shadow and tension; adds narrative and premium feel.' },
+  { name: 'Minimalist', promptHint: 'Ample whitespace and simple colors; perfect for highlighting the core idea.' },
+  { name: 'Flat Design', promptHint: '2D, clean and easy to recognize; a modern favorite for slides.' },
+  { name: 'Isometric', promptHint: '2.5D perspective; great for data centers, offices, or architecture diagrams.' },
+  { name: '3D Render / C4D Style', promptHint: 'Strong depth and modern tech feel; often paired with Octane Render.' },
+  { name: 'Memphis Design', promptHint: 'Playful geometric shapes and vivid colors; great for creative pitches.' },
+  { name: 'Cyberpunk', promptHint: 'Neon and high-tech vibe; perfect for future tech or software stories.' },
+  { name: 'Line Art', promptHint: 'Built from clean strokes; great for flowchart backdrops or icon-like visuals.' },
+  { name: 'Synthwave', promptHint: 'Retro-futuristic vibe with strong purples and blues.' },
+  { name: 'Pixel Art', promptHint: 'Nostalgic game vibe; great for fun, retro project explainers.' },
+  { name: 'Risograph', promptHint: 'Grainy, overlapping print look; very artsy and design-forward.' },
+  { name: 'Bauhaus', promptHint: 'Geometric shapes, primary colors, balance of form and function; very modern.' },
+  { name: 'Low Poly', promptHint: 'Faceted geometric surfaces; modern and abstract.' },
+  { name: 'Watercolor', promptHint: 'Soft washes and blends; warm, human, and empathetic storytelling.' },
+  { name: 'Oil Painting', promptHint: 'Thick, textured strokes; suits classic, serious, or historical topics.' },
+  { name: 'Ukiyo-e', promptHint: 'Traditional Japanese aesthetic; fits culture, beauty, or market-specific topics.' },
+  { name: 'Pop Art', promptHint: 'High saturation and comic feel; great for bold statements or ads.' },
+  { name: 'Paper Cutout', promptHint: 'Layered, tactile look; cozy visuals with a dimensional feel.' },
+  { name: 'Charcoal Sketch', promptHint: 'Rough, thoughtful strokes; great for emphasizing concepts or prototyping.' }
 ];
 
 export const DEFAULT_PALETTES: Palette[] = paletteData.map((item, index) => ({
@@ -128,7 +128,16 @@ export const DEFAULT_CATEGORIES: CategoryTemplate[] = [
     name: 'Character Theme',
     multi: false,
     isCustom: false,
-    options: ['Neutral Professional', 'Sci-Fi Futuristic', 'Friendly Minimal', 'Elegant Premium', 'Bold Startup']
+    options: [
+      'Harry Potter',
+      'Crayon Shin-chan',
+      'Dragon Ball',
+      'Luffy (One Piece)',
+      'Doraemon',
+      'Spider-Man',
+      'Iron Man',
+      'Sherlock Holmes'
+    ]
   }
 ];
 

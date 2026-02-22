@@ -115,7 +115,7 @@ function loadCustomizationState(): LoadedCustomizationState {
         )
       : [];
 
-    const loadedCategories = Array.isArray(parsed.categories)
+    const loadedCustomCategories = Array.isArray(parsed.categories)
       ? parsed.categories
           .filter(
             (item) =>
@@ -123,18 +123,24 @@ function loadCustomizationState(): LoadedCustomizationState {
               typeof item.id === 'string' &&
               typeof item.name === 'string' &&
               typeof item.multi === 'boolean' &&
-              Array.isArray(item.options)
+              Array.isArray(item.options) &&
+              item.isCustom === true
           )
           .map((item) => ({
             id: item.id,
             name: item.name,
             multi: item.multi,
             options: item.options.filter((option): option is string => typeof option === 'string'),
-            isCustom: Boolean(item.isCustom)
+            isCustom: true
           }))
-      : defaultCategories;
+      : [];
 
-    const categories = loadedCategories.length > 0 ? loadedCategories : defaultCategories;
+    const categories = [
+      ...defaultCategories,
+      ...loadedCustomCategories.filter(
+        (customCategory) => !defaultCategories.some((defaultCategory) => defaultCategory.id === customCategory.id)
+      )
+    ];
     const palettes = [...DEFAULT_PALETTES, ...customPalettes];
     const styles = [...DEFAULT_STYLE_PRESETS, ...customStyles];
     const selectedPaletteId = palettes.some((item) => item.id === parsed.selectedPaletteId)
@@ -620,29 +626,6 @@ function App() {
                 <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-300">
                   {t('slideStyleTitle')}
                 </h3>
-                <div className="mb-3 grid gap-2 md:grid-cols-3">
-                  <input
-                    value={styleNameInput}
-                    onChange={(event) => setStyleNameInput(event.target.value)}
-                    placeholder={t('addStyleNamePlaceholder')}
-                    className="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-800/80"
-                  />
-                  <input
-                    value={styleHintInput}
-                    onChange={(event) => setStyleHintInput(event.target.value)}
-                    placeholder={t('addStyleHintPlaceholder')}
-                    className="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-800/80 md:col-span-2"
-                  />
-                </div>
-                <button
-                  type="button"
-                  onClick={addCustomStyle}
-                  aria-label={t('addStyleButton')}
-                  title={t('addStyleButton')}
-                  className={`${iconButtonBase} mb-3 border border-sky-300 bg-sky-100/80 text-sky-700 dark:border-sky-500/60 dark:bg-sky-900/30 dark:text-sky-200`}
-                >
-                  <Plus className="h-4 w-4" />
-                </button>
                 <div className="grid gap-2 md:grid-cols-2">
                   {styles.map((styleItem) => (
                     <button
@@ -679,6 +662,29 @@ function App() {
                       </p>
                     </button>
                   ))}
+                </div>
+                <div className="mt-3 flex items-center gap-2">
+                  <input
+                    value={styleNameInput}
+                    onChange={(event) => setStyleNameInput(event.target.value)}
+                    placeholder={t('addStyleNamePlaceholder')}
+                    className="min-w-0 flex-1 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-800/80"
+                  />
+                  <input
+                    value={styleHintInput}
+                    onChange={(event) => setStyleHintInput(event.target.value)}
+                    placeholder={t('addStyleHintPlaceholder')}
+                    className="min-w-0 flex-1 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-800/80"
+                  />
+                  <button
+                    type="button"
+                    onClick={addCustomStyle}
+                    aria-label={t('addStyleButton')}
+                    title={t('addStyleButton')}
+                    className={`${iconButtonBase} border border-sky-300 bg-sky-100/80 text-sky-700 dark:border-sky-500/60 dark:bg-sky-900/30 dark:text-sky-200`}
+                  >
+                    <Plus className="h-4 w-4" />
+                  </button>
                 </div>
               </article>
 

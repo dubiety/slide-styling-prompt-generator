@@ -78,84 +78,84 @@
   },
   "stylePresets": {
     "style-default-1": {
-      "name": "Executive Insight",
-      "promptHint": "Sharp business framing with concise decisions and outcomes."
+      "name": "Photorealistic",
+      "promptHint": "Ultra-detailed, great for product showcases or scenario simulations."
     },
     "style-default-2": {
-      "name": "Story Arc",
-      "promptHint": "Narrative-first flow with a hook, tension, and payoff."
+      "name": "Cinematic Lighting",
+      "promptHint": "Emphasizes light/shadow and tension; adds narrative and premium feel."
     },
     "style-default-3": {
-      "name": "Analyst Brief",
-      "promptHint": "Data-driven structure with chart-friendly reasoning."
+      "name": "Minimalist",
+      "promptHint": "Ample whitespace and simple colors; perfect for highlighting the core idea."
     },
     "style-default-4": {
-      "name": "Launch Pitch",
-      "promptHint": "Problem-solution-market storyline for product launches."
+      "name": "Flat Design",
+      "promptHint": "2D, clean and easy to recognize; a modern favorite for slides."
     },
     "style-default-5": {
-      "name": "Teaching Deck",
-      "promptHint": "Explain concepts progressively with recap moments."
+      "name": "Isometric",
+      "promptHint": "2.5D perspective; great for data centers, offices, or architecture diagrams."
     },
     "style-default-6": {
-      "name": "Workshop Guide",
-      "promptHint": "Interactive format with exercises and checkpoints."
+      "name": "3D Render / C4D Style",
+      "promptHint": "Strong depth and modern tech feel; often paired with Octane Render."
     },
     "style-default-7": {
-      "name": "Board Update",
-      "promptHint": "Top-level strategic summary with risks and next actions."
+      "name": "Memphis Design",
+      "promptHint": "Playful geometric shapes and vivid colors; great for creative pitches."
     },
     "style-default-8": {
-      "name": "Sales Enablement",
-      "promptHint": "Value proposition, objections, and conversion-oriented framing."
+      "name": "Cyberpunk",
+      "promptHint": "Neon and high-tech vibe; perfect for future tech or software stories."
     },
     "style-default-9": {
-      "name": "Investor Narrative",
-      "promptHint": "Traction metrics, growth logic, and funding rationale."
+      "name": "Line Art",
+      "promptHint": "Built from clean strokes; great for flowchart backdrops or icon-like visuals."
     },
     "style-default-10": {
-      "name": "Product Walkthrough",
-      "promptHint": "Feature-benefit storyline with visual demonstration cues."
+      "name": "Synthwave",
+      "promptHint": "Retro-futuristic vibe with strong purples and blues."
     },
     "style-default-11": {
-      "name": "Research Report",
-      "promptHint": "Hypothesis, method, findings, and implications sequence."
+      "name": "Pixel Art",
+      "promptHint": "Nostalgic game vibe; great for fun, retro project explainers."
     },
     "style-default-12": {
-      "name": "Roadmap Sync",
-      "promptHint": "Timeline-driven structure with dependencies and milestones."
+      "name": "Risograph",
+      "promptHint": "Grainy, overlapping print look; very artsy and design-forward."
     },
     "style-default-13": {
-      "name": "Case Study",
-      "promptHint": "Context-action-result format with measurable impact."
+      "name": "Bauhaus",
+      "promptHint": "Geometric shapes, primary colors, balance of form and function; very modern."
     },
     "style-default-14": {
-      "name": "Training Sprint",
-      "promptHint": "Fast practical learning path with short retention prompts."
+      "name": "Low Poly",
+      "promptHint": "Faceted geometric surfaces; modern and abstract."
     },
     "style-default-15": {
-      "name": "Design Review",
-      "promptHint": "Design intent, trade-offs, alternatives, and final direction."
+      "name": "Watercolor",
+      "promptHint": "Soft washes and blends; warm, human, and empathetic storytelling."
     },
     "style-default-16": {
-      "name": "Campaign Plan",
-      "promptHint": "Audience-message-channel-measurement orchestration."
+      "name": "Oil Painting",
+      "promptHint": "Thick, textured strokes; suits classic, serious, or historical topics."
     },
     "style-default-17": {
-      "name": "Change Proposal",
-      "promptHint": "Current pain, proposed shift, expected gains, rollout plan."
+      "name": "Ukiyo-e",
+      "promptHint": "Traditional Japanese aesthetic; fits culture, beauty, or market-specific topics."
     },
     "style-default-18": {
-      "name": "Technical Deep Dive",
-      "promptHint": "Architecture-focused sequence with clear abstraction layers."
+      "name": "Pop Art",
+      "promptHint": "High saturation and comic feel; great for bold statements or ads."
     },
     "style-default-19": {
-      "name": "Quarterly Recap",
-      "promptHint": "Wins, misses, learnings, and upcoming focus."
+      "name": "Paper Cutout",
+      "promptHint": "Layered, tactile look; cozy visuals with a dimensional feel."
     },
     "style-default-20": {
-      "name": "Customer Journey",
-      "promptHint": "Map stages, friction points, and value moments."
+      "name": "Charcoal Sketch",
+      "promptHint": "Rough, thoughtful strokes; great for emphasizing concepts or prototyping."
     }
   },
   "categoryTemplates": {
@@ -206,11 +206,14 @@
     "character-theme": {
       "name": "Character Theme",
       "options": [
-        "Neutral Professional",
-        "Sci-Fi Futuristic",
-        "Friendly Minimal",
-        "Elegant Premium",
-        "Bold Startup"
+        "Harry Potter",
+        "Crayon Shin-chan",
+        "Dragon Ball",
+        "Luffy (One Piece)",
+        "Doraemon",
+        "Spider-Man",
+        "Iron Man",
+        "Sherlock Holmes"
       ]
     }
   }

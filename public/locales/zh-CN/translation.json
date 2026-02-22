@@ -78,84 +78,84 @@
   },
   "stylePresets": {
     "style-default-1": {
-      "name": "高层洞察",
-      "promptHint": "以精准商业框架呈现关键决策与结果。"
+      "name": "写实摄影",
+      "promptHint": "极高细节，适合产品展示或情境模拟。"
     },
     "style-default-2": {
-      "name": "故事弧线",
-      "promptHint": "用叙事节奏串联开场、冲突与收束。"
+      "name": "电影感",
+      "promptHint": "强调光影与张力，营造叙事感与高质感。"
     },
     "style-default-3": {
-      "name": "分析简报",
-      "promptHint": "以数据与图表逻辑支撑核心观点。"
+      "name": "极简主义",
+      "promptHint": "留白多、颜色单纯，适合强调核心概念。"
     },
     "style-default-4": {
-      "name": "发布提案",
-      "promptHint": "聚焦问题、方案与市场机会的提案叙事。"
+      "name": "扁平化设计",
+      "promptHint": "二维设计，简约且易辨识，是现代幻灯片常用风格。"
     },
     "style-default-5": {
-      "name": "教学讲解",
-      "promptHint": "分层讲解概念，并加入关键回顾。"
+      "name": "等距视角",
+      "promptHint": "2.5D 视角，常用于呈现数据中心、办公室或架构图。"
     },
     "style-default-6": {
-      "name": "工作坊引导",
-      "promptHint": "通过互动环节与练习步骤推进内容。"
+      "name": "3D 渲染 / C4D 风格",
+      "promptHint": "立体感强，带现代科技感，常搭配 Octane Render。"
     },
     "style-default-7": {
-      "name": "董事会更新",
-      "promptHint": "高层视角总结战略、风险与后续动作。"
+      "name": "孟菲斯风格",
+      "promptHint": "活泼几何形状与鲜艳色彩，适合创意型提案。"
     },
     "style-default-8": {
-      "name": "销售赋能",
-      "promptHint": "强化价值主张、异议处理与转化导向。"
+      "name": "赛博朋克",
+      "promptHint": "霓虹灯、高科技感，适合强调未来科技或软件开发。"
     },
     "style-default-9": {
-      "name": "投资人叙事",
-      "promptHint": "以增长数据和逻辑构建投资说服力。"
+      "name": "线条艺术",
+      "promptHint": "由简洁线条构成，适合流程图背景或图示化设计。"
     },
     "style-default-10": {
-      "name": "产品导览",
-      "promptHint": "用功能与收益串联清晰演示流程。"
+      "name": "合成器波",
+      "promptHint": "复古未来感，强烈的紫色与蓝色调。"
     },
     "style-default-11": {
-      "name": "研究报告",
-      "promptHint": "按假设、方法、结论与影响依次展开。"
+      "name": "像素艺术",
+      "promptHint": "怀旧游戏感，适合有趣的复古项目说明。"
     },
     "style-default-12": {
-      "name": "路线图同步",
-      "promptHint": "用时间线说明里程碑与依赖关系。"
+      "name": "孔版印刷风",
+      "promptHint": "带有颗粒感与重叠印刷感，深具文艺与设计感。"
     },
     "style-default-13": {
-      "name": "案例研究",
-      "promptHint": "采用背景、行动、结果的案例结构。"
+      "name": "包豪斯风格",
+      "promptHint": "强调几何形状、原色与功能的平衡，非常具现代感。"
     },
     "style-default-14": {
-      "name": "训练冲刺",
-      "promptHint": "以短节奏实操与记忆提示提升吸收。"
+      "name": "低多边形",
+      "promptHint": "几何切面构成，具备现代抽象感。"
     },
     "style-default-15": {
-      "name": "设计评审",
-      "promptHint": "清晰对比设计意图、取舍与最终方向。"
+      "name": "水彩画",
+      "promptHint": "渲染感强，适合温暖、具人文关怀的幻灯片。"
     },
     "style-default-16": {
-      "name": "营销计划",
-      "promptHint": "整合受众、信息、渠道与衡量指标。"
+      "name": "油画",
+      "promptHint": "质地厚重，适合经典、严肃或具历史感的内容。"
     },
     "style-default-17": {
-      "name": "变更提案",
-      "promptHint": "聚焦当前痛点、变更方案与落地路径。"
+      "name": "浮世绘",
+      "promptHint": "日系传统美学，适合文化、美学或特定市场讨论。"
     },
     "style-default-18": {
-      "name": "技术深潜",
-      "promptHint": "按架构层次拆解技术重点与依赖。"
+      "name": "波普艺术",
+      "promptHint": "高饱和、漫画感，适合强烈主张或广告类幻灯片。"
     },
     "style-default-19": {
-      "name": "季度复盘",
-      "promptHint": "总结成果、失误、经验与下季重点。"
+      "name": "剪纸风格",
+      "promptHint": "具备物理层次感，画面温馨且富有立体视觉效果。"
     },
     "style-default-20": {
-      "name": "客户旅程",
-      "promptHint": "描绘阶段触点、摩擦点与价值时刻。"
+      "name": "木炭素描",
+      "promptHint": "粗犷且具思考感，适合强调概念原型。"
     }
   },
   "categoryTemplates": {
@@ -204,13 +204,16 @@
       ]
     },
     "character-theme": {
-      "name": "角色主题",
+      "name": "结合人物主题",
       "options": [
-        "中性专业",
-        "科幻未来",
-        "友好极简",
-        "优雅高级",
-        "大胆创业"
+        "哈利·波特",
+        "蜡笔小新",
+        "七龙珠",
+        "海贼王路飞",
+        "哆啦A梦",
+        "蜘蛛侠",
+        "钢铁侠",
+        "福尔摩斯"
       ]
     }
   }
