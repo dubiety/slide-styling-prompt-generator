@@ -26,6 +26,8 @@ import {
   DEFAULT_STYLE_PRESETS,
   isPromptPreviewCopy,
   makeId,
+  SETTINGS_VERSION,
+  SETTINGS_VERSIONS,
   type CategoryTemplate,
   type ColorSet,
   type Palette,
@@ -128,8 +130,15 @@ function loadCustomizationState(): LoadedCustomizationState {
   try {
     const parsed = JSON.parse(raw) as PersistedCustomization | null;
     if (!parsed || parsed.version !== 1) return baseState;
+    const storedSettingVersions = parsed.settingVersions;
+    const paletteVersionMatch =
+      !storedSettingVersions || storedSettingVersions.paletteLibrary === SETTINGS_VERSIONS.paletteLibrary;
+    const styleVersionMatch =
+      !storedSettingVersions || storedSettingVersions.stylePresets === SETTINGS_VERSIONS.stylePresets;
+    const categoryVersionMatch =
+      !storedSettingVersions || storedSettingVersions.categoryTags === SETTINGS_VERSIONS.categoryTags;
 
-    const customPalettes = Array.isArray(parsed.customPalettes)
+    const customPalettes = paletteVersionMatch && Array.isArray(parsed.customPalettes)
       ? parsed.customPalettes.filter(
           (item) =>
             item &&
@@ -140,7 +149,7 @@ function loadCustomizationState(): LoadedCustomizationState {
         )
       : [];
 
-    const customStyles = Array.isArray(parsed.customStyles)
+    const customStyles = styleVersionMatch && Array.isArray(parsed.customStyles)
       ? parsed.customStyles.filter(
           (item) =>
             item &&
@@ -151,7 +160,7 @@ function loadCustomizationState(): LoadedCustomizationState {
         )
       : [];
 
-    const loadedCustomCategories = Array.isArray(parsed.categories)
+    const loadedCustomCategories = categoryVersionMatch && Array.isArray(parsed.categories)
       ? parsed.categories
           .filter(
             (item) =>
@@ -181,7 +190,7 @@ function loadCustomizationState(): LoadedCustomizationState {
     const styles = [...DEFAULT_STYLE_PRESETS, ...customStyles];
     const selectedPaletteId = palettes[0].id;
     const selectedStyleId = styles[0].id;
-    const colors = isColorSet(parsed.colors)
+    const colors = paletteVersionMatch && isColorSet(parsed.colors)
       ? parsed.colors
       : palettes[0].colors;
     const selections = sanitizeSelections({}, categories);
@@ -303,6 +312,7 @@ function App() {
   useEffect(() => {
     const payload: PersistedCustomization = {
       version: 1,
+      settingVersions: SETTINGS_VERSIONS,
       customPalettes: palettes.filter((item) => item.isCustom),
       customStyles: styles.filter((item) => item.isCustom),
       categories: cloneCategories(categories),
@@ -610,7 +620,7 @@ function App() {
         <header className="rounded-3xl border border-white/45 bg-white/55 p-4 shadow-[0_18px_50px_rgba(30,41,59,0.12)] backdrop-blur-xl dark:border-slate-700/70 dark:bg-slate-900/55 dark:shadow-[0_22px_56px_rgba(2,6,23,0.48)]">
           <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
             <div>
-              <h1 className="font-['Space_Grotesk',_'Noto_Sans_TC',sans-serif] text-2xl font-semibold tracking-tight md:text-3xl">
+              <h1 className="bg-gradient-to-r from-fuchsia-500 via-sky-500 to-indigo-500 bg-clip-text font-['Space_Grotesk',_'Noto_Sans_TC',sans-serif] text-2xl font-semibold tracking-tight text-transparent md:text-3xl">
                 {t('appTitle')}
               </h1>
               <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">{t('appSubtitle')}</p>
@@ -717,7 +727,7 @@ function App() {
                             [nextColor, ...prev.filter((color) => color !== nextColor)].slice(0, recentColorsLimit)
                           );
                         }}
-                        className="h-8 w-8 rounded-full border-0 bg-transparent p-0"
+                        className="h-8 w-8 border-0 bg-transparent p-0"
                       />
                       <span className="text-xs font-medium text-slate-600 dark:text-slate-300">
                         {`${t(`colorKeys.${key}`)} ${colors[key].toUpperCase()}`}
@@ -1143,6 +1153,9 @@ function App() {
             </div>
           </section>
         )}
+        <footer className="pt-1 text-center text-[11px] text-slate-400 dark:text-slate-500">
+          {SETTINGS_VERSION}
+        </footer>
       </div>
     </main>
   );

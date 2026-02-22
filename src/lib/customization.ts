@@ -33,6 +33,12 @@ export type CategoryTemplate = {
 export type SelectionMap = Record<string, string[]>;
 
 export const CUSTOMIZATION_STORAGE_KEY = 'slide-style-prompt-customization';
+export const SETTINGS_VERSION = 'v0.0.1';
+export const SETTINGS_VERSIONS = {
+  paletteLibrary: SETTINGS_VERSION,
+  stylePresets: SETTINGS_VERSION,
+  categoryTags: SETTINGS_VERSION
+} as const;
 
 const paletteData: Array<{ name: string; colors: ColorSet }> = [
   { name: 'Pacific Reef', colors: { background: '#0B3C5D', text: '#328CC1', title: '#0CAADC', highlight: '#F7F9FB', otherColors: ['#D9EEF7'] } },
@@ -58,26 +64,26 @@ const paletteData: Array<{ name: string; colors: ColorSet }> = [
 ];
 
 const styleData: Array<{ name: string; promptHint: string }> = [
-  { name: 'Photorealistic', promptHint: 'Ultra-detailed, great for product showcases or scenario simulations.' },
-  { name: 'Cinematic Lighting', promptHint: 'Emphasizes light/shadow and tension; adds narrative and premium feel.' },
-  { name: 'Minimalist', promptHint: 'Ample whitespace and simple colors; perfect for highlighting the core idea.' },
-  { name: 'Flat Design', promptHint: '2D, clean and easy to recognize; a modern favorite for slides.' },
-  { name: 'Isometric', promptHint: '2.5D perspective; great for data centers, offices, or architecture diagrams.' },
-  { name: '3D Render / C4D Style', promptHint: 'Strong depth and modern tech feel; often paired with Octane Render.' },
-  { name: 'Memphis Design', promptHint: 'Playful geometric shapes and vivid colors; great for creative pitches.' },
-  { name: 'Cyberpunk', promptHint: 'Neon and high-tech vibe; perfect for future tech or software stories.' },
-  { name: 'Line Art', promptHint: 'Built from clean strokes; great for flowchart backdrops or icon-like visuals.' },
-  { name: 'Synthwave', promptHint: 'Retro-futuristic vibe with strong purples and blues.' },
-  { name: 'Pixel Art', promptHint: 'Nostalgic game vibe; great for fun, retro project explainers.' },
-  { name: 'Risograph', promptHint: 'Grainy, overlapping print look; very artsy and design-forward.' },
-  { name: 'Bauhaus', promptHint: 'Geometric shapes, primary colors, balance of form and function; very modern.' },
-  { name: 'Low Poly', promptHint: 'Faceted geometric surfaces; modern and abstract.' },
-  { name: 'Watercolor', promptHint: 'Soft washes and blends; warm, human, and empathetic storytelling.' },
-  { name: 'Oil Painting', promptHint: 'Thick, textured strokes; suits classic, serious, or historical topics.' },
-  { name: 'Ukiyo-e', promptHint: 'Traditional Japanese aesthetic; fits culture, beauty, or market-specific topics.' },
-  { name: 'Pop Art', promptHint: 'High saturation and comic feel; great for bold statements or ads.' },
-  { name: 'Paper Cutout', promptHint: 'Layered, tactile look; cozy visuals with a dimensional feel.' },
-  { name: 'Charcoal Sketch', promptHint: 'Rough, thoughtful strokes; great for emphasizing concepts or prototyping.' }
+  { name: 'Photorealistic', promptHint: 'Use realistic lighting, precise materials, and high-detail textures for premium product-grade visuals' },
+  { name: 'Cinematic Lighting', promptHint: 'Use dramatic key light, rich shadows, and film-like contrast to create narrative tension and depth' },
+  { name: 'Minimalist', promptHint: 'Use large whitespace, restrained color usage, and simple composition to emphasize one core message' },
+  { name: 'Flat Design', promptHint: 'Use clean 2D shapes, clear iconography, and balanced spacing for modern and readable slides' },
+  { name: 'Isometric', promptHint: 'Use isometric 2.5D perspective with clear geometry for systems, architecture, and process storytelling' },
+  { name: '3D Render / C4D Style', promptHint: 'Use polished 3D forms, soft reflections, and controlled depth for a futuristic tech presentation look' },
+  { name: 'Memphis Design', promptHint: 'Use playful geometric accents, bold color blocking, and energetic layout rhythm for creative storytelling' },
+  { name: 'Cyberpunk', promptHint: 'Use neon highlights, dark atmosphere, and high-tech urban mood for future-focused product narratives' },
+  { name: 'Line Art', promptHint: 'Use precise monoline strokes and minimal fill to keep diagrams, flows, and concepts clean and legible' },
+  { name: 'Synthwave', promptHint: 'Use retro-futuristic gradients, grid motifs, and purple-blue glow to evoke nostalgic digital energy' },
+  { name: 'Pixel Art', promptHint: 'Use deliberate pixel edges, low-resolution charm, and playful retro game aesthetics for approachable visuals' },
+  { name: 'Risograph', promptHint: 'Use grain texture, offset color layers, and print-like imperfection for editorial and artistic presentation tone' },
+  { name: 'Bauhaus', promptHint: 'Use strong geometry, primary color hierarchy, and strict functional composition for modernist clarity' },
+  { name: 'Low Poly', promptHint: 'Use faceted polygon surfaces, simplified forms, and crisp lighting for abstract modern visuals' },
+  { name: 'Watercolor', promptHint: 'Use soft pigment diffusion, gentle gradients, and organic edges for warm and human storytelling' },
+  { name: 'Oil Painting', promptHint: 'Use rich brush texture, layered pigment depth, and classical color balance for serious timeless mood' },
+  { name: 'Ukiyo-e', promptHint: 'Use flat planes, stylized contour lines, and traditional Japanese balance for refined cultural storytelling' },
+  { name: 'Pop Art', promptHint: 'Use saturated contrast, comic-inspired shapes, and bold repetition for high-impact attention-grabbing slides' },
+  { name: 'Paper Cutout', promptHint: 'Use layered paper depth, soft shadows, and handcrafted silhouettes for tactile friendly visuals' },
+  { name: 'Charcoal Sketch', promptHint: 'Use rough charcoal strokes, tonal shading, and conceptual composition for ideation-first storytelling' }
 ];
 
 export const DEFAULT_PALETTES: Palette[] = paletteData.map((item, index) => ({
@@ -143,6 +149,11 @@ export const DEFAULT_CATEGORIES: CategoryTemplate[] = [
 
 export type PersistedCustomization = {
   version: 1;
+  settingVersions?: {
+    paletteLibrary: string;
+    stylePresets: string;
+    categoryTags: string;
+  };
   customPalettes: Palette[];
   customStyles: StylePreset[];
   categories: CategoryTemplate[];
