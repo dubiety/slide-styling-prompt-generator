@@ -20,6 +20,21 @@
     "title": "제목색",
     "highlight": "강조색"
   },
+  "promptPreview": {
+    "outputLanguage": "출력 언어",
+    "palette": "팔레트",
+    "stylePreset": "슬라이드 스타일",
+    "styleDirection": "스타일 설명",
+    "colors": "색상",
+    "colorKeys": {
+      "background": "배경",
+      "text": "텍스트",
+      "title": "제목",
+      "highlight": "강조",
+      "otherColors": "기타 색상"
+    },
+    "none": "없음"
+  },
   "addPalettePlaceholder": "사용자 정의 팔레트 이름",
   "addPaletteButton": "팔레트 추가",
   "paletteLibraryTitle": "팔레트 라이브러리",

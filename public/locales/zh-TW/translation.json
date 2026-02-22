@@ -20,6 +20,21 @@
     "title": "標題色",
     "highlight": "強調色"
   },
+  "promptPreview": {
+    "outputLanguage": "輸出語言",
+    "palette": "調色盤",
+    "stylePreset": "投影片風格",
+    "styleDirection": "風格描述",
+    "colors": "顏色",
+    "colorKeys": {
+      "background": "背景",
+      "text": "文字",
+      "title": "標題",
+      "highlight": "重點",
+      "otherColors": "其他顏色"
+    },
+    "none": "無"
+  },
   "addPalettePlaceholder": "自訂調色盤名稱",
   "addPaletteButton": "新增調色盤",
   "paletteLibraryTitle": "調色盤庫",

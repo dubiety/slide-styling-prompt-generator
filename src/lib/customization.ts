@@ -162,30 +162,51 @@ export type PromptBuilderInput = {
   categories: CategoryTemplate[];
 };
 
-export function buildPromptPreview(input: PromptBuilderInput): string {
-  const selectedCategoryText = input.categories
-    .map((category) => {
-      const picked = input.selections[category.id] ?? [];
-      if (picked.length === 0) return null;
-      return `${category.name}: ${picked.join(', ')}`;
-    })
-    .filter((item): item is string => Boolean(item))
-    .join('\n');
+export type PromptPreviewCopy = {
+  outputLanguage: string;
+  palette: string;
+  stylePreset: string;
+  styleDirection: string;
+  colors: string;
+  colorKeys: {
+    background: string;
+    text: string;
+    title: string;
+    highlight: string;
+    otherColors: string;
+  };
+  none: string;
+};
 
+export function isPromptPreviewCopy(value: unknown): value is PromptPreviewCopy {
+  if (!value || typeof value !== 'object') return false;
+  const typed = value as Record<string, unknown>;
+  const colorKeys = typed.colorKeys as Record<string, unknown> | undefined;
+  return (
+    typeof typed.outputLanguage === 'string' &&
+    typeof typed.palette === 'string' &&
+    typeof typed.stylePreset === 'string' &&
+    typeof typed.styleDirection === 'string' &&
+    typeof typed.colors === 'string' &&
+    typeof typed.none === 'string' &&
+    colorKeys !== undefined &&
+    typeof colorKeys.background === 'string' &&
+    typeof colorKeys.text === 'string' &&
+    typeof colorKeys.title === 'string' &&
+    typeof colorKeys.highlight === 'string' &&
+    typeof colorKeys.otherColors === 'string'
+  );
+}
+
+export function buildPromptPreview(input: PromptBuilderInput, copy: PromptPreviewCopy): string {
   return [
-    `Output Language: ${input.language}`,
-    `Palette: ${input.paletteName}`,
-    `Style Preset: ${input.styleName}`,
-    `Style Direction: ${input.styleHint}`,
-    `Colors: background ${input.colors.background}, text ${input.colors.text}, title ${input.colors.title}, highlight ${input.colors.highlight}, other colors ${
-      input.colors.otherColors && input.colors.otherColors.length > 0 ? input.colors.otherColors.join(', ') : 'none'
-    }`,
-    selectedCategoryText ? `Category Selections:\n${selectedCategoryText}` : 'Category Selections: none',
-    '',
-    'Output Requirements:',
-    '- Build a slide-by-slide outline with concise titles and actionable bullets.',
-    '- Mention layout guidance and visual emphasis per slide.',
-    '- Keep message hierarchy clear and avoid repetitive phrasing.'
+    `${copy.outputLanguage}: ${input.language}`,
+    `${copy.palette}: ${input.paletteName}`,
+    `${copy.stylePreset}: ${input.styleName}`,
+    `${copy.styleDirection}: ${input.styleHint}`,
+    `${copy.colors}: ${copy.colorKeys.background} ${input.colors.background}, ${copy.colorKeys.text} ${input.colors.text}, ${copy.colorKeys.title} ${input.colors.title}, ${copy.colorKeys.highlight} ${input.colors.highlight}, ${copy.colorKeys.otherColors} ${
+      input.colors.otherColors && input.colors.otherColors.length > 0 ? input.colors.otherColors.join(', ') : copy.none
+    }`
   ].join('\n');
 }
 

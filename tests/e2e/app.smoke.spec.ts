@@ -33,7 +33,7 @@ test('smoke: app renders and generates prompt', async ({ page }) => {
   await page.getByRole('button', { name: 'Add Style' }).click();
 
   await expect(page.locator('pre')).toContainText('Output Language: en');
-  await expect(page.locator('pre')).toContainText('Brand Voice: Playful Persona');
+  await expect(page.locator('pre')).not.toContainText('Brand Voice: Playful Persona');
   await expect(page.locator('pre')).toContainText('Style Preset: My Style');
 
   await page.getByRole('button', { name: 'Copy' }).click();

@@ -20,6 +20,21 @@
     "title": "Title",
     "highlight": "Highlight"
   },
+  "promptPreview": {
+    "outputLanguage": "Output Language",
+    "palette": "Palette",
+    "stylePreset": "Style Preset",
+    "styleDirection": "Style Direction",
+    "colors": "Colors",
+    "colorKeys": {
+      "background": "background",
+      "text": "text",
+      "title": "title",
+      "highlight": "highlight",
+      "otherColors": "other colors"
+    },
+    "none": "none"
+  },
   "addPalettePlaceholder": "Custom palette name",
   "addPaletteButton": "Add Palette",
   "paletteLibraryTitle": "Palette library",

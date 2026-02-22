@@ -20,6 +20,21 @@
     "title": "标题色",
     "highlight": "强调色"
   },
+  "promptPreview": {
+    "outputLanguage": "输出语言",
+    "palette": "调色板",
+    "stylePreset": "幻灯片风格",
+    "styleDirection": "风格描述",
+    "colors": "颜色",
+    "colorKeys": {
+      "background": "背景",
+      "text": "文字",
+      "title": "标题",
+      "highlight": "重点",
+      "otherColors": "其他颜色"
+    },
+    "none": "无"
+  },
   "addPalettePlaceholder": "自定义配色盘名称",
   "addPaletteButton": "新增配色盘",
   "paletteLibraryTitle": "配色盘库",

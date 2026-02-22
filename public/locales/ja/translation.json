@@ -20,6 +20,21 @@
     "title": "タイトル色",
     "highlight": "アクセント色"
   },
+  "promptPreview": {
+    "outputLanguage": "出力言語",
+    "palette": "パレット",
+    "stylePreset": "スライドスタイル",
+    "styleDirection": "スタイル説明",
+    "colors": "色",
+    "colorKeys": {
+      "background": "背景",
+      "text": "本文",
+      "title": "タイトル",
+      "highlight": "強調",
+      "otherColors": "その他の色"
+    },
+    "none": "なし"
+  },
   "addPalettePlaceholder": "カスタムパレット名",
   "addPaletteButton": "パレットを追加",
   "paletteLibraryTitle": "パレットライブラリ",

@@ -23,6 +23,7 @@ import {
   DEFAULT_CATEGORIES,
   DEFAULT_PALETTES,
   DEFAULT_STYLE_PRESETS,
+  isPromptPreviewCopy,
   makeId,
   type CategoryTemplate,
   type ColorSet,
@@ -257,16 +258,51 @@ function App() {
   }, [palettes, styles, categories, selectedPaletteId, selectedStyleId, colors, selections]);
 
   const generatedPrompt = useMemo(
-    () =>
-      buildPromptPreview({
+    () => {
+      const localizedStyle = getLocalizedStyle(selectedStyle, t);
+      const promptPreviewRaw = t('promptPreview', { returnObjects: true });
+      const promptPreviewCopy = isPromptPreviewCopy(promptPreviewRaw)
+        ? promptPreviewRaw
+        : {
+            outputLanguage: t('promptPreview.outputLanguage'),
+            palette: t('promptPreview.palette'),
+            stylePreset: t('promptPreview.stylePreset'),
+            styleDirection: t('promptPreview.styleDirection'),
+            colors: t('promptPreview.colors'),
+            colorKeys: {
+              background: t('promptPreview.colorKeys.background'),
+              text: t('promptPreview.colorKeys.text'),
+              title: t('promptPreview.colorKeys.title'),
+              highlight: t('promptPreview.colorKeys.highlight'),
+              otherColors: t('promptPreview.colorKeys.otherColors')
+            },
+            none: t('promptPreview.none')
+          };
+      const localizedCategories = categories.map((category) => ({
+        ...category,
+        name: getLocalizedCategoryName(category, t),
+        options: category.options.map((option, optionIndex) => getLocalizedOptionLabel(category, option, optionIndex, t))
+      }));
+      const localizedSelections = categories.reduce<SelectionMap>((accumulator, category) => {
+        const picked = selections[category.id] ?? [];
+        if (picked.length === 0) return accumulator;
+        accumulator[category.id] = picked.map((option) => {
+          const optionIndex = category.options.indexOf(option);
+          return optionIndex >= 0 ? getLocalizedOptionLabel(category, option, optionIndex, t) : option;
+        });
+        return accumulator;
+      }, {});
+
+      return buildPromptPreview({
         language: activeLanguage,
         colors,
         paletteName: getLocalizedPaletteName(selectedPalette, t),
-        styleName: selectedStyle.name,
-        styleHint: selectedStyle.promptHint,
-        selections,
-        categories
-      }),
+        styleName: localizedStyle.name,
+        styleHint: localizedStyle.promptHint,
+        selections: localizedSelections,
+        categories: localizedCategories
+      }, promptPreviewCopy);
+    },
     [activeLanguage, colors, selectedPalette, selectedStyle, selections, categories, t]
   );
 
