@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import type { KeyboardEvent } from 'react';
+import type { DragEvent, KeyboardEvent } from 'react';
 import type { TFunction } from 'i18next';
 import {
   BookTemplate,
@@ -38,6 +38,8 @@ type ColorMode = 'light' | 'dark';
 type TabKey = 'generator' | 'templates';
 
 const colorModeStorageKey = 'ui-color-mode';
+const recentColorsStorageKey = 'slide-style-prompt-recent-colors';
+const recentColorsLimit = 12;
 
 type LoadedCustomizationState = {
   palettes: Palette[];
@@ -48,6 +50,38 @@ type LoadedCustomizationState = {
   colors: ColorSet;
   selections: SelectionMap;
 };
+
+function normalizeHexColor(value: string): string | null {
+  const trimmed = value.trim();
+  if (!trimmed) return null;
+  const withHash = trimmed.startsWith('#') ? trimmed : `#${trimmed}`;
+  if (!/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(withHash)) return null;
+  if (withHash.length === 4) {
+    const expanded = withHash
+      .slice(1)
+      .split('')
+      .map((char) => `${char}${char}`)
+      .join('');
+    return `#${expanded.toUpperCase()}`;
+  }
+  return withHash.toUpperCase();
+}
+
+function loadRecentColors(): string[] {
+  if (typeof window === 'undefined') return [];
+  const raw = window.localStorage.getItem(recentColorsStorageKey);
+  if (!raw) return [];
+  try {
+    const parsed = JSON.parse(raw) as unknown;
+    if (!Array.isArray(parsed)) return [];
+    const normalized = parsed
+      .map((value) => (typeof value === 'string' ? normalizeHexColor(value) : null))
+      .filter((value): value is string => value !== null);
+    return normalized.filter((value, index) => normalized.indexOf(value) === index).slice(0, recentColorsLimit);
+  } catch {
+    return [];
+  }
+}
 
 function cloneCategories(categories: CategoryTemplate[]): CategoryTemplate[] {
   return categories.map((category) => ({ ...category, options: [...category.options] }));
@@ -246,15 +280,25 @@ function App() {
   const [newCategoryName, setNewCategoryName] = useState('');
   const [newCategoryMulti, setNewCategoryMulti] = useState(true);
   const [newOptionDrafts, setNewOptionDrafts] = useState<Record<string, string>>({});
+  const [otherColorInput, setOtherColorInput] = useState('');
+  const [recentColors, setRecentColors] = useState<string[]>(loadRecentColors);
+  const [draggingOtherColor, setDraggingOtherColor] = useState<string | null>(null);
 
   const activeLanguage = routeLanguage ?? defaultLanguage;
   const selectedStyle = styles.find((item) => item.id === selectedStyleId) ?? styles[0];
   const selectedPalette = palettes.find((item) => item.id === selectedPaletteId) ?? palettes[0];
+  const normalizedOtherColorInput = normalizeHexColor(otherColorInput);
+  const hasOtherColorInput = otherColorInput.trim().length > 0;
+  const canAddOtherColor = normalizedOtherColorInput !== null;
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', colorMode === 'dark');
     window.localStorage.setItem(colorModeStorageKey, colorMode);
   }, [colorMode]);
+
+  useEffect(() => {
+    window.localStorage.setItem(recentColorsStorageKey, JSON.stringify(recentColors));
+  }, [recentColors]);
 
   useEffect(() => {
     setSelections((prev) => sanitizeSelections(prev, categories));
@@ -354,12 +398,14 @@ function App() {
     setStyleHintInput('');
     setNewCategoryName('');
     setNewOptionDrafts({});
+    setOtherColorInput('');
     window.localStorage.removeItem(CUSTOMIZATION_STORAGE_KEY);
   };
 
   const applyPalette = (palette: Palette) => {
     setSelectedPaletteId(palette.id);
     setColors({ ...palette.colors });
+    setOtherColorInput('');
   };
 
   const addCustomPalette = () => {
@@ -374,6 +420,66 @@ function App() {
     setPalettes((prev) => [...prev, customPalette]);
     setSelectedPaletteId(customPalette.id);
     setPaletteNameInput('');
+  };
+
+  const addOtherColor = () => {
+    if (!normalizedOtherColorInput) return;
+    setColors((prev) => {
+      const current = prev.otherColors ?? [];
+      if (current.includes(normalizedOtherColorInput)) return prev;
+      return { ...prev, otherColors: [...current, normalizedOtherColorInput] };
+    });
+    setRecentColors((prev) =>
+      [normalizedOtherColorInput, ...prev.filter((color) => color !== normalizedOtherColorInput)].slice(0, recentColorsLimit)
+    );
+    setOtherColorInput('');
+  };
+
+  const removeOtherColor = (color: string) => {
+    setColors((prev) => {
+      const next = (prev.otherColors ?? []).filter((item) => item !== color);
+      return next.length > 0 ? { ...prev, otherColors: next } : { ...prev, otherColors: [] };
+    });
+  };
+
+  const onOtherColorInputKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.nativeEvent.isComposing || event.key !== 'Enter') return;
+    event.preventDefault();
+    addOtherColor();
+  };
+
+  const addRecentColorToPalette = (color: string) => {
+    const normalized = normalizeHexColor(color);
+    if (!normalized) return;
+    setColors((prev) => {
+      const current = prev.otherColors ?? [];
+      if (current.includes(normalized)) return prev;
+      return { ...prev, otherColors: [...current, normalized] };
+    });
+    setRecentColors((prev) => [normalized, ...prev.filter((item) => item !== normalized)].slice(0, recentColorsLimit));
+  };
+
+  const onOtherColorDragStart = (event: DragEvent<HTMLSpanElement>, color: string) => {
+    setDraggingOtherColor(color);
+    event.dataTransfer.effectAllowed = 'move';
+  };
+
+  const onOtherColorDrop = (targetColor: string) => {
+    if (!draggingOtherColor || draggingOtherColor === targetColor) {
+      setDraggingOtherColor(null);
+      return;
+    }
+    setColors((prev) => {
+      const list = prev.otherColors ?? [];
+      const from = list.indexOf(draggingOtherColor);
+      const to = list.indexOf(targetColor);
+      if (from < 0 || to < 0) return prev;
+      const next = [...list];
+      next.splice(from, 1);
+      next.splice(to, 0, draggingOtherColor);
+      return { ...prev, otherColors: next };
+    });
+    setDraggingOtherColor(null);
   };
 
   const deletePalette = (paletteId: string) => {
@@ -599,12 +705,16 @@ function App() {
                         type="color"
                         aria-label={t(`colorKeys.${key}`)}
                         value={colors[key]}
-                        onChange={(event) =>
+                        onChange={(event) => {
+                          const nextColor = event.target.value.toUpperCase();
                           setColors((prev) => ({
                             ...prev,
-                            [key]: event.target.value
-                          }))
-                        }
+                            [key]: nextColor
+                          }));
+                          setRecentColors((prev) =>
+                            [nextColor, ...prev.filter((color) => color !== nextColor)].slice(0, recentColorsLimit)
+                          );
+                        }}
                         className="h-8 w-8 rounded-full border-0 bg-transparent p-0"
                       />
                       <span className="text-xs font-medium text-slate-600 dark:text-slate-300">
@@ -612,6 +722,83 @@ function App() {
                       </span>
                     </div>
                   ))}
+                </div>
+                <div className="mt-3 space-y-2">
+                  <p className="text-xs font-semibold text-slate-600 dark:text-slate-300">{t('otherColorsLabel')}</p>
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400">{t('dragReorderHint')}</p>
+                  {(colors.otherColors ?? []).length > 0 ? (
+                    <div className="flex flex-wrap gap-2">
+                      {(colors.otherColors ?? []).map((color) => (
+                        <span
+                          key={`other-color-${color}`}
+                          draggable
+                          onDragStart={(event) => onOtherColorDragStart(event, color)}
+                          onDragOver={(event) => event.preventDefault()}
+                          onDrop={() => onOtherColorDrop(color)}
+                          onDragEnd={() => setDraggingOtherColor(null)}
+                          className={`inline-flex cursor-grab items-center gap-2 rounded-full border bg-white/80 px-2 py-1 text-xs text-slate-700 dark:bg-slate-800/80 dark:text-slate-200 ${
+                            draggingOtherColor === color
+                              ? 'border-indigo-400 dark:border-indigo-500'
+                              : 'border-slate-200 dark:border-slate-700'
+                          }`}
+                        >
+                          <span className="h-3 w-3 rounded-full border border-white/60" style={{ backgroundColor: color }} />
+                          <span>{color}</span>
+                          <button
+                            type="button"
+                            onClick={() => removeOtherColor(color)}
+                            aria-label={t('delete')}
+                            title={t('delete')}
+                            className="inline-flex h-5 w-5 items-center justify-center rounded-full text-rose-500"
+                          >
+                            <Trash2 className="h-3 w-3" />
+                          </button>
+                        </span>
+                      ))}
+                    </div>
+                  ) : null}
+                  <div className="space-y-1">
+                    <p className="text-xs font-semibold text-slate-600 dark:text-slate-300">{t('recentColorsLabel')}</p>
+                    {recentColors.length > 0 ? (
+                      <div className="flex flex-wrap gap-2">
+                        {recentColors.map((color) => (
+                          <button
+                            key={`recent-color-${color}`}
+                            type="button"
+                            onClick={() => addRecentColorToPalette(color)}
+                            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-2 py-1 text-xs text-slate-700 transition hover:-translate-y-0.5 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200"
+                          >
+                            <span className="h-3 w-3 rounded-full border border-white/60" style={{ backgroundColor: color }} />
+                            <span>{color}</span>
+                          </button>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-xs text-slate-500 dark:text-slate-400">{t('recentColorsEmpty')}</p>
+                    )}
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <input
+                      value={otherColorInput}
+                      onChange={(event) => setOtherColorInput(event.target.value)}
+                      onKeyDown={onOtherColorInputKeyDown}
+                      placeholder={t('otherColorHexPlaceholder')}
+                      className="min-w-[12rem] flex-1 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-xs focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-800/80"
+                    />
+                    <button
+                      type="button"
+                      onClick={addOtherColor}
+                      disabled={!canAddOtherColor}
+                      aria-label={t('addOtherColorButton')}
+                      title={t('addOtherColorButton')}
+                      className={`${iconButtonBase} border border-indigo-300 bg-indigo-100/80 text-indigo-700 disabled:opacity-50 dark:border-indigo-500/60 dark:bg-indigo-900/30 dark:text-indigo-200`}
+                    >
+                      <Plus className="h-4 w-4" />
+                    </button>
+                  </div>
+                  {hasOtherColorInput && !canAddOtherColor ? (
+                    <p className="text-xs text-rose-600 dark:text-rose-300">{t('invalidHexHint')}</p>
+                  ) : null}
                 </div>
               </article>
 

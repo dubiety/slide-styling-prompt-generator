@@ -14,6 +14,13 @@
   "contentLabel": "輸入內容",
   "contentPlaceholder": "貼上主題背景、重點與需求說明…",
   "colorPickersTitle": "色彩選擇器",
+  "otherColorsLabel": "其他顏色",
+  "dragReorderHint": "可拖曳色票調整順序",
+  "recentColorsLabel": "最近使用色票",
+  "recentColorsEmpty": "目前沒有最近使用色票",
+  "otherColorHexPlaceholder": "新增色票 HEX（例如 #7C3AED）",
+  "addOtherColorButton": "新增色票",
+  "invalidHexHint": "請使用 HEX 格式，例如 #7C3AED 或 #ABC",
   "colorKeys": {
     "background": "背景色",
     "text": "文字色",

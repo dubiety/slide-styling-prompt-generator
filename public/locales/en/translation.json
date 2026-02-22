@@ -14,6 +14,13 @@
   "contentLabel": "Source Content",
   "contentPlaceholder": "Paste topic notes, context, and key points...",
   "colorPickersTitle": "Color Pickers",
+  "otherColorsLabel": "Other colors",
+  "dragReorderHint": "Drag swatches to reorder",
+  "recentColorsLabel": "Recent swatches",
+  "recentColorsEmpty": "No recent colors yet",
+  "otherColorHexPlaceholder": "Add color hex (e.g. #7C3AED)",
+  "addOtherColorButton": "Add color",
+  "invalidHexHint": "Use HEX format like #7C3AED or #ABC",
   "colorKeys": {
     "background": "Background",
     "text": "Text",

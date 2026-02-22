@@ -14,6 +14,13 @@
   "contentLabel": "입력 내용",
   "contentPlaceholder": "주제 배경, 핵심 포인트, 요구사항을 붙여넣으세요…",
   "colorPickersTitle": "색상 선택기",
+  "otherColorsLabel": "기타 색상",
+  "dragReorderHint": "스와치를 드래그해 순서를 변경하세요",
+  "recentColorsLabel": "최근 사용 색상",
+  "recentColorsEmpty": "최근 사용한 색상이 없습니다",
+  "otherColorHexPlaceholder": "HEX 색상 추가 (예: #7C3AED)",
+  "addOtherColorButton": "색상 추가",
+  "invalidHexHint": "HEX 형식을 사용하세요. 예: #7C3AED 또는 #ABC",
   "colorKeys": {
     "background": "배경색",
     "text": "텍스트색",

@@ -14,6 +14,13 @@
   "contentLabel": "入力内容",
   "contentPlaceholder": "トピック背景、要点、要件を貼り付けてください…",
   "colorPickersTitle": "カラーピッカー",
+  "otherColorsLabel": "その他の色",
+  "dragReorderHint": "スウォッチをドラッグして並び替え",
+  "recentColorsLabel": "最近使った色",
+  "recentColorsEmpty": "最近使った色はまだありません",
+  "otherColorHexPlaceholder": "HEX 色コードを追加（例: #7C3AED）",
+  "addOtherColorButton": "色を追加",
+  "invalidHexHint": "HEX 形式を使用してください（例: #7C3AED または #ABC）",
   "colorKeys": {
     "background": "背景色",
     "text": "文字色",
