@@ -67,11 +67,15 @@
   "multi": "多选",
   "single": "单选",
   "languages": {
-    "en": "English",
-    "zh-TW": "繁體中文",
+    "en": "English (英语)",
+    "zh-TW": "繁體中文 (繁体中文)",
     "zh-CN": "简体中文",
-    "ja": "日本語",
-    "ko": "한국어"
+    "ja": "日本語 (日语)",
+    "ko": "한국어 (韩语)",
+    "es": "Español (西班牙语)",
+    "de": "Deutsch (德语)",
+    "fr": "Français (法语)",
+    "ru": "Русский (俄语)"
   },
   "platforms": {
     "Gemini": "Gemini",

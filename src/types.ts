@@ -1,4 +1,4 @@
-export type UILanguage = 'en' | 'zh-TW' | 'zh-CN' | 'ja' | 'ko';
+export type UILanguage = 'en' | 'zh-TW' | 'zh-CN' | 'ja' | 'ko' | 'es' | 'de' | 'fr' | 'ru';
 
 export type PromptStyle =
   | 'professional'

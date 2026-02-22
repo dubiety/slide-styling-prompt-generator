@@ -1,0 +1,247 @@
+{
+  "appTitle": "Generador de Prompts de Estilo de Diapositivas",
+  "appSubtitle": "Ajusta rápidamente estilos y temas para crear prompts de diapositivas claros y estructurados",
+  "navbarLabel": "Controles globales",
+  "interfaceLanguage": "Idioma",
+  "colorModeLabel": "Tema",
+  "lightMode": "Claro",
+  "darkMode": "Oscuro",
+  "resetButton": "Restablecer datos personalizados",
+  "tabGenerator": "Generador",
+  "tabTemplates": "Gestión de plantillas",
+  "generatorControls": "Controles del generador",
+  "targetPlatform": "Plataforma objetivo",
+  "contentLabel": "Contenido fuente",
+  "contentPlaceholder": "Pega notas del tema, contexto y puntos clave...",
+  "colorPickersTitle": "Selector de colores",
+  "otherColorsLabel": "Otros colores",
+  "dragReorderHint": "Arrastra las muestras para reordenar",
+  "recentColorsLabel": "Muestras recientes",
+  "recentColorsEmpty": "Aún no hay colores recientes",
+  "otherColorHexPlaceholder": "Añadir color HEX (ej. #7C3AED)",
+  "addOtherColorButton": "Añadir color",
+  "invalidHexHint": "Usa formato HEX como #7C3AED o #ABC",
+  "colorKeys": {
+    "background": "Fondo",
+    "text": "Texto",
+    "title": "Título",
+    "highlight": "Resaltado"
+  },
+  "promptPreview": {
+    "outputLanguage": "Idioma de salida",
+    "palette": "Paleta",
+    "stylePreset": "Estilo de diapositiva",
+    "styleDirection": "Descripción de estilo",
+    "colors": "Colores",
+    "colorKeys": {
+      "background": "fondo",
+      "text": "texto",
+      "title": "título",
+      "highlight": "resaltado",
+      "otherColors": "otros colores"
+    },
+    "none": "ninguno"
+  },
+  "addPalettePlaceholder": "Nombre de paleta personalizada",
+  "addPaletteButton": "Añadir paleta",
+  "paletteLibraryTitle": "Biblioteca de paletas",
+  "addStyleNamePlaceholder": "Nombre de estilo personalizado",
+  "addStyleHintPlaceholder": "Descripción de estilo personalizada",
+  "addStyleButton": "Añadir estilo",
+  "slideStyleTitle": "Estilo de diapositiva",
+  "categoriesTitle": "Etiquetas de categoría",
+  "previewExportTitle": "Vista previa y exportación",
+  "copyButton": "Copiar",
+  "copiedButton": "Copiado",
+  "exportButton": "Exportar",
+  "resultReadyHint": "La vista previa está lista, copia o exporta el prompt generado",
+  "resultEmptyHint": "Ingresa contenido para generar una vista previa en vivo del prompt",
+  "emptyPrompt": "Aún no hay prompt, completa los controles y el contenido para generar la salida",
+  "newCategoryPlaceholder": "Nuevo nombre de categoría",
+  "allowMultiSelect": "Permitir selección múltiple",
+  "addCategoryButton": "Añadir categoría",
+  "newOptionPlaceholder": "Nueva etiqueta de opción",
+  "customOptionTranslationHint": "Consejo: las opciones personalizadas no se traducen automáticamente",
+  "addOptionButton": "Añadir opción",
+  "delete": "Eliminar",
+  "multi": "Múltiple",
+  "single": "Única",
+  "languages": {
+    "en": "English (Inglés)",
+    "zh-TW": "繁體中文 (Chino tradicional)",
+    "zh-CN": "简体中文 (Chino simplificado)",
+    "ja": "日本語 (Japonés)",
+    "ko": "한국어 (Coreano)",
+    "es": "Español",
+    "de": "Deutsch (Alemán)",
+    "fr": "Français (Francés)",
+    "ru": "Русский (Ruso)"
+  },
+  "platforms": {
+    "Gemini": "Gemini",
+    "NotebookLM": "NotebookLM"
+  },
+  "paletteNames": {
+    "palette-default-1": "Arrecife del Pacífico",
+    "palette-default-2": "Atardecer Aurora",
+    "palette-default-3": "Niebla del Bosque",
+    "palette-default-4": "Noche Lavanda",
+    "palette-default-5": "Duna de Arena",
+    "palette-default-6": "Pulso Neón",
+    "palette-default-7": "Cielo Ártico",
+    "palette-default-8": "Toque Cítrico",
+    "palette-default-9": "Monocromo Minimalista",
+    "palette-default-10": "Nube Rosa",
+    "palette-default-11": "Jardín de Jade",
+    "palette-default-12": "Deriva Índigo",
+    "palette-default-13": "Brillo Ámbar",
+    "palette-default-14": "Lago Glaciar",
+    "palette-default-15": "Neón Pizarra",
+    "palette-default-16": "Menta Coral",
+    "palette-default-17": "Crema Moca",
+    "palette-default-18": "Terciopelo Real",
+    "palette-default-19": "Brisa Costera",
+    "palette-default-20": "Crepúsculo del Desierto"
+  },
+  "stylePresets": {
+    "style-default-1": {
+      "name": "Fotorrealista",
+      "promptHint": "Usa iluminación realista, materiales precisos y texturas de alto detalle para visuales de nivel premium"
+    },
+    "style-default-2": {
+      "name": "Iluminación cinematográfica",
+      "promptHint": "Usa luz principal dramática, sombras ricas y contraste cinematográfico para crear tensión narrativa y profundidad"
+    },
+    "style-default-3": {
+      "name": "Minimalista",
+      "promptHint": "Usa amplio espacio en blanco, color contenido y composición simple para enfatizar un solo mensaje clave"
+    },
+    "style-default-4": {
+      "name": "Diseño plano",
+      "promptHint": "Usa formas 2D limpias, iconografía clara y espaciado equilibrado para diapositivas modernas y legibles"
+    },
+    "style-default-5": {
+      "name": "Isométrico",
+      "promptHint": "Usa perspectiva isométrica 2.5D con geometría clara para narrar sistemas, arquitectura y procesos"
+    },
+    "style-default-6": {
+      "name": "Render 3D / Estilo C4D",
+      "promptHint": "Usa formas 3D pulidas, reflejos suaves y profundidad controlada para un estilo tecnológico futurista"
+    },
+    "style-default-7": {
+      "name": "Diseño Memphis",
+      "promptHint": "Usa acentos geométricos lúdicos, bloques de color fuertes y ritmo visual energético para narrativa creativa"
+    },
+    "style-default-8": {
+      "name": "Cyberpunk",
+      "promptHint": "Usa acentos neón, atmósfera oscura y tono urbano tecnológico para historias de producto orientadas al futuro"
+    },
+    "style-default-9": {
+      "name": "Arte lineal",
+      "promptHint": "Usa trazos monolineales precisos y relleno mínimo para mantener diagramas y conceptos claros y legibles"
+    },
+    "style-default-10": {
+      "name": "Synthwave",
+      "promptHint": "Usa degradados retrofuturistas, motivos de cuadrícula y brillo púrpura-azul para energía digital nostálgica"
+    },
+    "style-default-11": {
+      "name": "Pixel art",
+      "promptHint": "Usa bordes de píxel intencionales, encanto de baja resolución y estética retro lúdica para visuales cercanos"
+    },
+    "style-default-12": {
+      "name": "Risografía",
+      "promptHint": "Usa textura granulada, capas de color desfasadas e imperfección de impresión para un tono editorial artístico"
+    },
+    "style-default-13": {
+      "name": "Bauhaus",
+      "promptHint": "Usa geometría fuerte, jerarquía de colores primarios y composición funcional estricta para claridad modernista"
+    },
+    "style-default-14": {
+      "name": "Low Poly",
+      "promptHint": "Usa superficies poligonales facetadas, formas simplificadas e iluminación nítida para visuales abstractos modernos"
+    },
+    "style-default-15": {
+      "name": "Acuarela",
+      "promptHint": "Usa difusión suave de pigmento, degradados ligeros y bordes orgánicos para narrativa cálida y humana"
+    },
+    "style-default-16": {
+      "name": "Pintura al óleo",
+      "promptHint": "Usa textura de pincel rica, capas de pigmento y balance clásico de color para un tono serio y atemporal"
+    },
+    "style-default-17": {
+      "name": "Ukiyo-e",
+      "promptHint": "Usa planos planos, contornos estilizados y equilibrio japonés tradicional para narrativa cultural refinada"
+    },
+    "style-default-18": {
+      "name": "Pop Art",
+      "promptHint": "Usa contraste saturado, formas de cómic y repetición audaz para diapositivas de alto impacto"
+    },
+    "style-default-19": {
+      "name": "Recorte de papel",
+      "promptHint": "Usa profundidad por capas de papel, sombras suaves y siluetas artesanales para visuales táctiles y amigables"
+    },
+    "style-default-20": {
+      "name": "Boceto a carboncillo",
+      "promptHint": "Usa trazos de carboncillo ásperos, sombreado tonal y composición conceptual para narrativa centrada en ideación"
+    }
+  },
+  "categoryTemplates": {
+    "typography": {
+      "name": "Tipografía",
+      "options": [
+        "Sans en negrita",
+        "Mezcla serif",
+        "Acento monoespaciado",
+        "Editorial",
+        "Geométrico limpio",
+        "Alto contraste"
+      ]
+    },
+    "mood": {
+      "name": "Estado de ánimo",
+      "options": [
+        "Seguro",
+        "Juguetón",
+        "Calmo",
+        "Enérgico",
+        "Lujo",
+        "Minimal"
+      ]
+    },
+    "audience": {
+      "name": "Audiencia",
+      "options": [
+        "Ejecutivos",
+        "Equipo de producto",
+        "Equipo de diseño",
+        "Estudiantes",
+        "Clientes",
+        "Inversores"
+      ]
+    },
+    "purpose": {
+      "name": "Propósito",
+      "options": [
+        "Pitch",
+        "Enseñanza",
+        "Informe",
+        "Taller",
+        "Revisión de decisiones",
+        "Hoja de ruta"
+      ]
+    },
+    "character-theme": {
+      "name": "Tema de personaje",
+      "options": [
+        "Harry Potter",
+        "Shin-chan",
+        "Dragon Ball",
+        "Luffy (One Piece)",
+        "Doraemon",
+        "Spider-Man",
+        "Iron Man",
+        "Sherlock Holmes"
+      ]
+    }
+  }
+}

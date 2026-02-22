@@ -1,0 +1,247 @@
+{
+  "appTitle": "Generator für Folienstil-Prompts",
+  "appSubtitle": "Passe Stil und Thema schnell an, um klare und strukturierte Folien-Prompts zu erstellen",
+  "navbarLabel": "Globale Steuerung",
+  "interfaceLanguage": "Sprache",
+  "colorModeLabel": "Thema",
+  "lightMode": "Hell",
+  "darkMode": "Dunkel",
+  "resetButton": "Benutzerdefinierte Daten zurücksetzen",
+  "tabGenerator": "Generator",
+  "tabTemplates": "Vorlagenverwaltung",
+  "generatorControls": "Generator-Steuerung",
+  "targetPlatform": "Zielplattform",
+  "contentLabel": "Quellinhalt",
+  "contentPlaceholder": "Themennotizen, Kontext und Kernpunkte einfügen...",
+  "colorPickersTitle": "Farbwähler",
+  "otherColorsLabel": "Weitere Farben",
+  "dragReorderHint": "Farbfelder zum Neuordnen ziehen",
+  "recentColorsLabel": "Zuletzt verwendete Farben",
+  "recentColorsEmpty": "Noch keine zuletzt verwendeten Farben",
+  "otherColorHexPlaceholder": "HEX-Farbe hinzufügen (z. B. #7C3AED)",
+  "addOtherColorButton": "Farbe hinzufügen",
+  "invalidHexHint": "HEX-Format wie #7C3AED oder #ABC verwenden",
+  "colorKeys": {
+    "background": "Hintergrund",
+    "text": "Text",
+    "title": "Titel",
+    "highlight": "Akzent"
+  },
+  "promptPreview": {
+    "outputLanguage": "Ausgabesprache",
+    "palette": "Palette",
+    "stylePreset": "Folienstil",
+    "styleDirection": "Stilbeschreibung",
+    "colors": "Farben",
+    "colorKeys": {
+      "background": "hintergrund",
+      "text": "text",
+      "title": "titel",
+      "highlight": "akzent",
+      "otherColors": "weitere farben"
+    },
+    "none": "keine"
+  },
+  "addPalettePlaceholder": "Name der benutzerdefinierten Palette",
+  "addPaletteButton": "Palette hinzufügen",
+  "paletteLibraryTitle": "Palettenbibliothek",
+  "addStyleNamePlaceholder": "Name des benutzerdefinierten Stils",
+  "addStyleHintPlaceholder": "Beschreibung des benutzerdefinierten Stils",
+  "addStyleButton": "Stil hinzufügen",
+  "slideStyleTitle": "Folienstil",
+  "categoriesTitle": "Kategorie-Tags",
+  "previewExportTitle": "Vorschau und Export",
+  "copyButton": "Kopieren",
+  "copiedButton": "Kopiert",
+  "exportButton": "Exportieren",
+  "resultReadyHint": "Vorschau ist bereit, Prompt kopieren oder exportieren",
+  "resultEmptyHint": "Inhalt eingeben, um eine Live-Vorschau des Prompts zu erzeugen",
+  "emptyPrompt": "Noch kein Prompt, fülle die Einstellungen und den Inhalt aus",
+  "newCategoryPlaceholder": "Neuer Kategoriename",
+  "allowMultiSelect": "Mehrfachauswahl erlauben",
+  "addCategoryButton": "Kategorie hinzufügen",
+  "newOptionPlaceholder": "Neue Optionsbezeichnung",
+  "customOptionTranslationHint": "Hinweis: Benutzerdefinierte Optionen werden nicht automatisch übersetzt",
+  "addOptionButton": "Option hinzufügen",
+  "delete": "Löschen",
+  "multi": "Mehrfach",
+  "single": "Einzeln",
+  "languages": {
+    "en": "English (Englisch)",
+    "zh-TW": "繁體中文 (Traditionelles Chinesisch)",
+    "zh-CN": "简体中文 (Vereinfachtes Chinesisch)",
+    "ja": "日本語 (Japanisch)",
+    "ko": "한국어 (Koreanisch)",
+    "es": "Español (Spanisch)",
+    "de": "Deutsch",
+    "fr": "Français (Französisch)",
+    "ru": "Русский (Russisch)"
+  },
+  "platforms": {
+    "Gemini": "Gemini",
+    "NotebookLM": "NotebookLM"
+  },
+  "paletteNames": {
+    "palette-default-1": "Pazifisches Riff",
+    "palette-default-2": "Aurora-Sonnenuntergang",
+    "palette-default-3": "Waldnebel",
+    "palette-default-4": "Lavendelnacht",
+    "palette-default-5": "Sanddüne",
+    "palette-default-6": "Neonpuls",
+    "palette-default-7": "Arktischer Himmel",
+    "palette-default-8": "Zitrus-Pop",
+    "palette-default-9": "Minimales Monochrom",
+    "palette-default-10": "Rosenwolke",
+    "palette-default-11": "Jadegarten",
+    "palette-default-12": "Indigo-Drift",
+    "palette-default-13": "Bernsteinglühen",
+    "palette-default-14": "Gletschersee",
+    "palette-default-15": "Schiefer-Neon",
+    "palette-default-16": "Korallenminze",
+    "palette-default-17": "Mokka-Creme",
+    "palette-default-18": "Königssamt",
+    "palette-default-19": "Küstenbrise",
+    "palette-default-20": "Wüsten-Dämmerung"
+  },
+  "stylePresets": {
+    "style-default-1": {
+      "name": "Fotorealistisch",
+      "promptHint": "Nutze realistische Beleuchtung, präzise Materialien und hochdetaillierte Texturen für Premium-Visuals"
+    },
+    "style-default-2": {
+      "name": "Kinematische Beleuchtung",
+      "promptHint": "Nutze dramatisches Key-Light, tiefe Schatten und filmischen Kontrast für narrative Spannung und Tiefe"
+    },
+    "style-default-3": {
+      "name": "Minimalistisch",
+      "promptHint": "Nutze viel Weißraum, reduzierte Farben und einfache Komposition, um eine Kernbotschaft zu betonen"
+    },
+    "style-default-4": {
+      "name": "Flat Design",
+      "promptHint": "Nutze klare 2D-Formen, eindeutige Ikonografie und ausgewogene Abstände für moderne gut lesbare Folien"
+    },
+    "style-default-5": {
+      "name": "Isometrisch",
+      "promptHint": "Nutze isometrische 2.5D-Perspektive mit klarer Geometrie für Systeme, Architektur und Prozessdarstellung"
+    },
+    "style-default-6": {
+      "name": "3D-Render / C4D-Stil",
+      "promptHint": "Nutze polierte 3D-Formen, weiche Reflexionen und kontrollierte Tiefe für einen futuristischen Tech-Look"
+    },
+    "style-default-7": {
+      "name": "Memphis-Design",
+      "promptHint": "Nutze verspielte Geometrie, kräftige Farbblöcke und energetischen Layout-Rhythmus für kreative Storys"
+    },
+    "style-default-8": {
+      "name": "Cyberpunk",
+      "promptHint": "Nutze Neon-Akzente, dunkle Atmosphäre und urbanen Hightech-Ton für zukunftsorientierte Produktgeschichten"
+    },
+    "style-default-9": {
+      "name": "Linienkunst",
+      "promptHint": "Nutze präzise Monoline-Striche und minimale Flächen für klare und gut lesbare Diagramme und Konzepte"
+    },
+    "style-default-10": {
+      "name": "Synthwave",
+      "promptHint": "Nutze retrofuturistische Verläufe, Rastermotive und violett-blaues Leuchten für nostalgische Digitalenergie"
+    },
+    "style-default-11": {
+      "name": "Pixel Art",
+      "promptHint": "Nutze bewusste Pixelkanten, Low-Res-Charme und verspielte Retro-Ästhetik für zugängliche Visuals"
+    },
+    "style-default-12": {
+      "name": "Risografie",
+      "promptHint": "Nutze Korntextur, versetzte Farbebenen und Druckimperfektion für einen editoriellen künstlerischen Ton"
+    },
+    "style-default-13": {
+      "name": "Bauhaus",
+      "promptHint": "Nutze starke Geometrie, Primärfarben-Hierarchie und strenge funktionale Komposition für modernistische Klarheit"
+    },
+    "style-default-14": {
+      "name": "Low Poly",
+      "promptHint": "Nutze facettierte Polygonflächen, vereinfachte Formen und präzise Beleuchtung für moderne abstrakte Visuals"
+    },
+    "style-default-15": {
+      "name": "Aquarell",
+      "promptHint": "Nutze weiche Pigmentverläufe, sanfte Übergänge und organische Kanten für warme menschliche Erzählung"
+    },
+    "style-default-16": {
+      "name": "Ölmalerei",
+      "promptHint": "Nutze reiche Pinseltextur, geschichtete Pigmente und klassische Farbbalance für einen zeitlosen ernsten Ton"
+    },
+    "style-default-17": {
+      "name": "Ukiyo-e",
+      "promptHint": "Nutze flächige Ebenen, stilisierte Konturen und traditionelle japanische Balance für kulturell feine Storys"
+    },
+    "style-default-18": {
+      "name": "Pop Art",
+      "promptHint": "Nutze gesättigten Kontrast, Comic-Formen und starke Wiederholung für aufmerksamkeitsstarke Folien"
+    },
+    "style-default-19": {
+      "name": "Papierausschnitt",
+      "promptHint": "Nutze geschichtete Papier-Tiefe, weiche Schatten und handgemachte Silhouetten für taktile freundliche Visuals"
+    },
+    "style-default-20": {
+      "name": "Kohlezeichnung",
+      "promptHint": "Nutze raue Kohlestriche, tonale Schattierung und konzeptionelle Komposition für ideationsgetriebene Storys"
+    }
+  },
+  "categoryTemplates": {
+    "typography": {
+      "name": "Typografie",
+      "options": [
+        "Fette Sans",
+        "Serif-Mix",
+        "Monospace-Akzent",
+        "Editorial",
+        "Sauber geometrisch",
+        "Hoher Kontrast"
+      ]
+    },
+    "mood": {
+      "name": "Stimmung",
+      "options": [
+        "Selbstbewusst",
+        "Verspielt",
+        "Ruhig",
+        "Energiegeladen",
+        "Luxus",
+        "Minimal"
+      ]
+    },
+    "audience": {
+      "name": "Zielgruppe",
+      "options": [
+        "Führungskräfte",
+        "Produktteam",
+        "Designteam",
+        "Studierende",
+        "Kunden",
+        "Investoren"
+      ]
+    },
+    "purpose": {
+      "name": "Zweck",
+      "options": [
+        "Pitch",
+        "Lehre",
+        "Bericht",
+        "Workshop",
+        "Entscheidungsreview",
+        "Roadmap"
+      ]
+    },
+    "character-theme": {
+      "name": "Charakterthema",
+      "options": [
+        "Harry Potter",
+        "Shin-chan",
+        "Dragon Ball",
+        "Luffy (One Piece)",
+        "Doraemon",
+        "Spider-Man",
+        "Iron Man",
+        "Sherlock Holmes"
+      ]
+    }
+  }
+}

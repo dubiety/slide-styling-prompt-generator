@@ -1,0 +1,247 @@
+{
+  "appTitle": "Générateur de Prompts de Style de Slides",
+  "appSubtitle": "Ajustez rapidement style et thème pour créer des prompts de slides clairs et structurés",
+  "navbarLabel": "Contrôles globaux",
+  "interfaceLanguage": "Langue",
+  "colorModeLabel": "Thème",
+  "lightMode": "Clair",
+  "darkMode": "Sombre",
+  "resetButton": "Réinitialiser les données personnalisées",
+  "tabGenerator": "Générateur",
+  "tabTemplates": "Gestion des modèles",
+  "generatorControls": "Contrôles du générateur",
+  "targetPlatform": "Plateforme cible",
+  "contentLabel": "Contenu source",
+  "contentPlaceholder": "Collez les notes de sujet, le contexte et les points clés...",
+  "colorPickersTitle": "Sélecteur de couleurs",
+  "otherColorsLabel": "Autres couleurs",
+  "dragReorderHint": "Glissez les pastilles pour réorganiser",
+  "recentColorsLabel": "Couleurs récentes",
+  "recentColorsEmpty": "Aucune couleur récente pour le moment",
+  "otherColorHexPlaceholder": "Ajouter une couleur HEX (ex. #7C3AED)",
+  "addOtherColorButton": "Ajouter une couleur",
+  "invalidHexHint": "Utilisez un format HEX comme #7C3AED ou #ABC",
+  "colorKeys": {
+    "background": "Arrière-plan",
+    "text": "Texte",
+    "title": "Titre",
+    "highlight": "Accent"
+  },
+  "promptPreview": {
+    "outputLanguage": "Langue de sortie",
+    "palette": "Palette",
+    "stylePreset": "Style de slide",
+    "styleDirection": "Description de style",
+    "colors": "Couleurs",
+    "colorKeys": {
+      "background": "arrière-plan",
+      "text": "texte",
+      "title": "titre",
+      "highlight": "accent",
+      "otherColors": "autres couleurs"
+    },
+    "none": "aucun"
+  },
+  "addPalettePlaceholder": "Nom de palette personnalisée",
+  "addPaletteButton": "Ajouter une palette",
+  "paletteLibraryTitle": "Bibliothèque de palettes",
+  "addStyleNamePlaceholder": "Nom de style personnalisé",
+  "addStyleHintPlaceholder": "Description de style personnalisée",
+  "addStyleButton": "Ajouter un style",
+  "slideStyleTitle": "Style de slide",
+  "categoriesTitle": "Étiquettes de catégorie",
+  "previewExportTitle": "Aperçu et export",
+  "copyButton": "Copier",
+  "copiedButton": "Copié",
+  "exportButton": "Exporter",
+  "resultReadyHint": "L’aperçu est prêt, copiez ou exportez le prompt généré",
+  "resultEmptyHint": "Saisissez du contenu pour générer un aperçu en direct du prompt",
+  "emptyPrompt": "Aucun prompt pour le moment, remplissez les contrôles et le contenu",
+  "newCategoryPlaceholder": "Nouveau nom de catégorie",
+  "allowMultiSelect": "Autoriser la sélection multiple",
+  "addCategoryButton": "Ajouter une catégorie",
+  "newOptionPlaceholder": "Nouvelle étiquette d’option",
+  "customOptionTranslationHint": "Astuce : les options personnalisées ne sont pas traduites automatiquement",
+  "addOptionButton": "Ajouter une option",
+  "delete": "Supprimer",
+  "multi": "Multiple",
+  "single": "Unique",
+  "languages": {
+    "en": "English (Anglais)",
+    "zh-TW": "繁體中文 (Chinois traditionnel)",
+    "zh-CN": "简体中文 (Chinois simplifié)",
+    "ja": "日本語 (Japonais)",
+    "ko": "한국어 (Coréen)",
+    "es": "Español (Espagnol)",
+    "de": "Deutsch (Allemand)",
+    "fr": "Français",
+    "ru": "Русский (Russe)"
+  },
+  "platforms": {
+    "Gemini": "Gemini",
+    "NotebookLM": "NotebookLM"
+  },
+  "paletteNames": {
+    "palette-default-1": "Récif Pacifique",
+    "palette-default-2": "Coucher d’aurore",
+    "palette-default-3": "Brume forestière",
+    "palette-default-4": "Nuit lavande",
+    "palette-default-5": "Dune de sable",
+    "palette-default-6": "Impulsion néon",
+    "palette-default-7": "Ciel arctique",
+    "palette-default-8": "Éclat agrume",
+    "palette-default-9": "Mono minimal",
+    "palette-default-10": "Nuage rose",
+    "palette-default-11": "Jardin de jade",
+    "palette-default-12": "Dérive indigo",
+    "palette-default-13": "Lueur ambrée",
+    "palette-default-14": "Lac glaciaire",
+    "palette-default-15": "Néon ardoise",
+    "palette-default-16": "Corail menthe",
+    "palette-default-17": "Crème moka",
+    "palette-default-18": "Velours royal",
+    "palette-default-19": "Brise côtière",
+    "palette-default-20": "Crépuscule du désert"
+  },
+  "stylePresets": {
+    "style-default-1": {
+      "name": "Photorealiste",
+      "promptHint": "Utilisez un éclairage réaliste, des matériaux précis et des textures très détaillées pour des visuels premium"
+    },
+    "style-default-2": {
+      "name": "Éclairage cinématographique",
+      "promptHint": "Utilisez une lumière principale dramatique, des ombres riches et un contraste cinématographique pour créer tension et profondeur"
+    },
+    "style-default-3": {
+      "name": "Minimaliste",
+      "promptHint": "Utilisez un grand espace blanc, des couleurs limitées et une composition simple pour mettre en avant un message clé"
+    },
+    "style-default-4": {
+      "name": "Design plat",
+      "promptHint": "Utilisez des formes 2D nettes, une iconographie claire et un espacement équilibré pour des slides modernes lisibles"
+    },
+    "style-default-5": {
+      "name": "Isométrique",
+      "promptHint": "Utilisez une perspective isométrique 2.5D avec une géométrie claire pour raconter systèmes, architecture et processus"
+    },
+    "style-default-6": {
+      "name": "Rendu 3D / Style C4D",
+      "promptHint": "Utilisez des formes 3D polies, des reflets doux et une profondeur maîtrisée pour un rendu technologique futuriste"
+    },
+    "style-default-7": {
+      "name": "Design Memphis",
+      "promptHint": "Utilisez des accents géométriques ludiques, des blocs de couleurs forts et un rythme visuel énergique pour une narration créative"
+    },
+    "style-default-8": {
+      "name": "Cyberpunk",
+      "promptHint": "Utilisez des accents néon, une ambiance sombre et un ton urbain high-tech pour des récits produit orientés futur"
+    },
+    "style-default-9": {
+      "name": "Line Art",
+      "promptHint": "Utilisez des traits monolignes précis et un remplissage minimal pour garder diagrammes et concepts clairs et lisibles"
+    },
+    "style-default-10": {
+      "name": "Synthwave",
+      "promptHint": "Utilisez des dégradés rétrofuturistes, des motifs de grille et des lueurs violet-bleu pour une énergie numérique nostalgique"
+    },
+    "style-default-11": {
+      "name": "Pixel Art",
+      "promptHint": "Utilisez des contours pixelisés assumés, un charme basse résolution et une esthétique rétro ludique pour des visuels accessibles"
+    },
+    "style-default-12": {
+      "name": "Risographie",
+      "promptHint": "Utilisez une texture granuleuse, des couches de couleur décalées et des imperfections d’impression pour un ton éditorial artistique"
+    },
+    "style-default-13": {
+      "name": "Bauhaus",
+      "promptHint": "Utilisez une géométrie forte, une hiérarchie de couleurs primaires et une composition fonctionnelle stricte pour une clarté moderniste"
+    },
+    "style-default-14": {
+      "name": "Low Poly",
+      "promptHint": "Utilisez des surfaces polygonales facettées, des formes simplifiées et un éclairage net pour des visuels abstraits modernes"
+    },
+    "style-default-15": {
+      "name": "Aquarelle",
+      "promptHint": "Utilisez une diffusion douce des pigments, des dégradés délicats et des bords organiques pour une narration chaleureuse et humaine"
+    },
+    "style-default-16": {
+      "name": "Peinture à l’huile",
+      "promptHint": "Utilisez une texture de pinceau riche, des couches de pigments et un équilibre chromatique classique pour une ambiance sérieuse intemporelle"
+    },
+    "style-default-17": {
+      "name": "Ukiyo-e",
+      "promptHint": "Utilisez des aplats, des contours stylisés et un équilibre japonais traditionnel pour une narration culturelle raffinée"
+    },
+    "style-default-18": {
+      "name": "Pop Art",
+      "promptHint": "Utilisez un contraste saturé, des formes inspirées de la BD et une répétition audacieuse pour des slides à fort impact"
+    },
+    "style-default-19": {
+      "name": "Découpage papier",
+      "promptHint": "Utilisez des couches papier en profondeur, des ombres douces et des silhouettes artisanales pour des visuels tactiles et chaleureux"
+    },
+    "style-default-20": {
+      "name": "Esquisse au fusain",
+      "promptHint": "Utilisez des traits de fusain bruts, un modelé tonal et une composition conceptuelle pour une narration orientée idéation"
+    }
+  },
+  "categoryTemplates": {
+    "typography": {
+      "name": "Typographie",
+      "options": [
+        "Sans gras",
+        "Mélange serif",
+        "Accent monospace",
+        "Éditorial",
+        "Géométrique épuré",
+        "Contraste élevé"
+      ]
+    },
+    "mood": {
+      "name": "Ambiance",
+      "options": [
+        "Confiant",
+        "Ludique",
+        "Calme",
+        "Énergique",
+        "Luxe",
+        "Minimal"
+      ]
+    },
+    "audience": {
+      "name": "Audience",
+      "options": [
+        "Dirigeants",
+        "Équipe produit",
+        "Équipe design",
+        "Étudiants",
+        "Clients",
+        "Investisseurs"
+      ]
+    },
+    "purpose": {
+      "name": "Objectif",
+      "options": [
+        "Pitch",
+        "Enseignement",
+        "Rapport",
+        "Atelier",
+        "Revue de décision",
+        "Feuille de route"
+      ]
+    },
+    "character-theme": {
+      "name": "Thème de personnage",
+      "options": [
+        "Harry Potter",
+        "Shin-chan",
+        "Dragon Ball",
+        "Luffy (One Piece)",
+        "Doraemon",
+        "Spider-Man",
+        "Iron Man",
+        "Sherlock Holmes"
+      ]
+    }
+  }
+}
