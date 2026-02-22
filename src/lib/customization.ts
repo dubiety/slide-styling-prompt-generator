@@ -199,14 +199,23 @@ export function isPromptPreviewCopy(value: unknown): value is PromptPreviewCopy 
 }
 
 export function buildPromptPreview(input: PromptBuilderInput, copy: PromptPreviewCopy): string {
+  const categorySelections = input.categories
+    .map((category) => {
+      const picked = input.selections[category.id] ?? [];
+      if (picked.length === 0) return null;
+      return `${category.name}: ${picked.join(', ')}`;
+    })
+    .filter((item): item is string => item !== null);
+
   return [
     `${copy.outputLanguage}: ${input.language}`,
     `${copy.palette}: ${input.paletteName}`,
-    `${copy.stylePreset}: ${input.styleName}`,
-    `${copy.styleDirection}: ${input.styleHint}`,
     `${copy.colors}: ${copy.colorKeys.background} ${input.colors.background}, ${copy.colorKeys.text} ${input.colors.text}, ${copy.colorKeys.title} ${input.colors.title}, ${copy.colorKeys.highlight} ${input.colors.highlight}, ${copy.colorKeys.otherColors} ${
       input.colors.otherColors && input.colors.otherColors.length > 0 ? input.colors.otherColors.join(', ') : copy.none
-    }`
+    }`,
+    `${copy.stylePreset}: ${input.styleName}`,
+    `${copy.styleDirection}: ${input.styleHint}`,
+    ...categorySelections
   ].join('\n');
 }
 

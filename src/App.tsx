@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import type { KeyboardEvent } from 'react';
 import type { TFunction } from 'i18next';
 import {
   BookTemplate,
@@ -181,9 +182,16 @@ function getLocalizedPaletteName(palette: Palette, t: TFunction): string {
   return t(`paletteNames.${palette.id}`, { defaultValue: palette.name });
 }
 
+function getDefaultCategoryById(categoryId: string): CategoryTemplate | undefined {
+  return DEFAULT_CATEGORIES.find((item) => item.id === categoryId && !item.isCustom);
+}
+
 function getLocalizedCategoryName(category: CategoryTemplate, t: TFunction): string {
   if (category.isCustom) return category.name;
-  return t(`categoryTemplates.${category.id}.name`, { defaultValue: category.name });
+  const defaultCategory = getDefaultCategoryById(category.id);
+  if (!defaultCategory) return category.name;
+  if (category.name !== defaultCategory.name) return category.name;
+  return t(`categoryTemplates.${category.id}.name`, { defaultValue: defaultCategory.name });
 }
 
 function getLocalizedOptionLabel(
@@ -193,6 +201,10 @@ function getLocalizedOptionLabel(
   t: TFunction
 ): string {
   if (category.isCustom) return option;
+  const defaultCategory = getDefaultCategoryById(category.id);
+  if (!defaultCategory) return option;
+  const defaultOption = defaultCategory.options[optionIndex];
+  if (!defaultOption || option !== defaultOption) return option;
   return t(`categoryTemplates.${category.id}.options.${optionIndex}`, { defaultValue: option });
 }
 
@@ -445,6 +457,18 @@ function App() {
       return { ...category, options: [...category.options, draft] };
     });
     setNewOptionDrafts((prev) => ({ ...prev, [categoryId]: '' }));
+  };
+
+  const onAddOptionInputKeyDown = (event: KeyboardEvent<HTMLInputElement>, categoryId: string) => {
+    if (event.nativeEvent.isComposing || event.key !== 'Enter') return;
+    event.preventDefault();
+    addOptionToCategory(categoryId);
+  };
+
+  const onAddCategoryInputKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.nativeEvent.isComposing || event.key !== 'Enter') return;
+    event.preventDefault();
+    addCategory();
   };
 
   const removeOptionFromCategory = (categoryId: string, optionLabel: string) => {
@@ -804,35 +828,9 @@ function App() {
           </section>
         ) : (
           <section className="space-y-4 rounded-3xl border border-white/45 bg-white/55 p-4 shadow-[0_16px_42px_rgba(15,23,42,0.1)] backdrop-blur-xl dark:border-slate-700/70 dark:bg-slate-900/55">
-            <div className="grid gap-2 md:grid-cols-[1fr_auto]">
-              <input
-                value={newCategoryName}
-                onChange={(event) => setNewCategoryName(event.target.value)}
-                placeholder={t('newCategoryPlaceholder')}
-                className="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-800/80"
-              />
-              <div className="flex items-center gap-2">
-                <label className="text-xs text-slate-600 dark:text-slate-300">
-                  <input
-                    type="checkbox"
-                    checked={newCategoryMulti}
-                    onChange={(event) => setNewCategoryMulti(event.target.checked)}
-                    className="mr-1"
-                  />
-                  {t('allowMultiSelect')}
-                </label>
-                <button
-                  type="button"
-                  onClick={addCategory}
-                  aria-label={t('addCategoryButton')}
-                  title={t('addCategoryButton')}
-                  className={`${iconButtonBase} border border-indigo-300 bg-indigo-100/80 text-indigo-700 dark:border-indigo-500/60 dark:bg-indigo-900/30 dark:text-indigo-200`}
-                >
-                  <Plus className="h-4 w-4" />
-                </button>
-              </div>
-            </div>
-
+            <p className="rounded-xl border border-amber-200 bg-amber-50/80 px-3 py-2 text-sm font-medium text-amber-800 dark:border-amber-500/40 dark:bg-amber-900/20 dark:text-amber-200">
+              {t('customOptionTranslationHint')}
+            </p>
             <div className="grid gap-3 lg:grid-cols-2">
               {categories.map((category) => (
                 <article
@@ -841,7 +839,7 @@ function App() {
                 >
                   <div className="mb-2 flex items-center gap-2">
                     <input
-                      value={category.name}
+                      value={getLocalizedCategoryName(category, t)}
                       onChange={(event) =>
                         updateCategory(category.id, (current) => ({ ...current, name: event.target.value }))
                       }
@@ -854,9 +852,10 @@ function App() {
                       }
                       aria-label={category.multi ? t('multi') : t('single')}
                       title={category.multi ? t('multi') : t('single')}
-                      className={`${iconButtonBase} border border-sky-300 bg-sky-100/80 text-sky-700 dark:border-sky-500/60 dark:bg-sky-900/30 dark:text-sky-200`}
+                      className="inline-flex h-8 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-sky-300 bg-sky-100/80 px-3 text-xs font-medium text-sky-700 dark:border-sky-500/60 dark:bg-sky-900/30 dark:text-sky-200"
                     >
                       {category.multi ? <Layers className="h-4 w-4" /> : <Circle className="h-4 w-4" />}
+                      <span>{category.multi ? t('multi') : t('single')}</span>
                     </button>
                     <button
                       type="button"
@@ -873,9 +872,13 @@ function App() {
                     {category.options.map((option, index) => (
                       <div key={`${category.id}-${index}`} className="flex items-center gap-2">
                         <input
-                          value={option}
-                          onChange={(event) => updateOptionLabel(category.id, index, event.target.value)}
-                          className="w-full rounded-full border border-slate-200 bg-white/90 px-3 py-1.5 text-xs focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-900/80"
+                          value={category.isCustom ? option : getLocalizedOptionLabel(category, option, index, t)}
+                          onChange={(event) => {
+                            if (!category.isCustom) return;
+                            updateOptionLabel(category.id, index, event.target.value);
+                          }}
+                          readOnly={!category.isCustom}
+                          className="w-full rounded-full border border-slate-200 bg-white/90 px-3 py-1.5 text-xs focus:border-indigo-500 focus:outline-none read-only:cursor-not-allowed read-only:bg-slate-100 dark:border-slate-700 dark:bg-slate-900/80 dark:read-only:bg-slate-800"
                         />
                         <button
                           type="button"
@@ -896,6 +899,7 @@ function App() {
                       onChange={(event) =>
                         setNewOptionDrafts((prev) => ({ ...prev, [category.id]: event.target.value }))
                       }
+                      onKeyDown={(event) => onAddOptionInputKeyDown(event, category.id)}
                       placeholder={t('newOptionPlaceholder')}
                       className="w-full rounded-full border border-slate-200 bg-white/90 px-3 py-1.5 text-xs focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-900/80"
                     />
@@ -911,6 +915,41 @@ function App() {
                   </div>
                 </article>
               ))}
+
+              <article className="rounded-2xl border border-slate-200 bg-white/80 p-3 shadow-sm dark:border-slate-700 dark:bg-slate-800/80">
+                <p className="mb-2 text-xs font-semibold text-slate-600 dark:text-slate-300">
+                  {t('newCategoryPlaceholder')}
+                </p>
+                <div className="flex items-center gap-2">
+                  <input
+                    value={newCategoryName}
+                    onChange={(event) => setNewCategoryName(event.target.value)}
+                    onKeyDown={onAddCategoryInputKeyDown}
+                    placeholder={t('newCategoryPlaceholder')}
+                    className="min-w-0 flex-1 rounded-full border border-slate-200 bg-white/90 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-900/80"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setNewCategoryMulti((prev) => !prev)}
+                    aria-label={newCategoryMulti ? t('multi') : t('single')}
+                    title={t('allowMultiSelect')}
+                    className="inline-flex h-8 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-sky-300 bg-sky-100/80 px-3 text-xs font-medium text-sky-700 dark:border-sky-500/60 dark:bg-sky-900/30 dark:text-sky-200"
+                    >
+                      {newCategoryMulti ? <Layers className="h-4 w-4" /> : <Circle className="h-4 w-4" />}
+                      <span>{newCategoryMulti ? t('multi') : t('single')}</span>
+                    </button>
+                  <button
+                    type="button"
+                    onClick={addCategory}
+                    aria-label={t('addCategoryButton')}
+                    title={t('addCategoryButton')}
+                    className="inline-flex h-8 items-center gap-1.5 rounded-full border border-indigo-300 bg-indigo-100/80 px-2.5 text-xs font-medium text-indigo-700 dark:border-indigo-500/60 dark:bg-indigo-900/30 dark:text-indigo-200"
+                  >
+                    <Plus className="h-4 w-4" />
+                    <span>{t('addCategoryButton')}</span>
+                  </button>
+                </div>
+              </article>
             </div>
           </section>
         )}

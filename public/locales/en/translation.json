@@ -54,6 +54,7 @@
   "allowMultiSelect": "Allow multi-select",
   "addCategoryButton": "Add Category",
   "newOptionPlaceholder": "New option label",
+  "customOptionTranslationHint": "Tip: Custom options are not translated automatically.",
   "addOptionButton": "Add Option",
   "delete": "Delete",
   "multi": "Multi",

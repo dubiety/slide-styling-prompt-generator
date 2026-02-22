@@ -54,6 +54,7 @@
   "allowMultiSelect": "다중 선택 허용",
   "addCategoryButton": "카테고리 추가",
   "newOptionPlaceholder": "새 옵션 이름",
+  "customOptionTranslationHint": "팁: 직접 추가한 옵션은 자동 번역되지 않습니다",
   "addOptionButton": "옵션 추가",
   "delete": "삭제",
   "multi": "다중",

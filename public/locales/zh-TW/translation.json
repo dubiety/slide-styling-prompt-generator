@@ -54,6 +54,7 @@
   "allowMultiSelect": "允許多選",
   "addCategoryButton": "新增分類",
   "newOptionPlaceholder": "新增選項文字",
+  "customOptionTranslationHint": "小提示：自行新增的選項不會自動翻譯",
   "addOptionButton": "新增選項",
   "delete": "刪除",
   "multi": "多選",

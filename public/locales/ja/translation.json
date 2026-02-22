@@ -54,6 +54,7 @@
   "allowMultiSelect": "複数選択を許可",
   "addCategoryButton": "カテゴリを追加",
   "newOptionPlaceholder": "新しいオプション名",
+  "customOptionTranslationHint": "ヒント: 追加した独自オプションは自動翻訳されません",
   "addOptionButton": "オプションを追加",
   "delete": "削除",
   "multi": "複数",
