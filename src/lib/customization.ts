@@ -32,7 +32,7 @@ export type CategoryTemplate = {
 
 export type SelectionMap = Record<string, string[]>;
 
-export const CUSTOMIZATION_STORAGE_KEY = 'slide-prompt-glass-customization-v1';
+export const CUSTOMIZATION_STORAGE_KEY = 'slide-style-prompt-customization';
 
 const paletteData: Array<{ name: string; colors: ColorSet }> = [
   { name: 'Pacific Reef', colors: { background: '#0B3C5D', text: '#328CC1', title: '#0CAADC', highlight: '#F7F9FB', otherColors: ['#D9EEF7'] } },

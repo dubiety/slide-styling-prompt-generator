@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
-import { defaultLanguage, parseLanguage, supportedLanguages } from './localization/config';
+import { defaultLanguage, languageStorageKey, parseLanguage, supportedLanguages } from './localization/config';
 import {
   buildPromptPreview,
   CUSTOMIZATION_STORAGE_KEY,
@@ -212,6 +212,11 @@ function App() {
       void i18n.changeLanguage(routeLanguage);
     }
   }, [i18n, navigate, routeLanguage]);
+
+  useEffect(() => {
+    if (!routeLanguage || typeof window === 'undefined') return;
+    window.localStorage.setItem(languageStorageKey, routeLanguage);
+  }, [routeLanguage]);
 
   const [activeTab, setActiveTab] = useState<TabKey>('generator');
   const [copied, setCopied] = useState(false);
