@@ -106,83 +106,83 @@
   "stylePresets": {
     "style-default-1": {
       "name": "寫實攝影",
-      "promptHint": "極高細節，適合產品展示或情境模擬"
+      "promptHint": "使用寫實光線、真實材質與高細節紋理，呈現接近實拍的質感與深度"
     },
     "style-default-2": {
       "name": "電影感",
-      "promptHint": "強調光影與張力，營造敘事感與高質感"
+      "promptHint": "使用方向性主光、深陰影對比與空氣感層次，建立電影感張力"
     },
     "style-default-3": {
       "name": "極簡主義",
-      "promptHint": "留白多、顏色單純，適合強調核心概念"
+      "promptHint": "以大面積留白、極簡元素與克制配色，讓資訊層級清楚且乾淨"
     },
     "style-default-4": {
       "name": "扁平化設計",
-      "promptHint": "二維設計，簡約且易辨識，是現代簡報常用風格"
+      "promptHint": "使用俐落 2D 幾何、純色區塊與清晰圖示，避免複雜紋理與厚重特效"
     },
     "style-default-5": {
       "name": "等距視角",
-      "promptHint": "2.5D 視角，常用於呈現數據中心、辦公室或架構圖"
+      "promptHint": "使用一致的等距透視與模組化結構，讓空間與流程關係一目了然"
     },
     "style-default-6": {
       "name": "3D 渲染 / C4D 風格",
-      "promptHint": "立體感強，帶現代科技感，常搭配 Octane Render"
+      "promptHint": "使用拋光 3D 造型、柔和反射與全局光照，呈現現代科技感深度"
     },
     "style-default-7": {
       "name": "孟菲斯風格",
-      "promptHint": "活潑幾何形狀與鮮豔色彩，適合創意型提案"
+      "promptHint": "使用大膽幾何圖形、不對稱節奏與高對比點綴，營造活潑且有秩序的視覺"
     },
     "style-default-8": {
       "name": "賽博龐克",
-      "promptHint": "霓虹燈、高科技感，適合強調未來科技或軟體開發"
+      "promptHint": "使用高對比霓虹點光、暗色氛圍與反射材質，建立濃厚未來都市感"
     },
     "style-default-9": {
       "name": "線條藝術",
-      "promptHint": "由簡潔線條構成，適合流程圖背景或圖示化設計"
+      "promptHint": "使用線條層級、簡化輪廓與一致筆觸邏輯，強化結構與可讀性"
     },
     "style-default-10": {
       "name": "合成器波",
-      "promptHint": "復古未來感，強烈的紫色與藍色調"
+      "promptHint": "使用復古未來漸層、幾何網格與類比發光質感，呈現懷舊數位氛圍"
     },
     "style-default-11": {
       "name": "像素藝術",
-      "promptHint": "懷舊遊戲感，適合有趣的復古專案說明"
+      "promptHint": "使用像素網格、低解析邊緣與有限色塊，維持明確的像素化視覺語法"
     },
     "style-default-12": {
       "name": "孔版印刷風",
-      "promptHint": "帶有顆粒感與重疊印刷感，深具文藝與設計感"
+      "promptHint": "使用錯位套色、網點顆粒與印刷偏移質感，呈現類比印刷語言"
     },
     "style-default-13": {
       "name": "包浩斯風格",
-      "promptHint": "強調幾何形狀、原色與功能的平衡，非常具現代感"
+      "promptHint": "使用基礎幾何、嚴謹比例與強層級排版，保持功能導向的現代秩序"
     },
     "style-default-14": {
       "name": "低多邊形",
-      "promptHint": "幾何切面構成，具備現代抽象感"
+      "promptHint": "使用多邊形切面、稜角明暗轉折與簡化體積，建立俐落抽象結構"
     },
     "style-default-15": {
       "name": "水彩畫",
-      "promptHint": "渲染感強，適合溫暖、具人文關懷的簡報"
+      "promptHint": "使用水彩暈染、透明疊色與自然邊緣，形成柔和且流動的筆觸感"
     },
     "style-default-16": {
       "name": "油畫",
-      "promptHint": "質地厚重，適合經典、嚴肅或具歷史感的內容"
+      "promptHint": "使用厚塗筆觸、顏料堆疊深度與古典光影，展現厚實繪畫質感"
     },
     "style-default-17": {
       "name": "浮世繪",
-      "promptHint": "日系傳統美學，適合文化、美學或特定市場討論"
+      "promptHint": "使用平塗色面、裝飾性輪廓與木版畫式構圖節奏，呈現傳統日系美感"
     },
     "style-default-18": {
       "name": "波普藝術",
-      "promptHint": "高彩度、漫畫感，適合強烈主張或廣告類投影片"
+      "promptHint": "使用高飽和對比、粗描邊與重複圖形節奏，打造強烈圖像衝擊"
     },
     "style-default-19": {
       "name": "剪紙風格",
-      "promptHint": "具備物理層次感，畫面溫馨且富有立體視覺效果"
+      "promptHint": "使用層疊紙片平面、柔和投影與裁切輪廓，呈現可觸感的立體層次"
     },
     "style-default-20": {
       "name": "木炭素描",
-      "promptHint": "粗獷且具思考感，適合強調概念原型"
+      "promptHint": "使用粗獷炭筆線條、塗抹明暗與草稿式輪廓，保留概念探索感"
     }
   },
   "categoryTemplates": {

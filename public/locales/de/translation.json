@@ -106,83 +106,83 @@
   "stylePresets": {
     "style-default-1": {
       "name": "Fotorealistisch",
-      "promptHint": "Nutze realistische Beleuchtung, präzise Materialien und hochdetaillierte Texturen für Premium-Visuals"
+      "promptHint": "Nutze realistische Beleuchtung, physikalisch stimmige Materialien, präzise Texturen und natürliche Tiefe bei geringer Stilisierung"
     },
     "style-default-2": {
       "name": "Kinematische Beleuchtung",
-      "promptHint": "Nutze dramatisches Key-Light, tiefe Schatten und filmischen Kontrast für narrative Spannung und Tiefe"
+      "promptHint": "Nutze gerichtetes Key-Light, starken Schattenkontrast, atmosphärische Ebenen und dramatisches Framing für filmische Spannung"
     },
     "style-default-3": {
       "name": "Minimalistisch",
-      "promptHint": "Nutze viel Weißraum, reduzierte Farben und einfache Komposition, um eine Kernbotschaft zu betonen"
+      "promptHint": "Priorisiere Weißraum, strikte Elementreduktion, saubere Ausrichtung und zurückhaltende Akzente für klare visuelle Hierarchie"
     },
     "style-default-4": {
       "name": "Flat Design",
-      "promptHint": "Nutze klare 2D-Formen, eindeutige Ikonografie und ausgewogene Abstände für moderne gut lesbare Folien"
+      "promptHint": "Nutze klare 2D-Geometrie, geschlossene Farbflächen, eindeutige Icon-Formen und hohe Lesbarkeit ohne visuelles Rauschen"
     },
     "style-default-5": {
       "name": "Isometrisch",
-      "promptHint": "Nutze isometrische 2.5D-Perspektive mit klarer Geometrie für Systeme, Architektur und Prozessdarstellung"
+      "promptHint": "Baue Visuals in konsistenter isometrischer Perspektive mit modularen Blöcken, klaren Tiefenhinweisen und geordneter Raumstruktur"
     },
     "style-default-6": {
       "name": "3D-Render / C4D-Stil",
-      "promptHint": "Nutze polierte 3D-Formen, weiche Reflexionen und kontrollierte Tiefe für einen futuristischen Tech-Look"
+      "promptHint": "Nutze polierte 3D-Formen, weiche Reflexionen, sanfte globale Beleuchtung und tiefenbetonte Komposition für modernen Tech-Look"
     },
     "style-default-7": {
       "name": "Memphis-Design",
-      "promptHint": "Nutze verspielte Geometrie, kräftige Farbblöcke und energetischen Layout-Rhythmus für kreative Storys"
+      "promptHint": "Nutze starke Geometrie-Motive, asymmetrischen Rhythmus, dynamische Pattern-Layer und ausgewogene High-Contrast-Akzente"
     },
     "style-default-8": {
       "name": "Cyberpunk",
-      "promptHint": "Nutze Neon-Akzente, dunkle Atmosphäre und urbanen Hightech-Ton für zukunftsorientierte Produktgeschichten"
+      "promptHint": "Nutze kontrastreiche Neon-Akzente, dunkle Atmosphärenebenen, reflektierende Flächen und dichte futuristische Detailtiefe"
     },
     "style-default-9": {
       "name": "Linienkunst",
-      "promptHint": "Nutze präzise Monoline-Striche und minimale Flächen für klare und gut lesbare Diagramme und Konzepte"
+      "promptHint": "Nutze präzise Linienhierarchie, reduzierte Konturen, begrenzte Flächenfüllung und konsistente Strichlogik für Strukturklarheit"
     },
     "style-default-10": {
       "name": "Synthwave",
-      "promptHint": "Nutze retrofuturistische Verläufe, Rastermotive und violett-blaues Leuchten für nostalgische Digitalenergie"
+      "promptHint": "Nutze retrofuturistische Verläufe, geometrische Raster, analoges Leuchten und horizontbasierte Tiefe mit nostalgischer Digitalästhetik"
     },
     "style-default-11": {
       "name": "Pixel Art",
-      "promptHint": "Nutze bewusste Pixelkanten, Low-Res-Charme und verspielte Retro-Ästhetik für zugängliche Visuals"
+      "promptHint": "Nutze bewusste Pixelgeometrie, Low-Resolution-Kanten, limitierte Farbblöcke und streng rastergebundene Komposition"
     },
     "style-default-12": {
       "name": "Risografie",
-      "promptHint": "Nutze Korntextur, versetzte Farbebenen und Druckimperfektion für einen editoriellen künstlerischen Ton"
+      "promptHint": "Nutze versetzte Farbebenen, Halftone-Korn, Registerversatz und analoge Druckimperfektion als Texturcharakter"
     },
     "style-default-13": {
       "name": "Bauhaus",
-      "promptHint": "Nutze starke Geometrie, Primärfarben-Hierarchie und strenge funktionale Komposition für modernistische Klarheit"
+      "promptHint": "Nutze primäre Geometrie-Primitiven, disziplinierte Proportionen, starke Typohierarchie und funktionsorientierte Balance"
     },
     "style-default-14": {
       "name": "Low Poly",
-      "promptHint": "Nutze facettierte Polygonflächen, vereinfachte Formen und präzise Beleuchtung für moderne abstrakte Visuals"
+      "promptHint": "Nutze facettierte Polygonflächen, kantige Schattierungswechsel, vereinfachtes Volumen und klare triangulierte Struktur"
     },
     "style-default-15": {
       "name": "Aquarell",
-      "promptHint": "Nutze weiche Pigmentverläufe, sanfte Übergänge und organische Kanten für warme menschliche Erzählung"
+      "promptHint": "Nutze weiche Pigmentdiffusion, transparente Layer, unregelmäßige Kanten und sanfte Tonmischung mit organischem Fluss"
     },
     "style-default-16": {
       "name": "Ölmalerei",
-      "promptHint": "Nutze reiche Pinseltextur, geschichtete Pigmente und klassische Farbbalance für einen zeitlosen ernsten Ton"
+      "promptHint": "Nutze reichhaltige Pinseltextur, geschichtete Pigmenttiefe, leichte Impasto-Anmutung und klassisches Licht-Volumen-Modell"
     },
     "style-default-17": {
       "name": "Ukiyo-e",
-      "promptHint": "Nutze flächige Ebenen, stilisierte Konturen und traditionelle japanische Balance für kulturell feine Storys"
+      "promptHint": "Nutze flache Farbflächen, stilisierte Konturlinien, dekorativen Pattern-Rhythmus und holzschnittnahe Kompositionsbalance"
     },
     "style-default-18": {
       "name": "Pop Art",
-      "promptHint": "Nutze gesättigten Kontrast, Comic-Formen und starke Wiederholung für aufmerksamkeitsstarke Folien"
+      "promptHint": "Nutze gesättigten Kontrast, kräftige Outlines, grafische Wiederholung und Comic-Halftone-Energie mit direktem Impact"
     },
     "style-default-19": {
       "name": "Papierausschnitt",
-      "promptHint": "Nutze geschichtete Papier-Tiefe, weiche Schatten und handgemachte Silhouetten für taktile freundliche Visuals"
+      "promptHint": "Nutze gestapelte Papierlagen, weiche Schlagschatten, ausgeschnittene Silhouetten und taktile Tiefe durch Ebenenschichtung"
     },
     "style-default-20": {
       "name": "Kohlezeichnung",
-      "promptHint": "Nutze raue Kohlestriche, tonale Schattierung und konzeptionelle Komposition für ideationsgetriebene Storys"
+      "promptHint": "Nutze expressive Kohlestriche, tonales Verwischen, raue Kanten und konzeptionelle Skizzenkomposition"
     }
   },
   "categoryTemplates": {

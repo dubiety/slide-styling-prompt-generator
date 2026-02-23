@@ -106,83 +106,83 @@
   "stylePresets": {
     "style-default-1": {
       "name": "Fotorrealista",
-      "promptHint": "Usa iluminación realista, materiales precisos y texturas de alto detalle para visuales de nivel premium"
+      "promptHint": "Usa iluminación realista, materiales físicamente coherentes, texturas precisas y profundidad natural con mínima estilización"
     },
     "style-default-2": {
       "name": "Iluminación cinematográfica",
-      "promptHint": "Usa luz principal dramática, sombras ricas y contraste cinematográfico para crear tensión narrativa y profundidad"
+      "promptHint": "Usa luz clave direccional, contraste profundo de sombras, capas atmosféricas y encuadre dramático para tensión cinematográfica"
     },
     "style-default-3": {
       "name": "Minimalista",
-      "promptHint": "Usa amplio espacio en blanco, color contenido y composición simple para enfatizar un solo mensaje clave"
+      "promptHint": "Prioriza espacio en blanco, reducción estricta de elementos, alineación limpia y acentos contenidos para jerarquía visual clara"
     },
     "style-default-4": {
       "name": "Diseño plano",
-      "promptHint": "Usa formas 2D limpias, iconografía clara y espaciado equilibrado para diapositivas modernas y legibles"
+      "promptHint": "Usa geometría 2D nítida, rellenos sólidos, formas de icono claras y alta legibilidad sin ruido visual"
     },
     "style-default-5": {
       "name": "Isométrico",
-      "promptHint": "Usa perspectiva isométrica 2.5D con geometría clara para narrar sistemas, arquitectura y procesos"
+      "promptHint": "Construye visuales con perspectiva isométrica consistente, bloques modulares, claves de profundidad y estructura espacial ordenada"
     },
     "style-default-6": {
       "name": "Render 3D / Estilo C4D",
-      "promptHint": "Usa formas 3D pulidas, reflejos suaves y profundidad controlada para un estilo tecnológico futurista"
+      "promptHint": "Usa formas 3D pulidas, reflejos suaves, iluminación global difusa y composición con profundidad para acabado tecnológico moderno"
     },
     "style-default-7": {
       "name": "Diseño Memphis",
-      "promptHint": "Usa acentos geométricos lúdicos, bloques de color fuertes y ritmo visual energético para narrativa creativa"
+      "promptHint": "Usa motivos geométricos audaces, ritmo asimétrico, capas de patrón dinámicas y acentos de alto contraste con equilibrio"
     },
     "style-default-8": {
       "name": "Cyberpunk",
-      "promptHint": "Usa acentos neón, atmósfera oscura y tono urbano tecnológico para historias de producto orientadas al futuro"
+      "promptHint": "Usa acentos neón de alto contraste, capas atmosféricas oscuras, superficies reflectantes y detalle futurista denso"
     },
     "style-default-9": {
       "name": "Arte lineal",
-      "promptHint": "Usa trazos monolineales precisos y relleno mínimo para mantener diagramas y conceptos claros y legibles"
+      "promptHint": "Usa jerarquía precisa de líneas, contornos simplificados, relleno limitado y lógica de trazo consistente para claridad estructural"
     },
     "style-default-10": {
       "name": "Synthwave",
-      "promptHint": "Usa degradados retrofuturistas, motivos de cuadrícula y brillo púrpura-azul para energía digital nostálgica"
+      "promptHint": "Usa degradados retrofuturistas, cuadrículas geométricas, brillo analógico y profundidad de horizonte con estética digital nostálgica"
     },
     "style-default-11": {
       "name": "Pixel art",
-      "promptHint": "Usa bordes de píxel intencionales, encanto de baja resolución y estética retro lúdica para visuales cercanos"
+      "promptHint": "Usa geometría de píxel intencional, bordes de baja resolución, bloques de paleta limitada y composición anclada a cuadrícula"
     },
     "style-default-12": {
       "name": "Risografía",
-      "promptHint": "Usa textura granulada, capas de color desfasadas e imperfección de impresión para un tono editorial artístico"
+      "promptHint": "Usa capas de color desfasadas, grano de semitono, textura de desregistro e imperfección de impresión analógica"
     },
     "style-default-13": {
       "name": "Bauhaus",
-      "promptHint": "Usa geometría fuerte, jerarquía de colores primarios y composición funcional estricta para claridad modernista"
+      "promptHint": "Usa primitivas geométricas primarias, proporción disciplinada, jerarquía tipográfica fuerte y equilibrio visual funcional"
     },
     "style-default-14": {
       "name": "Low Poly",
-      "promptHint": "Usa superficies poligonales facetadas, formas simplificadas e iluminación nítida para visuales abstractos modernos"
+      "promptHint": "Usa planos poligonales facetados, transiciones angulares de sombreado, volumen simplificado y estructura triangulada limpia"
     },
     "style-default-15": {
       "name": "Acuarela",
-      "promptHint": "Usa difusión suave de pigmento, degradados ligeros y bordes orgánicos para narrativa cálida y humana"
+      "promptHint": "Usa difusión suave de pigmento, capas transparentes, bordes irregulares y mezcla tonal delicada con flujo orgánico"
     },
     "style-default-16": {
       "name": "Pintura al óleo",
-      "promptHint": "Usa textura de pincel rica, capas de pigmento y balance clásico de color para un tono serio y atemporal"
+      "promptHint": "Usa textura de pincel rica, profundidad de pigmento por capas, sensación leve de empaste y modelado clásico de luz y volumen"
     },
     "style-default-17": {
       "name": "Ukiyo-e",
-      "promptHint": "Usa planos planos, contornos estilizados y equilibrio japonés tradicional para narrativa cultural refinada"
+      "promptHint": "Usa planos de color planos, contornos estilizados, ritmo de patrones decorativos y equilibrio compositivo inspirado en grabado"
     },
     "style-default-18": {
       "name": "Pop Art",
-      "promptHint": "Usa contraste saturado, formas de cómic y repetición audaz para diapositivas de alto impacto"
+      "promptHint": "Usa contraste saturado, contornos gruesos, repetición gráfica y energía de semitono tipo cómic con impacto visual directo"
     },
     "style-default-19": {
       "name": "Recorte de papel",
-      "promptHint": "Usa profundidad por capas de papel, sombras suaves y siluetas artesanales para visuales táctiles y amigables"
+      "promptHint": "Usa capas tipo papel apiladas, sombras suaves proyectadas, siluetas recortadas y profundidad táctil por planos superpuestos"
     },
     "style-default-20": {
       "name": "Boceto a carboncillo",
-      "promptHint": "Usa trazos de carboncillo ásperos, sombreado tonal y composición conceptual para narrativa centrada en ideación"
+      "promptHint": "Usa trazos expresivos de carboncillo, difuminado tonal, bordes ásperos y composición conceptual de boceto"
     }
   },
   "categoryTemplates": {

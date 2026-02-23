@@ -106,83 +106,83 @@
   "stylePresets": {
     "style-default-1": {
       "name": "Photorealiste",
-      "promptHint": "Utilisez un éclairage réaliste, des matériaux précis et des textures très détaillées pour des visuels premium"
+      "promptHint": "Utilisez une lumière réaliste, des matériaux physiquement plausibles, des textures précises et une profondeur naturelle avec peu de stylisation"
     },
     "style-default-2": {
       "name": "Éclairage cinématographique",
-      "promptHint": "Utilisez une lumière principale dramatique, des ombres riches et un contraste cinématographique pour créer tension et profondeur"
+      "promptHint": "Utilisez une key light directionnelle, un contraste d’ombres profond, des couches atmosphériques et un cadrage dramatique pour une tension cinématographique"
     },
     "style-default-3": {
       "name": "Minimaliste",
-      "promptHint": "Utilisez un grand espace blanc, des couleurs limitées et une composition simple pour mettre en avant un message clé"
+      "promptHint": "Privilégiez les grands blancs, la réduction stricte des éléments, l’alignement net et des accents retenus pour une hiérarchie visuelle claire"
     },
     "style-default-4": {
       "name": "Design plat",
-      "promptHint": "Utilisez des formes 2D nettes, une iconographie claire et un espacement équilibré pour des slides modernes lisibles"
+      "promptHint": "Utilisez une géométrie 2D nette, des aplats francs, des formes d’icônes lisibles et une forte clarté sans bruit visuel"
     },
     "style-default-5": {
       "name": "Isométrique",
-      "promptHint": "Utilisez une perspective isométrique 2.5D avec une géométrie claire pour raconter systèmes, architecture et processus"
+      "promptHint": "Construisez des visuels en perspective isométrique cohérente avec blocs modulaires, repères de profondeur et structure spatiale ordonnée"
     },
     "style-default-6": {
       "name": "Rendu 3D / Style C4D",
-      "promptHint": "Utilisez des formes 3D polies, des reflets doux et une profondeur maîtrisée pour un rendu technologique futuriste"
+      "promptHint": "Utilisez des formes 3D polies, des reflets doux, une illumination globale souple et une composition profonde au rendu technologique moderne"
     },
     "style-default-7": {
       "name": "Design Memphis",
-      "promptHint": "Utilisez des accents géométriques ludiques, des blocs de couleurs forts et un rythme visuel énergique pour une narration créative"
+      "promptHint": "Utilisez des motifs géométriques audacieux, un rythme asymétrique, des couches de motifs dynamiques et des accents contrastés équilibrés"
     },
     "style-default-8": {
       "name": "Cyberpunk",
-      "promptHint": "Utilisez des accents néon, une ambiance sombre et un ton urbain high-tech pour des récits produit orientés futur"
+      "promptHint": "Utilisez des accents néon à fort contraste, des couches atmosphériques sombres, des surfaces réfléchissantes et une densité de détails futuristes"
     },
     "style-default-9": {
       "name": "Line Art",
-      "promptHint": "Utilisez des traits monolignes précis et un remplissage minimal pour garder diagrammes et concepts clairs et lisibles"
+      "promptHint": "Utilisez une hiérarchie de lignes précise, des contours simplifiés, des aplats limités et une logique de trait cohérente pour une clarté structurelle"
     },
     "style-default-10": {
       "name": "Synthwave",
-      "promptHint": "Utilisez des dégradés rétrofuturistes, des motifs de grille et des lueurs violet-bleu pour une énergie numérique nostalgique"
+      "promptHint": "Utilisez des dégradés rétrofuturistes, des grilles géométriques, une lueur analogique et une profondeur guidée par l’horizon à l’esthétique numérique nostalgique"
     },
     "style-default-11": {
       "name": "Pixel Art",
-      "promptHint": "Utilisez des contours pixelisés assumés, un charme basse résolution et une esthétique rétro ludique pour des visuels accessibles"
+      "promptHint": "Utilisez une géométrie pixel volontaire, des bords basse résolution, des blocs de palette limitée et une composition ancrée sur grille"
     },
     "style-default-12": {
       "name": "Risographie",
-      "promptHint": "Utilisez une texture granuleuse, des couches de couleur décalées et des imperfections d’impression pour un ton éditorial artistique"
+      "promptHint": "Utilisez des couches colorées décalées, un grain tramé, des effets de repérage imparfait et une texture d’impression analogique"
     },
     "style-default-13": {
       "name": "Bauhaus",
-      "promptHint": "Utilisez une géométrie forte, une hiérarchie de couleurs primaires et une composition fonctionnelle stricte pour une clarté moderniste"
+      "promptHint": "Utilisez des primitives géométriques primaires, des proportions rigoureuses, une forte hiérarchie typographique et un équilibre fonctionnel"
     },
     "style-default-14": {
       "name": "Low Poly",
-      "promptHint": "Utilisez des surfaces polygonales facettées, des formes simplifiées et un éclairage net pour des visuels abstraits modernes"
+      "promptHint": "Utilisez des plans polygonaux facettés, des transitions d’ombre anguleuses, des volumes simplifiés et une structure triangulée propre"
     },
     "style-default-15": {
       "name": "Aquarelle",
-      "promptHint": "Utilisez une diffusion douce des pigments, des dégradés délicats et des bords organiques pour une narration chaleureuse et humaine"
+      "promptHint": "Utilisez une diffusion pigmentaire douce, des couches transparentes, des bords irréguliers et un fondu tonal délicat au flux organique"
     },
     "style-default-16": {
       "name": "Peinture à l’huile",
-      "promptHint": "Utilisez une texture de pinceau riche, des couches de pigments et un équilibre chromatique classique pour une ambiance sérieuse intemporelle"
+      "promptHint": "Utilisez une texture de pinceau riche, une profondeur pigmentaire en couches, une légère sensation d’impasto et un modelé classique lumière-volume"
     },
     "style-default-17": {
       "name": "Ukiyo-e",
-      "promptHint": "Utilisez des aplats, des contours stylisés et un équilibre japonais traditionnel pour une narration culturelle raffinée"
+      "promptHint": "Utilisez des aplats, des contours stylisés, un rythme décoratif répétitif et un équilibre de composition inspiré de la gravure"
     },
     "style-default-18": {
       "name": "Pop Art",
-      "promptHint": "Utilisez un contraste saturé, des formes inspirées de la BD et une répétition audacieuse pour des slides à fort impact"
+      "promptHint": "Utilisez un contraste saturé, des contours épais, une répétition graphique et une énergie de trame type BD à fort impact visuel"
     },
     "style-default-19": {
       "name": "Découpage papier",
-      "promptHint": "Utilisez des couches papier en profondeur, des ombres douces et des silhouettes artisanales pour des visuels tactiles et chaleureux"
+      "promptHint": "Utilisez des couches façon papier superposé, des ombres portées douces, des silhouettes découpées et une profondeur tactile par plans empilés"
     },
     "style-default-20": {
       "name": "Esquisse au fusain",
-      "promptHint": "Utilisez des traits de fusain bruts, un modelé tonal et une composition conceptuelle pour une narration orientée idéation"
+      "promptHint": "Utilisez des traits de fusain expressifs, un estompage tonal, des bords rugueux et une composition conceptuelle de type esquisse"
     }
   },
   "categoryTemplates": {

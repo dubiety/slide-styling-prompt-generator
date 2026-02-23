@@ -245,83 +245,83 @@
   "styles": [
     {
       "name": "Photorealistic",
-      "promptHint": "Use realistic lighting, precise materials, and high-detail textures for premium product-grade visuals"
+      "promptHint": "Use lifelike lighting, physically plausible materials, realistic textures, and natural depth with minimal stylization"
     },
     {
       "name": "Cinematic Lighting",
-      "promptHint": "Use dramatic key light, rich shadows, and film-like contrast to create narrative tension and depth"
+      "promptHint": "Use directional key lighting, deep shadow contrast, atmospheric haze, and dramatic framing for film-like visual tension"
     },
     {
       "name": "Minimalist",
-      "promptHint": "Use large whitespace, restrained color usage, and simple composition to emphasize one core message"
+      "promptHint": "Prioritize whitespace, strict element reduction, clean alignment, and restrained accents to keep hierarchy crisp and uncluttered"
     },
     {
       "name": "Flat Design",
-      "promptHint": "Use clean 2D shapes, clear iconography, and balanced spacing for modern and readable slides"
+      "promptHint": "Use crisp 2D geometry, solid fills, clear icon forms, and high legibility without heavy gradients or texture noise"
     },
     {
       "name": "Isometric",
-      "promptHint": "Use isometric 2.5D perspective with clear geometry for systems, architecture, and process storytelling"
+      "promptHint": "Construct visuals in consistent isometric perspective with modular blocks, clear depth cues, and orderly spatial structure"
     },
     {
       "name": "3D Render / C4D Style",
-      "promptHint": "Use polished 3D forms, soft reflections, and controlled depth for a futuristic tech presentation look"
+      "promptHint": "Use polished 3D forms, smooth reflections, soft global illumination, and depth-rich composition with a modern tech finish"
     },
     {
       "name": "Memphis Design",
-      "promptHint": "Use playful geometric accents, bold color blocking, and energetic layout rhythm for creative storytelling"
+      "promptHint": "Use bold geometric motifs, asymmetrical rhythm, playful pattern layering, and high-contrast accents with controlled balance"
     },
     {
       "name": "Cyberpunk",
-      "promptHint": "Use neon highlights, dark atmosphere, and high-tech urban mood for future-focused product narratives"
+      "promptHint": "Use high-contrast neon accents, dark atmospheric layers, reflective surfaces, and dense futuristic visual detail"
     },
     {
       "name": "Line Art",
-      "promptHint": "Use precise monoline strokes and minimal fill to keep diagrams, flows, and concepts clean and legible"
+      "promptHint": "Use precise line hierarchy, simplified contours, limited fills, and consistent stroke logic for clean structural clarity"
     },
     {
       "name": "Synthwave",
-      "promptHint": "Use retro-futuristic gradients, grid motifs, and purple-blue glow to evoke nostalgic digital energy"
+      "promptHint": "Use retro-futuristic gradients, geometric grids, analog glow, and horizon-driven depth with nostalgic digital aesthetics"
     },
     {
       "name": "Pixel Art",
-      "promptHint": "Use deliberate pixel edges, low-resolution charm, and playful retro game aesthetics for approachable visuals"
+      "promptHint": "Use intentional pixel geometry, low-resolution edge treatment, limited palette blocks, and grid-locked composition"
     },
     {
       "name": "Risograph",
-      "promptHint": "Use grain texture, offset color layers, and print-like imperfection for editorial and artistic presentation tone"
+      "promptHint": "Use offset color layers, halftone grain, print misregistration texture, and limited-ink contrast for analog print character"
     },
     {
       "name": "Bauhaus",
-      "promptHint": "Use strong geometry, primary color hierarchy, and strict functional composition for modernist clarity"
+      "promptHint": "Use primary geometric primitives, disciplined proportion, strong typographic hierarchy, and function-first visual balance"
     },
     {
       "name": "Low Poly",
-      "promptHint": "Use faceted polygon surfaces, simplified forms, and crisp lighting for abstract modern visuals"
+      "promptHint": "Use faceted polygon planes, angular shading transitions, simplified volume, and clean triangulated structure"
     },
     {
       "name": "Watercolor",
-      "promptHint": "Use soft pigment diffusion, gentle gradients, and organic edges for warm and human storytelling"
+      "promptHint": "Use soft pigment diffusion, transparent layering, irregular edges, and gentle tonal blending with organic flow"
     },
     {
       "name": "Oil Painting",
-      "promptHint": "Use rich brush texture, layered pigment depth, and classical color balance for serious timeless mood"
+      "promptHint": "Use rich brushstroke texture, layered pigment depth, subtle impasto feel, and classical light-volume modeling"
     },
     {
       "name": "Ukiyo-e",
-      "promptHint": "Use flat planes, stylized contour lines, and traditional Japanese balance for refined cultural storytelling"
+      "promptHint": "Use flat color planes, stylized contour lines, decorative pattern rhythm, and woodblock-inspired compositional balance"
     },
     {
       "name": "Pop Art",
-      "promptHint": "Use saturated contrast, comic-inspired shapes, and bold repetition for high-impact attention-grabbing slides"
+      "promptHint": "Use saturated contrast, bold outlines, graphic repetition, and comic halftone energy with punchy visual impact"
     },
     {
       "name": "Paper Cutout",
-      "promptHint": "Use layered paper depth, soft shadows, and handcrafted silhouettes for tactile friendly visuals"
+      "promptHint": "Use stacked paper-like layers, soft cast shadows, cut-edge silhouettes, and tactile depth through layered planes"
     },
     {
       "name": "Charcoal Sketch",
-      "promptHint": "Use rough charcoal strokes, tonal shading, and conceptual composition for ideation-first storytelling"
+      "promptHint": "Use expressive charcoal strokes, tonal smudging, rough edge definition, and draft-like conceptual composition"
     }
   ],
   "categories": [

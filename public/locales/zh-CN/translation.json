@@ -106,83 +106,83 @@
   "stylePresets": {
     "style-default-1": {
       "name": "写实摄影",
-      "promptHint": "极高细节，适合产品展示或情境模拟"
+      "promptHint": "使用写实光线、真实材质与高细节纹理，呈现接近实拍的质感与深度"
     },
     "style-default-2": {
       "name": "电影感",
-      "promptHint": "强调光影与张力，营造叙事感与高质感"
+      "promptHint": "使用方向性主光、深阴影对比与空气感层次，建立电影感张力"
     },
     "style-default-3": {
       "name": "极简主义",
-      "promptHint": "留白多、颜色单纯，适合强调核心概念"
+      "promptHint": "以大面积留白、极简元素与克制配色，让信息层级清晰且干净"
     },
     "style-default-4": {
       "name": "扁平化设计",
-      "promptHint": "二维设计，简约且易辨识，是现代幻灯片常用风格"
+      "promptHint": "使用利落 2D 几何、纯色区块与清晰图示，避免复杂纹理与厚重特效"
     },
     "style-default-5": {
       "name": "等距视角",
-      "promptHint": "2.5D 视角，常用于呈现数据中心、办公室或架构图"
+      "promptHint": "使用一致的等距透视与模块化结构，让空间与流程关系一目了然"
     },
     "style-default-6": {
       "name": "3D 渲染 / C4D 风格",
-      "promptHint": "立体感强，带现代科技感，常搭配 Octane Render"
+      "promptHint": "使用抛光 3D 造型、柔和反射与全局光照，呈现现代科技感深度"
     },
     "style-default-7": {
       "name": "孟菲斯风格",
-      "promptHint": "活泼几何形状与鲜艳色彩，适合创意型提案"
+      "promptHint": "使用大胆几何图形、不对称节奏与高对比点缀，营造活泼且有秩序的视觉"
     },
     "style-default-8": {
       "name": "赛博朋克",
-      "promptHint": "霓虹灯、高科技感，适合强调未来科技或软件开发"
+      "promptHint": "使用高对比霓虹点光、暗色氛围与反射材质，建立浓厚未来都市感"
     },
     "style-default-9": {
       "name": "线条艺术",
-      "promptHint": "由简洁线条构成，适合流程图背景或图示化设计"
+      "promptHint": "使用线条层级、简化轮廓与一致笔触逻辑，强化结构与可读性"
     },
     "style-default-10": {
       "name": "合成器波",
-      "promptHint": "复古未来感，强烈的紫色与蓝色调"
+      "promptHint": "使用复古未来渐层、几何网格与类比发光质感，呈现怀旧数字氛围"
     },
     "style-default-11": {
       "name": "像素艺术",
-      "promptHint": "怀旧游戏感，适合有趣的复古项目说明"
+      "promptHint": "使用像素网格、低分辨率边缘与有限色块，维持明确的像素化视觉语法"
     },
     "style-default-12": {
       "name": "孔版印刷风",
-      "promptHint": "带有颗粒感与重叠印刷感，深具文艺与设计感"
+      "promptHint": "使用错位套色、网点颗粒与印刷偏移质感，呈现类比印刷语言"
     },
     "style-default-13": {
       "name": "包豪斯风格",
-      "promptHint": "强调几何形状、原色与功能的平衡，非常具现代感"
+      "promptHint": "使用基础几何、严谨比例与强层级排版，保持功能导向的现代秩序"
     },
     "style-default-14": {
       "name": "低多边形",
-      "promptHint": "几何切面构成，具备现代抽象感"
+      "promptHint": "使用多边形切面、棱角明暗转折与简化体积，建立利落抽象结构"
     },
     "style-default-15": {
       "name": "水彩画",
-      "promptHint": "渲染感强，适合温暖、具人文关怀的幻灯片"
+      "promptHint": "使用水彩晕染、透明叠色与自然边缘，形成柔和且流动的笔触感"
     },
     "style-default-16": {
       "name": "油画",
-      "promptHint": "质地厚重，适合经典、严肃或具历史感的内容"
+      "promptHint": "使用厚涂笔触、颜料堆叠深度与古典光影，展现厚实绘画质感"
     },
     "style-default-17": {
       "name": "浮世绘",
-      "promptHint": "日系传统美学，适合文化、美学或特定市场讨论"
+      "promptHint": "使用平涂色面、装饰性轮廓与木版画式构图节奏，呈现传统日系美感"
     },
     "style-default-18": {
       "name": "波普艺术",
-      "promptHint": "高饱和、漫画感，适合强烈主张或广告类幻灯片"
+      "promptHint": "使用高饱和对比、粗描边与重复图形节奏，打造强烈图像冲击"
     },
     "style-default-19": {
       "name": "剪纸风格",
-      "promptHint": "具备物理层次感，画面温馨且富有立体视觉效果"
+      "promptHint": "使用层叠纸片平面、柔和投影与裁切轮廓，呈现可触感的立体层次"
     },
     "style-default-20": {
       "name": "木炭素描",
-      "promptHint": "粗犷且具思考感，适合强调概念原型"
+      "promptHint": "使用粗犷炭笔线条、涂抹明暗与草稿式轮廓，保留概念探索感"
     }
   },
   "categoryTemplates": {
