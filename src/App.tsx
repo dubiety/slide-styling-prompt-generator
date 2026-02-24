@@ -1372,8 +1372,26 @@ function App() {
             </div>
           </section>
         )}
-        <footer className="pt-1 text-center text-[11px] text-slate-400 dark:text-slate-500">
-          {SETTINGS_VERSION}
+        <footer className="grid w-full gap-2 pt-1 text-[11px] text-slate-400 dark:text-slate-500 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
+          <span className="justify-self-center sm:col-start-2">{SETTINGS_VERSION}</span>
+          <span className="inline-flex flex-wrap items-center justify-end gap-3 text-right sm:col-start-3 sm:justify-self-end">
+            <a
+              href="https://github.com/dubiety/slide-styling-prompt-generator/issues"
+              target="_blank"
+              rel="noreferrer"
+              className="underline-offset-2 hover:underline"
+            >
+              provide feedback
+            </a>
+            <a
+              href="https://github.com/dubiety/slide-styling-prompt-generator"
+              target="_blank"
+              rel="noreferrer"
+              className="underline-offset-2 hover:underline"
+            >
+              Copyright © dubiety
+            </a>
+          </span>
         </footer>
       </div>
     </main>
