@@ -1,7 +1,7 @@
 import type { UILanguage } from '../types';
 
 export const supportedLanguages: UILanguage[] = ['en', 'zh-TW', 'zh-CN', 'ja', 'ko', 'es', 'de', 'fr', 'ru'];
-export const defaultLanguage: UILanguage = 'zh-TW';
+export const defaultLanguage: UILanguage = 'en';
 export const languageStorageKey = 'ui-language';
 
 export function isSupportedLanguage(value: string): value is UILanguage {

@@ -2,7 +2,7 @@
   "appTitle": "スライドスタイル指示文生成ツール",
   "appSubtitle": "スライドのスタイルとテーマをすばやく整え、明確で構造化されたスライド用プロンプトを作成します",
   "navbarLabel": "グローバル操作",
-  "interfaceLanguage": "表示言語",
+  "interfaceLanguage": "言語",
   "colorModeLabel": "テーマモード",
   "lightMode": "ライト",
   "darkMode": "ダーク",

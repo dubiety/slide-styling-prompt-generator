@@ -8,6 +8,7 @@ import {
   Copy,
   Download,
   Layers,
+  Languages,
   Moon,
   Palette as PaletteIcon,
   Plus,
@@ -844,7 +845,9 @@ function App() {
 
             <div className="flex flex-col gap-2 xl:items-end">
               <div className="flex flex-wrap gap-2">
-                <label className="rounded-full border border-white/70 bg-white/70 px-3 py-1 text-xs font-medium text-slate-600 backdrop-blur-md dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-200">
+                <label className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/70 px-3 py-1 text-xs font-medium text-slate-600 backdrop-blur-md dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-200">
+                  <Languages className="h-3.5 w-3.5" />
+                  <span>{t('interfaceLanguage')}</span>
                   <select
                     name="language"
                     value={activeLanguage}
