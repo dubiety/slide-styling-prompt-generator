@@ -881,7 +881,7 @@ function App() {
                 </button>
               </div>
 
-              <div className="inline-flex rounded-full border border-white/70 bg-white/70 p-1 backdrop-blur-md dark:border-slate-700 dark:bg-slate-800/70">
+              <div className="inline-flex w-fit rounded-full border border-white/70 bg-white/70 p-1 backdrop-blur-md dark:border-slate-700 dark:bg-slate-800/70">
                 <button
                   type="button"
                   onClick={() => setActiveTab('generator')}
