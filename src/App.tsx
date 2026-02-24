@@ -843,8 +843,8 @@ function App() {
               <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">{t('appSubtitle')}</p>
             </div>
 
-            <div className="flex flex-col gap-2 xl:items-end">
-              <div className="flex flex-wrap gap-2">
+            <div className="flex flex-col items-end gap-2">
+              <div className="flex w-full flex-wrap justify-end gap-2">
                 <label className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/70 px-3 py-1 text-xs font-medium text-slate-600 backdrop-blur-md dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-200">
                   <Languages className="h-3.5 w-3.5" />
                   <span>{t('interfaceLanguage')}</span>
