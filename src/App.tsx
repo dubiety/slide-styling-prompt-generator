@@ -27,7 +27,6 @@ import {
   isPromptPreviewCopy,
   makeId,
   SETTINGS_VERSION,
-  SETTINGS_VERSIONS,
   type CategoryTemplate,
   type ColorSet,
   type Palette,
@@ -42,11 +41,32 @@ type TabKey = 'generator' | 'templates';
 const colorModeStorageKey = 'ui-color-mode';
 const recentColorsStorageKey = 'slide-style-prompt-recent-colors';
 const recentColorsLimit = 12;
+const systemSettingsStorageKey = 'slide-style-prompt-system-settings';
+const customPalettesStorageKey = 'slide-style-prompt-custom-palettes';
+const customStylesStorageKey = 'slide-style-prompt-custom-styles';
+const customCategoriesStorageKey = 'slide-style-prompt-custom-categories';
+const customStateStorageKey = 'slide-style-prompt-custom-state';
 
 type LoadedCustomizationState = {
   palettes: Palette[];
   styles: StylePreset[];
   categories: CategoryTemplate[];
+  selectedPaletteId: string;
+  selectedStyleId: string;
+  colors: ColorSet;
+  selections: SelectionMap;
+};
+
+type PersistedSystemSettings = {
+  version: 1;
+  settingsVersion: string;
+  palettes: Palette[];
+  styles: StylePreset[];
+  categories: CategoryTemplate[];
+};
+
+type PersistedCustomState = {
+  version: 1;
   selectedPaletteId: string;
   selectedStyleId: string;
   colors: ColorSet;
@@ -111,6 +131,204 @@ function isColorSet(value: unknown): value is ColorSet {
   );
 }
 
+function cloneColorSet(value: ColorSet): ColorSet {
+  return {
+    ...value,
+    otherColors: value.otherColors ? [...value.otherColors] : undefined
+  };
+}
+
+function isCustomPalette(value: unknown): value is Palette {
+  if (!value || typeof value !== 'object') return false;
+  const typed = value as Record<string, unknown>;
+  return (
+    typeof typed.id === 'string' &&
+    typeof typed.name === 'string' &&
+    typed.isCustom === true &&
+    isColorSet(typed.colors)
+  );
+}
+
+function isCustomStylePreset(value: unknown): value is StylePreset {
+  if (!value || typeof value !== 'object') return false;
+  const typed = value as Record<string, unknown>;
+  return (
+    typeof typed.id === 'string' &&
+    typeof typed.name === 'string' &&
+    typeof typed.promptHint === 'string' &&
+    typed.isCustom === true
+  );
+}
+
+function isCustomCategoryTemplate(value: unknown): value is CategoryTemplate {
+  if (!value || typeof value !== 'object') return false;
+  const typed = value as Record<string, unknown>;
+  return (
+    typeof typed.id === 'string' &&
+    typeof typed.name === 'string' &&
+    typeof typed.multi === 'boolean' &&
+    Array.isArray(typed.options) &&
+    typed.options.every((option) => typeof option === 'string') &&
+    typed.isCustom === true
+  );
+}
+
+function loadCustomPalettes(): Palette[] {
+  if (typeof window === 'undefined') return [];
+  const raw = window.localStorage.getItem(customPalettesStorageKey);
+  if (!raw) return [];
+  try {
+    const parsed = JSON.parse(raw) as unknown;
+    if (!Array.isArray(parsed)) return [];
+    return parsed
+      .filter((item): item is Palette => isCustomPalette(item))
+      .map((item) => ({
+        ...item,
+        colors: cloneColorSet(item.colors)
+      }));
+  } catch {
+    return [];
+  }
+}
+
+function loadCustomStyles(): StylePreset[] {
+  if (typeof window === 'undefined') return [];
+  const raw = window.localStorage.getItem(customStylesStorageKey);
+  if (!raw) return [];
+  try {
+    const parsed = JSON.parse(raw) as unknown;
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter((item): item is StylePreset => isCustomStylePreset(item));
+  } catch {
+    return [];
+  }
+}
+
+function loadCustomCategories(): CategoryTemplate[] {
+  if (typeof window === 'undefined') return [];
+  const raw = window.localStorage.getItem(customCategoriesStorageKey);
+  if (!raw) return [];
+  try {
+    const parsed = JSON.parse(raw) as unknown;
+    if (!Array.isArray(parsed)) return [];
+    return parsed
+      .filter((item): item is CategoryTemplate => isCustomCategoryTemplate(item))
+      .map((item) => ({
+        ...item,
+        options: [...item.options]
+      }));
+  } catch {
+    return [];
+  }
+}
+
+function loadCustomState(): PersistedCustomState | null {
+  if (typeof window === 'undefined') return null;
+  const raw = window.localStorage.getItem(customStateStorageKey);
+  if (!raw) return null;
+  try {
+    const parsed = JSON.parse(raw) as unknown;
+    if (!parsed || typeof parsed !== 'object') return null;
+    const typed = parsed as Record<string, unknown>;
+    if (typed.version !== 1) return null;
+    if (typeof typed.selectedPaletteId !== 'string' || typeof typed.selectedStyleId !== 'string') return null;
+    if (!isColorSet(typed.colors)) return null;
+    if (!typed.selections || typeof typed.selections !== 'object') return null;
+    const selections = typed.selections as Record<string, unknown>;
+    const normalizedSelections = Object.entries(selections).reduce<SelectionMap>((acc, [key, value]) => {
+      if (!Array.isArray(value)) return acc;
+      acc[key] = value.filter((option): option is string => typeof option === 'string');
+      return acc;
+    }, {});
+    return {
+      version: 1,
+      selectedPaletteId: typed.selectedPaletteId,
+      selectedStyleId: typed.selectedStyleId,
+      colors: cloneColorSet(typed.colors),
+      selections: normalizedSelections
+    };
+  } catch {
+    return null;
+  }
+}
+
+function ensureSystemSettingsSnapshot() {
+  if (typeof window === 'undefined') return;
+  const latestSettings: PersistedSystemSettings = {
+    version: 1,
+    settingsVersion: SETTINGS_VERSION,
+    palettes: DEFAULT_PALETTES.map((palette) => ({ ...palette, colors: cloneColorSet(palette.colors) })),
+    styles: DEFAULT_STYLE_PRESETS.map((style) => ({ ...style })),
+    categories: cloneCategories(DEFAULT_CATEGORIES)
+  };
+  const raw = window.localStorage.getItem(systemSettingsStorageKey);
+  if (!raw) {
+    window.localStorage.setItem(systemSettingsStorageKey, JSON.stringify(latestSettings));
+    return;
+  }
+  try {
+    const parsed = JSON.parse(raw) as Partial<PersistedSystemSettings> | null;
+    if (!parsed || parsed.version !== 1 || parsed.settingsVersion !== SETTINGS_VERSION) {
+      window.localStorage.setItem(systemSettingsStorageKey, JSON.stringify(latestSettings));
+    }
+  } catch {
+    window.localStorage.setItem(systemSettingsStorageKey, JSON.stringify(latestSettings));
+  }
+}
+
+function migrateLegacyCustomization() {
+  if (typeof window === 'undefined') return;
+  const hasCustomKeys =
+    window.localStorage.getItem(customPalettesStorageKey) !== null ||
+    window.localStorage.getItem(customStylesStorageKey) !== null ||
+    window.localStorage.getItem(customCategoriesStorageKey) !== null ||
+    window.localStorage.getItem(customStateStorageKey) !== null;
+  if (hasCustomKeys) return;
+
+  const raw = window.localStorage.getItem(CUSTOMIZATION_STORAGE_KEY);
+  if (!raw) return;
+  try {
+    const parsed = JSON.parse(raw) as PersistedCustomization | null;
+    if (!parsed || parsed.version !== 1) return;
+
+    const legacyCustomPalettes = Array.isArray(parsed.customPalettes)
+      ? parsed.customPalettes.filter((item) => isCustomPalette(item)).map((item) => ({
+          ...item,
+          colors: cloneColorSet(item.colors)
+        }))
+      : [];
+    const legacyCustomStyles = Array.isArray(parsed.customStyles)
+      ? parsed.customStyles.filter((item) => isCustomStylePreset(item))
+      : [];
+    const legacyCustomCategories = Array.isArray(parsed.categories)
+      ? parsed.categories
+          .filter((item) => isCustomCategoryTemplate(item))
+          .map((item) => ({ ...item, options: [...item.options] }))
+      : [];
+    const legacyState: PersistedCustomState = {
+      version: 1,
+      selectedPaletteId: parsed.selectedPaletteId,
+      selectedStyleId: parsed.selectedStyleId,
+      colors: isColorSet(parsed.colors) ? cloneColorSet(parsed.colors) : cloneColorSet(DEFAULT_PALETTES[0].colors),
+      selections:
+        parsed.selections && typeof parsed.selections === 'object'
+          ? Object.entries(parsed.selections).reduce<SelectionMap>((acc, [key, value]) => {
+              if (!Array.isArray(value)) return acc;
+              acc[key] = value.filter((option): option is string => typeof option === 'string');
+              return acc;
+            }, {})
+          : {}
+    };
+
+    window.localStorage.setItem(customPalettesStorageKey, JSON.stringify(legacyCustomPalettes));
+    window.localStorage.setItem(customStylesStorageKey, JSON.stringify(legacyCustomStyles));
+    window.localStorage.setItem(customCategoriesStorageKey, JSON.stringify(legacyCustomCategories));
+    window.localStorage.setItem(customStateStorageKey, JSON.stringify(legacyState));
+  } catch {
+    return;
+  }
+}
+
 function loadCustomizationState(): LoadedCustomizationState {
   const defaultCategories = cloneCategories(DEFAULT_CATEGORIES);
   const baseState: LoadedCustomizationState = {
@@ -124,81 +342,38 @@ function loadCustomizationState(): LoadedCustomizationState {
   };
 
   if (typeof window === 'undefined') return baseState;
-  const raw = window.localStorage.getItem(CUSTOMIZATION_STORAGE_KEY);
-  if (!raw) return baseState;
+  ensureSystemSettingsSnapshot();
+  migrateLegacyCustomization();
 
-  try {
-    const parsed = JSON.parse(raw) as PersistedCustomization | null;
-    if (!parsed || parsed.version !== 1) return baseState;
-    const storedSettingVersions = parsed.settingVersions;
-    const paletteVersionMatch =
-      !storedSettingVersions || storedSettingVersions.paletteLibrary === SETTINGS_VERSIONS.paletteLibrary;
-    const styleVersionMatch =
-      !storedSettingVersions || storedSettingVersions.stylePresets === SETTINGS_VERSIONS.stylePresets;
-    const categoryVersionMatch =
-      !storedSettingVersions || storedSettingVersions.categoryTags === SETTINGS_VERSIONS.categoryTags;
+  const customPalettes = loadCustomPalettes();
+  const customStyles = loadCustomStyles();
+  const customCategories = loadCustomCategories();
+  const customState = loadCustomState();
 
-    const customPalettes = paletteVersionMatch && Array.isArray(parsed.customPalettes)
-      ? parsed.customPalettes.filter(
-          (item) =>
-            item &&
-            typeof item.id === 'string' &&
-            typeof item.name === 'string' &&
-            isColorSet(item.colors) &&
-            item.isCustom === true
-        )
-      : [];
+  const palettes = [
+    ...DEFAULT_PALETTES,
+    ...customPalettes.filter((item) => !DEFAULT_PALETTES.some((defaultItem) => defaultItem.id === item.id))
+  ];
+  const styles = [
+    ...DEFAULT_STYLE_PRESETS,
+    ...customStyles.filter((item) => !DEFAULT_STYLE_PRESETS.some((defaultItem) => defaultItem.id === item.id))
+  ];
+  const categories = [
+    ...defaultCategories,
+    ...customCategories.filter((item) => !defaultCategories.some((defaultItem) => defaultItem.id === item.id))
+  ];
 
-    const customStyles = styleVersionMatch && Array.isArray(parsed.customStyles)
-      ? parsed.customStyles.filter(
-          (item) =>
-            item &&
-            typeof item.id === 'string' &&
-            typeof item.name === 'string' &&
-            typeof item.promptHint === 'string' &&
-            item.isCustom === true
-        )
-      : [];
+  const selectedPaletteId = customState && palettes.some((item) => item.id === customState.selectedPaletteId)
+    ? customState.selectedPaletteId
+    : palettes[0].id;
+  const selectedStyleId = customState && styles.some((item) => item.id === customState.selectedStyleId)
+    ? customState.selectedStyleId
+    : styles[0].id;
+  const selectedPalette = palettes.find((item) => item.id === selectedPaletteId) ?? palettes[0];
+  const colors = customState ? cloneColorSet(customState.colors) : cloneColorSet(selectedPalette.colors);
+  const selections = sanitizeSelections(customState?.selections ?? {}, categories);
 
-    const loadedCustomCategories = categoryVersionMatch && Array.isArray(parsed.categories)
-      ? parsed.categories
-          .filter(
-            (item) =>
-              item &&
-              typeof item.id === 'string' &&
-              typeof item.name === 'string' &&
-              typeof item.multi === 'boolean' &&
-              Array.isArray(item.options) &&
-              item.isCustom === true
-          )
-          .map((item) => ({
-            id: item.id,
-            name: item.name,
-            multi: item.multi,
-            options: item.options.filter((option): option is string => typeof option === 'string'),
-            isCustom: true
-          }))
-      : [];
-
-    const categories = [
-      ...defaultCategories,
-      ...loadedCustomCategories.filter(
-        (customCategory) => !defaultCategories.some((defaultCategory) => defaultCategory.id === customCategory.id)
-      )
-    ];
-    const palettes = [...DEFAULT_PALETTES, ...customPalettes];
-    const styles = [...DEFAULT_STYLE_PRESETS, ...customStyles];
-    const selectedPaletteId = palettes[0].id;
-    const selectedStyleId = styles[0].id;
-    const colors = paletteVersionMatch && isColorSet(parsed.colors)
-      ? parsed.colors
-      : palettes[0].colors;
-    const selections = sanitizeSelections({}, categories);
-
-    return { palettes, styles, categories, selectedPaletteId, selectedStyleId, colors, selections };
-  } catch {
-    return baseState;
-  }
+  return { palettes, styles, categories, selectedPaletteId, selectedStyleId, colors, selections };
 }
 
 function getInitialColorMode(): ColorMode {
@@ -310,18 +485,55 @@ function App() {
   }, [categories]);
 
   useEffect(() => {
-    const payload: PersistedCustomization = {
+    const customPalettes = palettes
+      .filter((item) => item.isCustom)
+      .map((item) => ({ ...item, colors: cloneColorSet(item.colors) }));
+    const customStyles = styles.filter((item) => item.isCustom).map((item) => ({ ...item }));
+    const customCategories = categories
+      .filter((item) => item.isCustom)
+      .map((item) => ({ ...item, options: [...item.options] }));
+    const selectionSnapshot = Object.entries(selections).reduce<SelectionMap>((acc, [key, value]) => {
+      acc[key] = [...value];
+      return acc;
+    }, {});
+
+    const statePayload: PersistedCustomState = {
       version: 1,
-      settingVersions: SETTINGS_VERSIONS,
-      customPalettes: palettes.filter((item) => item.isCustom),
-      customStyles: styles.filter((item) => item.isCustom),
+      selectedPaletteId,
+      selectedStyleId,
+      colors: cloneColorSet(colors),
+      selections: selectionSnapshot
+    };
+    window.localStorage.setItem(customPalettesStorageKey, JSON.stringify(customPalettes));
+    window.localStorage.setItem(customStylesStorageKey, JSON.stringify(customStyles));
+    window.localStorage.setItem(customCategoriesStorageKey, JSON.stringify(customCategories));
+    window.localStorage.setItem(customStateStorageKey, JSON.stringify(statePayload));
+
+    const systemPayload: PersistedSystemSettings = {
+      version: 1,
+      settingsVersion: SETTINGS_VERSION,
+      palettes: DEFAULT_PALETTES.map((item) => ({ ...item, colors: cloneColorSet(item.colors) })),
+      styles: DEFAULT_STYLE_PRESETS.map((item) => ({ ...item })),
+      categories: cloneCategories(DEFAULT_CATEGORIES)
+    };
+    window.localStorage.setItem(systemSettingsStorageKey, JSON.stringify(systemPayload));
+
+    const legacyPayload: PersistedCustomization = {
+      version: 1,
+      settingVersions: {
+        paletteLibrary: SETTINGS_VERSION,
+        stylePresets: SETTINGS_VERSION,
+        categoryTags: SETTINGS_VERSION
+      },
+      customPalettes,
+      customStyles,
       categories: cloneCategories(categories),
       selectedPaletteId,
       selectedStyleId,
-      colors,
-      selections
+      colors: cloneColorSet(colors),
+      selections: selectionSnapshot
     };
-    window.localStorage.setItem(CUSTOMIZATION_STORAGE_KEY, JSON.stringify(payload));
+    window.localStorage.setItem(CUSTOMIZATION_STORAGE_KEY, JSON.stringify(legacyPayload));
   }, [palettes, styles, categories, selectedPaletteId, selectedStyleId, colors, selections]);
 
   const generatedPrompt = useMemo(
@@ -405,6 +617,10 @@ function App() {
     setNewCategoryName('');
     setNewOptionDrafts({});
     setOtherColorInput('');
+    window.localStorage.removeItem(customPalettesStorageKey);
+    window.localStorage.removeItem(customStylesStorageKey);
+    window.localStorage.removeItem(customCategoriesStorageKey);
+    window.localStorage.removeItem(customStateStorageKey);
     window.localStorage.removeItem(CUSTOMIZATION_STORAGE_KEY);
   };
 
