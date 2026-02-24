@@ -25,6 +25,18 @@ A multilingual web app that helps users generate slide-style prompts for LLM too
 - Theme mode (light/dark)
 - Config versioning (`settings_version`) for palette/style/category upgrades
 
+## How To Use it
+
+1. Choose the slide style you want, or add new settings as you wish
+2. Copy and paste the prompt when you want to generate slide deck in NotebookLM
+![img](img/notebooklm.png)
+
+## Notes
+
+- All data are stored in browser, not in any server.
+- No runtime environment variables are required by default
+- Prompt options are automatically upgrade when load to the page
+
 ## Tech Stack
 
 - React + TypeScript + Vite
@@ -58,29 +70,4 @@ npm run build
 npm run test
 npm run test:e2e
 ```
-
-## Configuration Versioning
-
-Default settings are centralized in:
-
-- `src/config/settings-catalog.json`
-
-This file contains:
-
-- `settings_version`
-- default palettes
-- default styles
-- default categories
-
-When you release a settings update (example `v0.0.1` -> `v0.0.2`):
-
-1. Update `settings_version` in `src/config/settings-catalog.json`
-2. Update default data in the same file
-3. Sync translated labels/descriptions in `public/locales/*/translation.json`
-
-## Notes
-
-- All data are stored in browser, not in any server.
-- No runtime environment variables are required by default
-- Prompt options are automatically upgrade when load to the page
 
