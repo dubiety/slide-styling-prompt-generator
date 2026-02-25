@@ -39,11 +39,9 @@ const languageDirectives: Record<UILanguage, string> = {
   'zh-TW': '請以繁體中文撰寫最終的簡報內容。',
   'zh-CN': '请以简体中文撰写最终的演示内容。',
   ja: '最終的スライド内容は日本語で作成してください。',
-  ko: '최종 슬라이드 내용은 한국어로 작성해 주세요.',
   es: 'Escribe el plan final de diapositivas en español.',
   de: 'Schreibe den finalen Foliensatz auf Deutsch.',
-  fr: 'Rédige le plan final des slides en français.',
-  ru: 'Напиши итоговый план слайдов на русском языке.'
+  fr: 'Rédige le plan final des slides en français.'
 };
 
 export function generateSlidePrompt(input: PromptInput): string {

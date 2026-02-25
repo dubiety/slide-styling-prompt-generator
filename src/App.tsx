@@ -37,7 +37,7 @@ import {
 } from './lib/customization';
 
 type ColorMode = 'light' | 'dark';
-type TabKey = 'generator' | 'templates';
+type TabKey = 'generator' | 'templates' | 'guide';
 
 const colorModeStorageKey = 'ui-color-mode';
 const recentColorsStorageKey = 'slide-style-prompt-recent-colors';
@@ -917,6 +917,19 @@ function App() {
                     <span>{t('tabTemplates')}</span>
                   </span>
                 </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('guide')}
+                  aria-label={t('usageGuideButton')}
+                  title={t('usageGuideButton')}
+                  className={`${tabButtonBase} ${
+                    activeTab === 'guide'
+                      ? 'border-transparent bg-gradient-to-r from-indigo-500 via-sky-500 to-fuchsia-500 text-white shadow-md'
+                      : 'border-white/70 bg-white/70 text-slate-600 hover:text-slate-900 dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-300 dark:hover:text-white'
+                  }`}
+                >
+                  <span>{t('usageGuideButton')}</span>
+                </button>
               </div>
             </div>
           </div>
@@ -1245,7 +1258,7 @@ function App() {
               </article>
             </aside>
           </section>
-        ) : (
+        ) : activeTab === 'templates' ? (
           <section className="space-y-4 rounded-3xl border border-white/45 bg-white/55 p-4 shadow-[0_16px_42px_rgba(15,23,42,0.1)] backdrop-blur-xl dark:border-slate-700/70 dark:bg-slate-900/55">
             <p className="rounded-xl border border-amber-200 bg-amber-50/80 px-3 py-2 text-sm font-medium text-amber-800 dark:border-amber-500/40 dark:bg-amber-900/20 dark:text-amber-200">
               {t('customOptionTranslationHint')}
@@ -1369,6 +1382,32 @@ function App() {
                   </button>
                 </div>
               </article>
+            </div>
+          </section>
+        ) : (
+          <section className="space-y-4 rounded-3xl border border-white/45 bg-white/55 p-4 shadow-[0_16px_42px_rgba(15,23,42,0.1)] backdrop-blur-xl dark:border-slate-700/70 dark:bg-slate-900/55">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-300">
+              {t('usageGuideTitle')}
+            </h2>
+            <div className="space-y-3 text-sm text-slate-700 dark:text-slate-200">
+              <p>
+                <span className="mr-1 font-semibold">1.</span>
+                {t('usageGuideStep1')}
+              </p>
+              <p>
+                <span className="mr-1 font-semibold">2.</span>
+                {t('usageGuideStep2')}
+              </p>
+              <div className="flex aspect-[16/9] items-center justify-center rounded-2xl border-2 border-dashed border-slate-300 bg-white/70 text-xs font-medium text-slate-500 dark:border-slate-600 dark:bg-slate-800/70 dark:text-slate-300">
+                {`${t('usageGuideWireframeLabel')} 1`}
+              </div>
+              <p>
+                <span className="mr-1 font-semibold">3.</span>
+                {t('usageGuideStep3')}
+              </p>
+              <div className="flex aspect-[16/9] items-center justify-center rounded-2xl border-2 border-dashed border-slate-300 bg-white/70 text-xs font-medium text-slate-500 dark:border-slate-600 dark:bg-slate-800/70 dark:text-slate-300">
+                {`${t('usageGuideWireframeLabel')} 2`}
+              </div>
             </div>
           </section>
         )}
