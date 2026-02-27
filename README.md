@@ -3,34 +3,37 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Data Version](https://img.shields.io/badge/data--version-v0.0.1-purple)
 
-A multilingual web app that helps users generate slide-style prompts for LLM tools (for example Gemini and NotebookLM).
+A multilingual web app that helps users generate slide-style prompts for NotebookLM or other slide generation agents.
 
 ## Features
 
 - 3-step generation flow:
-  - Slide style
   - Color palette/theme
+  - Slide style
   - Content + category chips
 - Multilingual UI:
-  - English (`/en`)
-  - Traditional Chinese (`/zh-TW`)
-  - Simplified Chinese (`/zh-CN`)
-  - Japanese (`/ja`)
-  - Korean (`/ko`)
-  - Spanish (`/es`)
-  - German (`/de`)
-  - French (`/fr`)
-  - Russian (`/ru`)
-  - Portuguese (`/pt`)
+  - English
+  - Traditional Chinese
+  - Simplified Chinese
+  - Japanese
+  - Korean
+  - Spanish
+  - German
+  - French
+  - Russian
+  - Portuguese
 - Copy and export prompt text
 - Theme mode (light/dark)
-- Config versioning (`settings_version`) for palette/style/category upgrades
+- Default palette, style, and category auto-upgrades
+- Customization of palette, style and category
 
 ## How To Use it
 
 1. Choose the slide style you want, or add new settings as you wish
 2. Copy and paste the prompt when you want to generate slide deck in NotebookLM
-![img](img/notebooklm.png)
+![step2](public/guide-images/en/step2.png)
+3. Or download the prompt and upload to NotebookLM as a source of file
+![step3](public/guide-images/en/step3.png)
 
 ## Notes
 
