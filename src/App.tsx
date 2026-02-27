@@ -478,6 +478,63 @@ function App() {
   }, [colorMode]);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    document.documentElement.lang = activeLanguage;
+    document.title = t('appTitle');
+
+    const description = t('appSubtitle');
+    const head = document.head;
+    let descriptionMeta = head.querySelector<HTMLMetaElement>('meta[name="description"]');
+    if (!descriptionMeta) {
+      descriptionMeta = document.createElement('meta');
+      descriptionMeta.name = 'description';
+      head.append(descriptionMeta);
+    }
+    descriptionMeta.content = description;
+
+    let canonicalLink = head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.rel = 'canonical';
+      head.append(canonicalLink);
+    }
+    canonicalLink.href = `${window.location.origin}/${activeLanguage}`;
+
+    head.querySelectorAll('link[rel="alternate"][data-generated="true"]').forEach((element) => element.remove());
+    supportedLanguages.forEach((language) => {
+      const alternateLink = document.createElement('link');
+      alternateLink.rel = 'alternate';
+      alternateLink.hreflang = language;
+      alternateLink.href = `${window.location.origin}/${language}`;
+      alternateLink.dataset.generated = 'true';
+      head.append(alternateLink);
+    });
+    const xDefaultLink = document.createElement('link');
+    xDefaultLink.rel = 'alternate';
+    xDefaultLink.hreflang = 'x-default';
+    xDefaultLink.href = `${window.location.origin}/${defaultLanguage}`;
+    xDefaultLink.dataset.generated = 'true';
+    head.append(xDefaultLink);
+
+    let schemaScript = document.getElementById('seo-webapp-schema') as HTMLScriptElement | null;
+    if (!schemaScript) {
+      schemaScript = document.createElement('script');
+      schemaScript.id = 'seo-webapp-schema';
+      schemaScript.type = 'application/ld+json';
+      head.append(schemaScript);
+    }
+    schemaScript.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: t('appTitle'),
+      description,
+      applicationCategory: 'ProductivityApplication',
+      inLanguage: supportedLanguages,
+      url: `${window.location.origin}/${activeLanguage}`
+    });
+  }, [activeLanguage, t]);
+
+  useEffect(() => {
     window.localStorage.setItem(recentColorsStorageKey, JSON.stringify(recentColors));
   }, [recentColors]);
 
@@ -829,7 +886,7 @@ function App() {
     'rounded-full border px-3 py-1.5 text-xs font-medium transition duration-200 hover:-translate-y-0.5 hover:scale-[1.02]';
   const iconButtonBase = 'inline-flex h-8 w-8 items-center justify-center rounded-full';
   const tabButtonBase =
-    'inline-flex h-8 items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
+    'inline-flex h-8 min-w-0 items-center justify-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_20%_10%,rgba(99,102,241,0.25),transparent_38%),radial-gradient(circle_at_80%_0%,rgba(236,72,153,0.2),transparent_32%),radial-gradient(circle_at_50%_100%,rgba(14,165,233,0.18),transparent_32%)] bg-slate-100 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
@@ -843,7 +900,7 @@ function App() {
               <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">{t('appSubtitle')}</p>
             </div>
 
-            <div className="flex flex-col items-end gap-2">
+            <div className="flex flex-col items-stretch gap-2 sm:items-end">
               <div className="flex w-full flex-wrap justify-end gap-2">
                 <label className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/70 px-3 py-1 text-xs font-medium text-slate-600 backdrop-blur-md dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-200">
                   <Languages className="h-3.5 w-3.5" />
@@ -884,13 +941,13 @@ function App() {
                 </button>
               </div>
 
-              <div className="inline-flex w-fit rounded-full border border-white/70 bg-white/70 p-1 backdrop-blur-md dark:border-slate-700 dark:bg-slate-800/70">
+              <div className="flex w-full flex-wrap gap-1 rounded-2xl border border-white/70 bg-white/70 p-1 backdrop-blur-md dark:border-slate-700 dark:bg-slate-800/70 sm:w-fit sm:flex-nowrap sm:rounded-full">
                 <button
                   type="button"
                   onClick={() => setActiveTab('generator')}
                   aria-label={t('tabGenerator')}
                   title={t('tabGenerator')}
-                  className={`${tabButtonBase} ${
+                  className={`${tabButtonBase} flex-1 sm:flex-none ${
                     activeTab === 'generator'
                       ? 'border-transparent bg-gradient-to-r from-indigo-500 via-sky-500 to-fuchsia-500 text-white shadow-md'
                       : 'border-white/70 bg-white/70 text-slate-600 hover:text-slate-900 dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-300 dark:hover:text-white'
@@ -898,7 +955,7 @@ function App() {
                 >
                   <span className="inline-flex items-center gap-2">
                     <PaletteIcon className="h-4 w-4" />
-                    <span>{t('tabGenerator')}</span>
+                    <span className="truncate">{t('tabGenerator')}</span>
                   </span>
                 </button>
                 <button
@@ -906,7 +963,7 @@ function App() {
                   onClick={() => setActiveTab('templates')}
                   aria-label={t('tabTemplates')}
                   title={t('tabTemplates')}
-                  className={`${tabButtonBase} ${
+                  className={`${tabButtonBase} flex-1 sm:flex-none ${
                     activeTab === 'templates'
                       ? 'border-transparent bg-gradient-to-r from-indigo-500 via-sky-500 to-fuchsia-500 text-white shadow-md'
                       : 'border-white/70 bg-white/70 text-slate-600 hover:text-slate-900 dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-300 dark:hover:text-white'
@@ -914,7 +971,7 @@ function App() {
                 >
                   <span className="inline-flex items-center gap-2">
                     <BookTemplate className="h-4 w-4" />
-                    <span>{t('tabTemplates')}</span>
+                    <span className="truncate">{t('tabTemplates')}</span>
                   </span>
                 </button>
                 <button
@@ -922,13 +979,13 @@ function App() {
                   onClick={() => setActiveTab('guide')}
                   aria-label={t('usageGuideButton')}
                   title={t('usageGuideButton')}
-                  className={`${tabButtonBase} ${
+                  className={`${tabButtonBase} flex-1 sm:flex-none ${
                     activeTab === 'guide'
                       ? 'border-transparent bg-gradient-to-r from-indigo-500 via-sky-500 to-fuchsia-500 text-white shadow-md'
                       : 'border-white/70 bg-white/70 text-slate-600 hover:text-slate-900 dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-300 dark:hover:text-white'
                   }`}
                 >
-                  <span>{t('usageGuideButton')}</span>
+                  <span className="truncate">{t('usageGuideButton')}</span>
                 </button>
               </div>
             </div>
@@ -944,7 +1001,10 @@ function App() {
                 </h3>
                 <div className="grid gap-2 sm:grid-cols-2">
                   {(['background', 'text', 'title', 'highlight'] as const).map((key) => (
-                    <div key={key} className="flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-2 dark:border-slate-700 dark:bg-slate-800/80">
+                    <div
+                      key={key}
+                      className="flex min-w-0 items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-2 dark:border-slate-700 dark:bg-slate-800/80"
+                    >
                       <input
                         type="color"
                         aria-label={t(`colorKeys.${key}`)}
@@ -961,7 +1021,7 @@ function App() {
                         }}
                         className="h-8 w-8 border-0 bg-transparent p-0"
                       />
-                      <span className="text-xs font-medium text-slate-600 dark:text-slate-300">
+                      <span className="min-w-0 break-all text-xs font-medium text-slate-600 dark:text-slate-300">
                         {`${t(`colorKeys.${key}`)} ${colors[key].toUpperCase()}`}
                       </span>
                     </div>
@@ -1027,7 +1087,7 @@ function App() {
                       onChange={(event) => setOtherColorInput(event.target.value)}
                       onKeyDown={onOtherColorInputKeyDown}
                       placeholder={t('otherColorHexPlaceholder')}
-                      className="min-w-[12rem] flex-1 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-xs focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-800/80"
+                      className="min-w-0 flex-1 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-xs focus:border-indigo-500 focus:outline-none sm:min-w-[12rem] dark:border-slate-700 dark:bg-slate-800/80"
                     />
                     <button
                       type="button"
@@ -1105,7 +1165,7 @@ function App() {
                     onChange={(event) => setPaletteNameInput(event.target.value)}
                     onKeyDown={onPaletteNameInputKeyDown}
                     placeholder={t('addPalettePlaceholder')}
-                    className="min-w-[11rem] flex-1 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-800/80"
+                    className="min-w-0 flex-1 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none sm:min-w-[11rem] dark:border-slate-700 dark:bg-slate-800/80"
                   />
                   <button
                     type="button"
@@ -1160,7 +1220,7 @@ function App() {
                     </button>
                   ))}
                 </div>
-                <div className="mt-3 flex items-center gap-2">
+                <div className="mt-3 flex flex-wrap items-center gap-2">
                   <input
                     value={styleNameInput}
                     onChange={(event) => setStyleNameInput(event.target.value)}
@@ -1269,13 +1329,13 @@ function App() {
                   key={category.id}
                   className="rounded-2xl border border-slate-200 bg-white/80 p-3 shadow-sm dark:border-slate-700 dark:bg-slate-800/80"
                 >
-                  <div className="mb-2 flex items-center gap-2">
+                  <div className="mb-2 flex flex-wrap items-center gap-2">
                     <input
                       value={getLocalizedCategoryName(category, t)}
                       onChange={(event) =>
                         updateCategory(category.id, (current) => ({ ...current, name: event.target.value }))
                       }
-                      className="w-full rounded-full border border-slate-200 bg-white/90 px-3 py-1.5 text-sm focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-900/80"
+                      className="min-w-0 flex-1 rounded-full border border-slate-200 bg-white/90 px-3 py-1.5 text-sm focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-900/80"
                     />
                     <button
                       type="button"
@@ -1310,7 +1370,7 @@ function App() {
                             updateOptionLabel(category.id, index, event.target.value);
                           }}
                           readOnly={!category.isCustom}
-                          className="w-full rounded-full border border-slate-200 bg-white/90 px-3 py-1.5 text-xs focus:border-indigo-500 focus:outline-none read-only:cursor-not-allowed read-only:bg-slate-100 dark:border-slate-700 dark:bg-slate-900/80 dark:read-only:bg-slate-800"
+                          className="min-w-0 flex-1 rounded-full border border-slate-200 bg-white/90 px-3 py-1.5 text-xs focus:border-indigo-500 focus:outline-none read-only:cursor-not-allowed read-only:bg-slate-100 dark:border-slate-700 dark:bg-slate-900/80 dark:read-only:bg-slate-800"
                         />
                         <button
                           type="button"
@@ -1325,7 +1385,7 @@ function App() {
                     ))}
                   </div>
 
-                  <div className="mt-2 flex items-center gap-2">
+                  <div className="mt-2 flex flex-wrap items-center gap-2">
                     <input
                       value={newOptionDrafts[category.id] ?? ''}
                       onChange={(event) =>
@@ -1333,7 +1393,7 @@ function App() {
                       }
                       onKeyDown={(event) => onAddOptionInputKeyDown(event, category.id)}
                       placeholder={t('newOptionPlaceholder')}
-                      className="w-full rounded-full border border-slate-200 bg-white/90 px-3 py-1.5 text-xs focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-900/80"
+                      className="min-w-0 flex-1 rounded-full border border-slate-200 bg-white/90 px-3 py-1.5 text-xs focus:border-indigo-500 focus:outline-none dark:border-slate-700 dark:bg-slate-900/80"
                     />
                     <button
                       type="button"
@@ -1352,7 +1412,7 @@ function App() {
                 <p className="mb-2 text-xs font-semibold text-slate-600 dark:text-slate-300">
                   {t('newCategoryPlaceholder')}
                 </p>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <input
                     value={newCategoryName}
                     onChange={(event) => setNewCategoryName(event.target.value)}
