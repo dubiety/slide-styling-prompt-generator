@@ -12,8 +12,8 @@
   "usageGuideButton": "使用教學",
   "usageGuideTitle": "使用教學",
   "usageGuideStep1": "選擇你想要的投影片風格，或依需求新增設定",
-  "usageGuideStep2": "當你要在 NotebookLM 產生投影片時，複製並貼上提示詞到「客製化投影片」中的「說明要建立的簡報」",
-  "usageGuideStep3": "或是下載提示詞 (prompt.txt) 並且上傳成 NotebookLM 參考資料",
+  "usageGuideStep2": "當你要在 NotebookLM 產生投影片時，複製並貼上提示詞到「自訂簡報」中的「說明要建立的簡報」",
+  "usageGuideStep3": "或是下載提示詞 (slide-prompt-xxxx.txt) 並且上傳成 NotebookLM 參考資料",
   "usageGuideWireframeTitle": "線框圖佔位（之後可替換成你的教學圖片）",
   "usageGuideWireframeLabel": "線框圖",
   "generatorControls": "產生器控制面板",
@@ -82,7 +82,8 @@
     "es": "Español (西班牙語)",
     "de": "Deutsch (德文)",
     "fr": "Français (法文)",
-    "ru": "Русский (俄文)"
+    "ru": "Русский (俄文)",
+    "pt": "Português (葡萄牙語)"
   },
   "platforms": {
     "Gemini": "Gemini",

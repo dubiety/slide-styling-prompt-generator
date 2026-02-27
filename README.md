@@ -16,9 +16,12 @@ A multilingual web app that helps users generate slide-style prompts for LLM too
   - Traditional Chinese (`/zh-TW`)
   - Simplified Chinese (`/zh-CN`)
   - Japanese (`/ja`)
+  - Korean (`/ko`)
   - Spanish (`/es`)
   - German (`/de`)
   - French (`/fr`)
+  - Russian (`/ru`)
+  - Portuguese (`/pt`)
 - Copy and export prompt text
 - Theme mode (light/dark)
 - Config versioning (`settings_version`) for palette/style/category upgrades

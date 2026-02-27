@@ -9,12 +9,12 @@
   "resetButton": "Reset Custom Data",
   "tabGenerator": "Generator",
   "tabTemplates": "Templates",
-  "usageGuideButton": "How to Use",
-  "usageGuideTitle": "How To Use It",
-  "usageGuideStep1": "Choose the slide style you want, or add new settings as you wish",
-  "usageGuideStep2": "When you want to generate slides in NotebookLM, copy and paste the prompt into \"Describe the slide deck you want to create\" under \"Customize Slide Deck\"",
-  "usageGuideStep3": "Or download the prompt (slide-prompt-xxxx.txt) and upload it as NotebookLM reference material",
-  "usageGuideWireframeTitle": "Wireframe placeholders (replace with your images later)",
+  "usageGuideButton": "Guia de uso",
+  "usageGuideTitle": "Como usar",
+  "usageGuideStep1": "Escolha o estilo de slide que você quer, ou adicione novas configurações conforme necessário",
+  "usageGuideStep2": "Quando quiser gerar slides no NotebookLM, copie e cole o prompt em \"Descreva a apresentação de slides que você quer criar\" dentro de \"Personalizar apresentação de slides\"",
+  "usageGuideStep3": "Ou baixe o prompt (slide-prompt-xxxx.txt) e envie como material de referência no NotebookLM",
+  "usageGuideWireframeTitle": "Placeholders de wireframe (substitua pelas suas imagens depois)",
   "usageGuideWireframeLabel": "Wireframe",
   "generatorControls": "Generator Controls",
   "targetPlatform": "Target Platform",
@@ -83,7 +83,7 @@
     "de": "Deutsch (German)",
     "fr": "Français (French)",
     "ru": "Русский (Russian)",
-    "pt": "Português (Portuguese)"
+    "pt": "Português"
   },
   "platforms": {
     "Gemini": "Gemini",

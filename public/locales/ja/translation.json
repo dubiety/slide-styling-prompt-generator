@@ -12,8 +12,8 @@
   "usageGuideButton": "使い方",
   "usageGuideTitle": "使い方",
   "usageGuideStep1": "希望するスライドスタイルを選ぶか、必要に応じて設定を追加します",
-  "usageGuideStep2": "NotebookLM でスライドを生成するときに、プロンプトを「Customize Slide Deck」の「作成するスライドについて説明してください」にコピーして貼り付けます。",
-  "usageGuideStep3": "またはプロンプト（prompt.txt）をダウンロードして、NotebookLM の参考資料としてアップロードします",
+  "usageGuideStep2": "NotebookLM でスライドを生成するときに、プロンプトを「スライド資料をカスタマイズ」の「作成するスライドについて説明してください」にコピーして貼り付けます",
+  "usageGuideStep3": "またはプロンプト（slide-prompt-xxxx.txt）をダウンロードして、NotebookLM の参考資料としてアップロードします",
   "usageGuideWireframeTitle": "ワイヤーフレーム枠（後で画像に差し替え可能）",
   "usageGuideWireframeLabel": "ワイヤーフレーム",
   "generatorControls": "ジェネレーター設定",
@@ -82,7 +82,8 @@
     "es": "Español (スペイン語)",
     "de": "Deutsch (ドイツ語)",
     "fr": "Français (フランス語)",
-    "ru": "Русский (ロシア語)"
+    "ru": "Русский (ロシア語)",
+    "pt": "Português (ポルトガル語)"
   },
   "platforms": {
     "Gemini": "Gemini",

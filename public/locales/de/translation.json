@@ -12,8 +12,8 @@
   "usageGuideButton": "Anleitung",
   "usageGuideTitle": "So verwendest du es",
   "usageGuideStep1": "Wähle den gewünschten Folienstil oder füge bei Bedarf neue Einstellungen hinzu",
-  "usageGuideStep2": "Wenn Sie in NotebookLM Folien erstellen möchten, kopieren Sie den Prompt in „Beschreiben Sie die Präsentation, die Sie erstellen möchten“ unter „Customize Slide Deck“.",
-  "usageGuideStep3": "Oder lade den Prompt (prompt.txt) herunter und als NotebookLM-Referenzmaterial hoch",
+  "usageGuideStep2": "Wenn Sie in NotebookLM Folien erstellen möchten, kopieren Sie den Prompt in „Beschreiben Sie die Präsentation, die Sie erstellen möchten“ unter „Präsentation anpassen“",
+  "usageGuideStep3": "Oder lade den Prompt (slide-prompt-xxxx.txt) herunter und als NotebookLM-Referenzmaterial hoch",
   "usageGuideWireframeTitle": "Wireframe-Platzhalter (später durch Bilder ersetzen)",
   "usageGuideWireframeLabel": "Wireframe",
   "generatorControls": "Generator-Steuerung",
@@ -82,7 +82,8 @@
     "es": "Español (Spanisch)",
     "de": "Deutsch",
     "fr": "Français (Französisch)",
-    "ru": "Русский (Russisch)"
+    "ru": "Русский (Russisch)",
+    "pt": "Português (Portugiesisch)"
   },
   "platforms": {
     "Gemini": "Gemini",

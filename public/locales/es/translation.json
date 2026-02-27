@@ -12,8 +12,8 @@
   "usageGuideButton": "Guía de uso",
   "usageGuideTitle": "Cómo usarlo",
   "usageGuideStep1": "Elige el estilo de diapositiva que quieras o agrega nuevas configuraciones según lo necesites",
-  "usageGuideStep2": "Cuando quieras generar diapositivas en NotebookLM, copia y pega el prompt en \"Describe la presentación que quieres crear\" dentro de \"Customize Slide Deck\".",
-  "usageGuideStep3": "O descarga el prompt (prompt.txt) y súbelo como material de referencia en NotebookLM",
+  "usageGuideStep2": "Cuando quieras generar diapositivas en NotebookLM, copia y pega el prompt en \"Describe la presentación que quieres crear\" dentro de \"Customize Slide Deck\"",
+  "usageGuideStep3": "O descarga el prompt (slide-prompt-xxxx.txt) y súbelo como material de referencia en NotebookLM",
   "usageGuideWireframeTitle": "Marcadores wireframe (luego reemplázalos por tus imágenes)",
   "usageGuideWireframeLabel": "Wireframe",
   "generatorControls": "Controles del generador",
@@ -82,7 +82,8 @@
     "es": "Español",
     "de": "Deutsch (Alemán)",
     "fr": "Français (Francés)",
-    "ru": "Русский (Ruso)"
+    "ru": "Русский (Ruso)",
+    "pt": "Português (Portugués)"
   },
   "platforms": {
     "Gemini": "Gemini",

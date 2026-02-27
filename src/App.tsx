@@ -1398,15 +1398,35 @@ function App() {
                 <span className="mr-1 font-semibold">2.</span>
                 {t('usageGuideStep2')}
               </p>
-              <div className="flex aspect-[16/9] items-center justify-center rounded-2xl border-2 border-dashed border-slate-300 bg-white/70 text-xs font-medium text-slate-500 dark:border-slate-600 dark:bg-slate-800/70 dark:text-slate-300">
-                {`${t('usageGuideWireframeLabel')} 1`}
+              <div className="mx-auto w-full max-w-3xl overflow-hidden rounded-2xl border border-slate-200 bg-white/80 shadow-sm dark:border-slate-700 dark:bg-slate-800/80">
+                <img
+                  src={`/guide-images/${activeLanguage}/step2.png`}
+                  onError={(event) => {
+                    const image = event.currentTarget;
+                    if (image.currentSrc.endsWith('/guide-images/en/step2.png')) return;
+                    image.src = '/guide-images/en/step2.png';
+                  }}
+                  alt={`${t('usageGuideTitle')} Step 2`}
+                  className="aspect-[16/9] w-full object-contain"
+                  loading="lazy"
+                />
               </div>
               <p>
                 <span className="mr-1 font-semibold">3.</span>
                 {t('usageGuideStep3')}
               </p>
-              <div className="flex aspect-[16/9] items-center justify-center rounded-2xl border-2 border-dashed border-slate-300 bg-white/70 text-xs font-medium text-slate-500 dark:border-slate-600 dark:bg-slate-800/70 dark:text-slate-300">
-                {`${t('usageGuideWireframeLabel')} 2`}
+              <div className="mx-auto w-full max-w-3xl overflow-hidden rounded-2xl border border-slate-200 bg-white/80 shadow-sm dark:border-slate-700 dark:bg-slate-800/80">
+                <img
+                  src={`/guide-images/${activeLanguage}/step3.png`}
+                  onError={(event) => {
+                    const image = event.currentTarget;
+                    if (image.currentSrc.endsWith('/guide-images/en/step3.png')) return;
+                    image.src = '/guide-images/en/step3.png';
+                  }}
+                  alt={`${t('usageGuideTitle')} Step 3`}
+                  className="aspect-[16/9] w-full object-contain"
+                  loading="lazy"
+                />
               </div>
             </div>
           </section>
